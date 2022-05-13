@@ -1,0 +1,69 @@
+/**
+ * -----------------------------------------------------------------------------
+ * File: views/configurator
+ * -----------------------------------------------------------------------------
+ *
+ */
+
+.configurator {
+  @extend %md\:flex;
+  
+  &__selector,
+  &__result {
+    @extend %pt-10x;
+    @extend %sm\:pt-16x;
+    @extend %md\:pt-8x;
+
+    @include bp-md() {
+      width: 50%;
+    }
+  }
+
+  &__selector {
+
+    > div {
+      @extend %md\:pl-8x;
+      @extend %md\:pr-8x;
+      @extend %md\:pb-8x;
+    }
+
+    @include bp-md() {
+      display: flex;
+      justify-content: flex-end;
+  
+      > div {
+        max-width: 700px;
+        width: 100%;
+      }
+    }
+    
+    h1 {
+      text-align: center;
+    }
+
+    figure {
+      margin-top: $space-12x;
+    }
+  }
+
+  &__result {
+
+    @include bp-md() {
+      display: flex;
+      justify-content: flex-start;
+
+      header {
+        width: 100%;
+      }
+
+      h1 {
+        border-bottom: 1px solid $color-light-grey;
+        padding-bottom: $space-16x;
+        padding-left: $space-16x;
+        padding-right: $space-16x;
+      }
+    }
+
+  }
+
+}

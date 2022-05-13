@@ -5,12 +5,21 @@
  */
 
 main.site {
-  @extend %pt-10x;
-  @extend %sm\:pt-16x;
-  @extend %md\:pt-8x;
-  flex: 1;
+  @include bp-md() {
+    flex: 1;
+    position: relative;
   
-  > div {
-    @extend %inner-block;
+    &:after {
+      background-color: $color-light;
+      border-left: 1px solid $color-light-grey;
+      content: '';
+      display: block;
+      height: 100%;
+      position: absolute;
+      right: 0;
+      top: 0; 
+      width: 50%;
+      z-index: -1;
+    }
   }
 }

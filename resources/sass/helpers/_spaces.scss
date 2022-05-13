@@ -69,6 +69,19 @@ $step: 4px;
 // Padding
 .px-auto { padding-left: auto; padding-right: auto; }
 
+%sm\:pl-0, .sm\:pl-0 { @include bp-sm() { padding-left: 0; } }
+%md\:pl-0, .md\:pl-0 { @include bp-md() { padding-left: 0; } }
+%lg\:pl-0, .lg\:pl-0 { @include bp-lg() { padding-left: 0; } }
+
+%sm\:pr-0, .sm\:pr-0 { @include bp-sm() { padding-right: 0; } }
+%md\:pr-0, .md\:pr-0 { @include bp-md() { padding-right: 0; } }
+%lg\:pr-0, .lg\:pr-0 { @include bp-lg() { padding-right: 0; } }
+
+@for $i from 1 through 50 { %p-#{$i}x, .p-#{$i}x { padding: $i * $step; } }
+@for $i from 1 through 50 { %sm\:p-#{$i}x, .sm\:p-#{$i}x { @include bp-sm() { padding: $i * $step; } } }
+@for $i from 1 through 50 { %md\:p-#{$i}x, .md\:p-#{$i}x { @include bp-md() { padding: $i * $step; } } }
+@for $i from 1 through 50 { %lg\:p-#{$i}x, .lg\:p-#{$i}x { @include bp-lg() { padding: $i * $step; } } }
+
 @for $i from 1 through 50 { %py-#{$i}x, .py-#{$i}x { padding: $i * $step 0; } }
 @for $i from 1 through 50 { %sm\:py-#{$i}x, .sm\:py-#{$i}x { @include bp-sm() { padding: $i * $step 0; } } }
 @for $i from 1 through 50 { %md\:py-#{$i}x, .md\:py-#{$i}x { @include bp-md() { padding: $i * $step 0; } } }
