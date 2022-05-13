@@ -1,0 +1,24 @@
+/**
+ * -----------------------------------------------------------------------------
+ * File: component/headings/global
+ * -----------------------------------------------------------------------------
+ */
+
+h1, h2, h3 {
+}
+
+h1 {
+
+}
+
+h2 {
+
+}
+
+h3 {
+  @extend %mb-3x;
+  color: $color-dark;
+  @include font-bold();
+  @include font-size($fs-xs);
+  text-transform: uppercase;
+}

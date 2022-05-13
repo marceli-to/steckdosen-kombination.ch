@@ -1,0 +1,77 @@
+/**
+ * -----------------------------------------------------------------------------
+ * File: components/typo/helpers
+ * -----------------------------------------------------------------------------
+ *
+ * Helper classes for typography
+ *
+ */
+
+%uppercase,
+.uppercase { 
+  text-transform: uppercase;
+}
+
+%lowercase,
+.lowercase { 
+  text-transform: lowercase;
+}
+
+%text-indent,
+.text-indent {
+  &:not(:first-of-type) {
+    text-indent: $space-12x;
+  }
+}
+
+.cap { text-transform: capitalize; }
+.align-center { text-align: center; }
+.align-justify { text-align: justify; }
+.align-left { text-align: left; }
+.align-right { text-align: right; }
+.nobr { white-space: nowrap; }
+
+.font-regular {
+  @include font-regular();
+}
+
+.font-medium {
+  @include font-bold();
+}
+
+.font-xs {
+  @include font-size($fs-xs);
+}
+
+.text-sm {
+  @include font-size($fs-sm);
+}
+
+.text-md {
+  @include font-size($fs-md);
+}
+
+.text-lg {
+  @include font-size($fs-md);
+}
+
+
+/**
+ * Typography - Generic elements
+ * -----------------------------------------------------------------------------
+ */
+
+strong, b {
+	@include font-bold();
+}
+
+p {
+  @extend %mb-4x;
+	&:last-child {
+		margin-bottom: 0 !important;
+	}
+}
+
+i, em {
+	@include font-regular();
+}

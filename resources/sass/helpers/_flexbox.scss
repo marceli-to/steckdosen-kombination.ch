@@ -1,0 +1,78 @@
+/**
+ * -----------------------------------------------------------------------------
+ * File: component/flexbox
+ * -----------------------------------------------------------------------------
+ *
+ *
+ */
+
+%flex,
+.flex {
+  display: flex;
+}
+
+%sm\:flex,
+.sm\:flex {
+  @include bp-sm() {
+    display: flex;
+  }
+}
+
+%md\:flex,
+.md\:flex {
+  @include bp-sm() {
+    display: flex;
+  }
+}
+
+%flex-column,
+.flex-column {
+  flex-direction: column;
+}
+
+%flex-row,
+.flex-row {
+  flex-direction: row;
+}
+
+%sm\:flex-row,
+.sm\:flex-row {
+  @include bp-sm() {
+    flex-direction: row;
+  }
+}
+
+%items-start ,
+.items-start {
+  align-items: flex-start;
+}
+
+%items-end,
+.items-end {
+  align-items: flex-end;
+}
+
+%items-center,
+.items-center {
+  align-items: center;
+}
+
+%justify-start,
+.justify-start {
+  justify-content: flex-start;
+}
+
+%justify-end,
+.justify-end {
+  justify-content: flex-end;
+}
+
+%justify-center,
+.justify-center {
+  justify-content: center;
+}
+
+%justify-between,
+.justify-between {
+  justify-content: space-between;
+}

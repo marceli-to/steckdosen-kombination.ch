@@ -1,0 +1,21 @@
+/**
+ * -----------------------------------------------------------------------------
+ * File: components/buttons/primary
+ * -----------------------------------------------------------------------------
+ */
+
+%btn-primary,
+.btn-primary {
+  @extend %btn;
+  background-color: $color-black;
+  border-radius: 2px;
+  border: none;
+  color: $color-white;
+  width: auto;
+  text-transform: uppercase;
+  transition: all .1s ease-out;
+
+  &:hover {
+    background-color: $color-black;
+  }
+}

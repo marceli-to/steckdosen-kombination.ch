@@ -1,0 +1,46 @@
+/**
+ * -----------------------------------------------------------------------------
+ * File: layout/footer
+ * -----------------------------------------------------------------------------
+ */
+
+footer.site-footer {
+  @extend %pb-9x;
+  border-top: 1px solid $color-light-grey;
+  @include font-size($fs-xs);
+  width: 100%;
+
+  > div {
+    @extend %inner-block;
+    max-width: 920px;
+
+    &:first-of-type {
+      @extend %pt-16x;
+    }
+  }
+
+  .site-footer__item:not(:last-of-type) {
+    @extend %mb-9x;
+    @extend %sm\:mb-0;
+  }
+
+  .site-footer__copy {
+    @extend %pt-16x;
+    color: $color-grey;
+    text-align: center;
+  }
+
+  p {
+    color: $color-grey;
+  }
+
+  a {
+    color: $color-green;
+    text-decoration: none;
+
+    &:hover {
+      color: $color-grey;
+      text-decoration: underline;
+    }
+  }
+}

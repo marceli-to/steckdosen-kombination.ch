@@ -1,0 +1,33 @@
+/**
+ * -----------------------------------------------------------------------------
+ * File: components/logo
+ * -----------------------------------------------------------------------------
+ */
+
+.logo {
+  display: block;
+  width: 100%;
+
+  img {
+    @extend %is-responsive;
+    @extend %mx-auto;
+  }
+
+  &.logo--ferratec {
+    @extend %mb-5x;
+    @extend %sm\:mb-0;
+    @extend %sm\:mr-10x;
+    img {
+      max-width: 132px;
+    }
+  }
+
+  &.logo--mennekes {
+    @extend %mt-5x;
+    @extend %sm\:mt-0;
+    @extend %sm\:ml-10x;
+    img {
+      max-width: 148px;
+    }
+  }
+}
