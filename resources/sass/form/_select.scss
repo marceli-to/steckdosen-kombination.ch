@@ -5,10 +5,12 @@
  */
 
 .select-wrapper {
-  background-color: transparent;
+  background-color: $color-green;
+  border-radius: 30px;
   display: block;
+  height: 30px;
   position: relative;
-  width: 100%;
+  width: 60px;
 
 	&:after {
     @include background-default();
@@ -29,9 +31,10 @@
 
 	select {
     background-color: transparent !important;
+    border: none;
     color: $color-black;
     display: block;
-    padding: 10px 50px 8px 6px;
+    padding: 6px;
     width: 100%;
 
     &:hover {

@@ -20,7 +20,7 @@
 
 %md\:flex,
 .md\:flex {
-  @include bp-sm() {
+  @include bp-md() {
     display: flex;
   }
 }

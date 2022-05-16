@@ -8,7 +8,7 @@
 .configurator {
   @extend %md\:flex;
   
-  &__selector,
+  &__filter,
   &__result {
     @extend %pt-10x;
     @extend %sm\:pt-16x;
@@ -19,7 +19,7 @@
     }
   }
 
-  &__selector {
+  &__filter {
 
     > div {
       @extend %md\:pl-8x;
@@ -40,10 +40,6 @@
     h1 {
       text-align: center;
     }
-
-    figure {
-      margin-top: $space-12x;
-    }
   }
 
   &__result {
@@ -63,7 +59,192 @@
         padding-right: $space-16x;
       }
     }
+  }
+}
 
+
+.selector {
+  @extend %mx-auto;
+  margin-top: $space-12x;
+  position: relative;
+
+  &.is-mobile {
+    display: block;
+    height: 1180px;
+    width: 100%;
+
+    @include bp-sm() {
+      display: none;
+    }
+
+    > div {
+      display: flex;
+      position: relative;
+
+      &.is-right {
+        justify-content: flex-end;
+      }
+
+      &.is-left {
+        justify-content: flex-start;
+        top: -64px;
+      }
+    }
+
+    // Visual Powerbox
+    img {
+      display: block;
+      position: relative;
+      height: 590px;
+      width: 320px;
+
+      @include bp-sm() {
+        display: none;
+      }
+    }
+  }
+
+  &.is-tablet,
+  &.is-desktop {
+    display: none;
+    height: 275px;
+    width: 275px;
+
+    @include bp-sm() {
+      display: block;
+      height: 480px;
+      width: 480px;
+    }
+  
+    @include bp-lg() {
+      height: 590px;
+      width: 590px;
+    }
+
+    // Visual Powerbox
+    img {
+      display: none;
+      height: inherit;
+      width: inherit;
+
+      @include bp-sm() {
+        display: block;
+      }
+    }
+
+  }
+
+  // Pointers
+  &__pointer {
+    display: block;
+    position: absolute;
+
+    > div {
+      @extend %flex;
+      @extend %items-center;
+
+      svg {
+        position: relative;
+      }
+    }
+
+    .select {
+      background-color: $color-green;
+      border-radius: 5000px;
+      display: flex;
+      height: 30px;
+      position: relative;
+      width: 60px;
+    
+      &:after {
+        @include background-default();
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: 20px auto;
+        background-color: transparent;
+        content: '';
+        height: 100%;
+        right: 0;
+        padding: 0 5px;
+        position: absolute;
+        top: 0;
+        width: 32px;
+        z-index: 0;
+      }
+    
+      select {
+        background-color: transparent !important;
+        border: none;
+        color: $color-white;
+        display: block;
+        @include font-bold();
+        @include font-size($fs-xs);
+        padding: 0;
+        text-align: center;
+        width: 100%;
+    
+        &:hover {
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}
+
+/** FI/LS **/
+.selector__pointer.is-fi_ls {
+  height: 38px;
+  right: 68px;
+  top: 103px;
+  width: 179px;
+
+  svg {
+    left: -4px;
+  }
+
+  .select {
+    height: 38px;
+    width: 104px;
+  }
+
+}
+
+/** CH 16A T25 **/
+.selector__pointer.is-ch_16a_t25 {
+  height: 38px;
+  right: 75px;
+  top: 234px;
+  width: 214px;
+
+  svg {
+    left: -4px;
+  }
+
+  .select {
+    height: 38px;
+    width: 139px;
+  }
+
+}
+
+/** CEE 16/32 5P **/
+.selector__pointer.is-ch_16-32a_5p {
+  height: 92px;
+  right: 64px;
+  top: 380px;
+  width: 219px;
+
+  svg {
+    left: -6px;
+  }
+
+  .select {
+    height: 38px;
+    width: 144px;
+    
+    + .select {
+      top: 10px;
+    }
   }
 
 }

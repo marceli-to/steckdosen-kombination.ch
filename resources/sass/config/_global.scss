@@ -26,10 +26,9 @@ $url-icons:  '../img/icons/';
 /* Breakpoints
  * -------------------- */
 
-$bp-sm:   700px;
-$bp-md:   900px;
-$bp-lg:  1200px;
-
+$bp-sm:   768px;
+$bp-md:  1024px;
+$bp-lg:  1440px;
 
 $breakpoints: (
   sm: $bp-sm,
