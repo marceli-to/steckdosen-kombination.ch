@@ -10,16 +10,15 @@
   
   &__filter,
   &__result {
-    @extend %pt-10x;
-    @extend %sm\:pt-16x;
-    @extend %md\:pt-8x;
-
     @include bp-md() {
       width: 50%;
     }
   }
 
   &__filter {
+    @extend %pt-10x;
+    @extend %sm\:pt-16x;
+    @extend %md\:pt-8x;
 
     > div {
       @extend %md\:pl-8x;
@@ -43,25 +42,46 @@
   }
 
   &__result {
+    background-color: $color-light;
+
+    header {
+      @extend %pt-6x;
+      @extend %md\:pt-8x;
+      @extend %pb-5x;
+      @extend %sm\:pb-7x;
+      @extend %mb-8x;
+      border-bottom: 1px solid $color-light-grey;
+    }
+
+    > header,
+    > div {
+      @extend %pl-4x;
+      @extend %pr-4x;
+      @extend %sm\:pl-6x;
+      @extend %sm\:pr-6x;
+      @extend %md\:pl-8x;
+      @extend %md\:pr-8x;
+    }
+
+    > div {
+      @extend %pb-8x;
+    }
 
     @include bp-md() {
       display: flex;
+      flex-direction: column;
       justify-content: flex-start;
 
       header {
         width: 100%;
       }
-
-      h1 {
-        border-bottom: 1px solid $color-light-grey;
-        padding-bottom: $space-16x;
-        padding-left: $space-16x;
-        padding-right: $space-16x;
-      }
     }
   }
 }
 
+/** 
+ Selector and pointers
+ */
 
 .selector {
   @extend %mx-auto;
@@ -139,11 +159,21 @@
     display: block;
     position: absolute;
 
+    // &:hover {
+    //   svg {
+    //     circle,
+    //     path,
+    //     stroke {
+    //     }
+    //   }
+    // }
+
     > div {
       @extend %flex;
       @extend %items-center;
 
       svg {
+        flex-shrink: 0;
         position: relative;
       }
     }
@@ -152,23 +182,25 @@
       background-color: $color-green;
       border-radius: 5000px;
       display: flex;
+      flex-shrink: 0;
       height: 30px;
       position: relative;
       width: 60px;
     
       &:after {
         @include background-default();
+        background-image: url($url-images + 'chevron-down.svg');
         background-repeat: no-repeat;
         background-position: center center;
-        background-size: 20px auto;
+        background-size: 16px 16px;
         background-color: transparent;
         content: '';
         height: 100%;
-        right: 0;
-        padding: 0 5px;
+        right: 10px;
+        padding: 0;
         position: absolute;
         top: 0;
-        width: 32px;
+        width: 16px;
         z-index: 0;
       }
     
@@ -179,7 +211,7 @@
         display: block;
         @include font-bold();
         @include font-size($fs-xs);
-        padding: 0;
+        padding: 0 12px 0 0 ;
         text-align: center;
         width: 100%;
     
@@ -194,7 +226,7 @@
 /** FI/LS **/
 .selector__pointer.is-fi_ls {
   height: 38px;
-  right: 68px;
+  right: 72px;
   top: 103px;
   width: 179px;
 
@@ -207,12 +239,21 @@
     width: 104px;
   }
 
+  @include bp-sm() {
+    right: 276px;
+    top: 83px;
+  }
+
+  @include bp-lg() {
+    right: 343px;
+    top: 104px;
+  }
 }
 
 /** CH 16A T25 **/
 .selector__pointer.is-ch_16a_t25 {
   height: 38px;
-  right: 75px;
+  right: 81px;
   top: 234px;
   width: 214px;
 
@@ -225,17 +266,26 @@
     width: 139px;
   }
 
+  @include bp-sm() {
+    right: 282px;
+    top: 185px;
+  }
+
+  @include bp-lg() {
+    right: 350px;
+    top: 234px;
+  }
 }
 
 /** CEE 16/32 5P **/
 .selector__pointer.is-ch_16-32a_5p {
   height: 92px;
-  right: 64px;
-  top: 380px;
+  right: 68px;
+  top: 382px;
   width: 219px;
 
   svg {
-    left: -6px;
+    left: -8px;
   }
 
   .select {
@@ -243,8 +293,129 @@
     width: 144px;
     
     + .select {
-      top: 10px;
+      top: 15px;
     }
   }
 
+  @include bp-sm() {
+    right: 272px;
+    top: 310px;
+  }
+
+  @include bp-lg() {
+    right: 337px;
+    top: 384px;
+  }
+}
+
+/** FI Switch **/
+.selector__pointer.is-fi_switch {
+  height: 107px;
+  left: 8px;
+  top: 180px;
+  width: 277px;
+
+  > div {
+    align-items: flex-start;
+  }
+
+  .select {
+    height: 38px;
+    left: -6px;
+    top: -15px;
+    width: 140px;
+
+    @include bp-sm() {
+      left: -24px;
+    }
+  }
+
+  @include bp-sm() {
+    left: 222px;
+    top: 130px;
+  }
+
+  @include bp-lg() {
+    left: 280px;
+    top: 179px;
+  }
+}
+
+/** FI Switch **/
+.selector__pointer.is-cee_16a_t23 {
+  height: 89px;
+  left: 78px;
+  top: 236px;
+  width: 210px;
+
+  > div {
+    align-items: flex-end;
+  }
+
+  .select {
+    height: 38px;
+    left: -6px;
+    top: 16px;
+    width: 146px;
+  }
+
+  @include bp-sm() {
+    left: 280px;
+    top: 186px;
+  }
+
+  @include bp-lg() {
+    left: 348px;
+    top: 235px;
+  }
+}
+
+/** CEE 63 5P **/
+.selector__pointer.is-cee_63_5p {
+  height: 89px;
+  left: 64px;
+  top: 388px;
+  width: 196px;
+
+  .select {
+    height: 38px;
+    left: -6px;
+    top: 2px;
+    width: 146px;
+  }
+
+  @include bp-sm() {
+    left: 268px;
+    top: 312px;
+  }
+
+  @include bp-lg() {
+    left: 334px;
+    top: 387px;
+  }
+}
+
+/** Data ports **/
+.selector__pointer.is-data_ports {
+  height: 89px;
+  left: 58px;
+  top: 489px;
+  width: 206px;
+
+  .select {
+    height: 38px;
+    left: -6px;
+    top: 2px;
+    width: 146px;
+  }
+
+  @include bp-sm() {
+    left: 262px;
+    top: 393px;
+  }
+
+  @include bp-lg() {
+    left: 330px;
+    top: 488px;
+  }
 }
