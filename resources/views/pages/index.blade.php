@@ -1,10 +1,8 @@
 @extends('layout.main')
 @section('content')
 
-<main class="site" id="app">
-
+{{-- <main class="site" id="app">
   <div class="configurator">
-
     <section class="configurator__filter">
       <div>
         <header>
@@ -305,7 +303,6 @@
          <!-- // Tablet and Desktop -->
       </div>
     </section>
-
     <section class="configurator__result">
       <header>
         <h1>Passende Produkte</h1>
@@ -316,16 +313,14 @@
         <p>Produkt 3</p>
       </div>
     </section>
-
   </div>
-  
-</main>
+</main> --}}
 
-{{-- 
+
 <main class="site" id="app">
   <div>
     <app-component />
   </div>
 </main>
---}}
+
 @endsection
