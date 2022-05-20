@@ -1,11 +1,9 @@
 <template>
   <configurator-wrapper>
-
     <configurator-filter>
       <configurator-header>
         <h1>Konfigurator für Wand-Stromverteiler</h1>
       </configurator-header>
-      
       <!-- Mobile -->
       <div class="selector is-mobile">
         <div class="is-right">
@@ -120,9 +118,6 @@
           </filter-item>
         </div>
       </div>
-
-      <!-- // Mobile -->
-
       <!-- Tablet and Desktop -->
       <div class="selector is-tablet">
         <img src="/assets/img/powerbox.png" width="590" height="590">
@@ -233,10 +228,7 @@
           </template>
         </filter-item>
       </div>
-      <!-- // Tablet and Desktop -->
-
     </configurator-filter>
-
     <configurator-result>
       <configurator-header>
         <h1>Passende Produkte</h1>
@@ -256,7 +248,6 @@
         </div>
       </div>
     </configurator-result>
-
   </configurator-wrapper>
 </template>
 
@@ -353,7 +344,6 @@ export default {
       this.axios.post(this.routes.filter, this.filter_items).then(response => {
         this.filter_results = response.data;
         NProgress.done();
-        console.log(this.filter_results);
       });
     },
   },
