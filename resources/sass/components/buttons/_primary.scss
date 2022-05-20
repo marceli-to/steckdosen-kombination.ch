@@ -7,15 +7,25 @@
 %btn-primary,
 .btn-primary {
   @extend %btn;
-  background-color: $color-black;
-  border-radius: 2px;
+  @extend %mx-auto;
+  align-items: center;
+  align-self: center;
+  background-color: $color-green;
+  border-radius: 4px;
   border: none;
   color: $color-white;
-  width: auto;
+  display: flex;
+  @include font-medium();
+  @include font-size($fs-sm);
+  justify-content: center;
+  height: 64px;
+  text-align: center;
+  width: 192px;
   text-transform: uppercase;
   transition: all .1s ease-out;
 
-  &:hover {
-    background-color: $color-black;
+  @include bp-sm() {
+    margin-right: 0;
   }
+
 }

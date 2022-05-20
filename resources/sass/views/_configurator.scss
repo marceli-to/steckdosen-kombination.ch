@@ -159,15 +159,6 @@
     display: block;
     position: absolute;
 
-    // &:hover {
-    //   svg {
-    //     circle,
-    //     path,
-    //     stroke {
-    //     }
-    //   }
-    // }
-
     > div {
       @extend %flex;
       @extend %items-center;
@@ -410,7 +401,6 @@
   }
 }
 
-
 /** Data ports **/
 .selector__pointer.is-data_ports {
   height: 38px;
@@ -443,4 +433,43 @@
     left: 16px;
     top: 488px;
   }
+}
+
+.product {  
+  @extend %pb-8x;
+
+
+  @include bp-sm() {
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+  }
+
+  &:not(:last-of-type) {
+    @extend %mb-8x;
+    border-bottom: 1px solid $color-light-grey;
+  }
+
+  figure {
+    @extend %mb-8x;
+    @extend %sm\:mr-8x;
+    img {
+      @extend %is-responsive;
+      max-width: 125px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+
+  h3 {
+    @extend %mb-4x;
+    @include font-bold();
+    @include font-size($fs-md);
+  }
+
+  p {
+    @extend %mb-16x;
+    color: $color-grey;
+    @include font-size($fs-sm);
+  }
+
 }

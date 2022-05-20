@@ -241,6 +241,20 @@
       <configurator-header>
         <h1>Passende Produkte</h1>
       </configurator-header>
+      <div v-for="result in filter_results" :key="result.id" class="product">
+        <figure>
+          <img src="/assets/img/products/dummy.png" width="204" height="346" :alt="result.number">
+        </figure>
+        <div>
+          <h3>{{ result.gehaeuse}}</h3>
+          <p>E-Nummer: {{ result.number}}</p>
+          <div>
+            <a href="" class="btn-primary">
+              <span>Im Shop anzeigen</span>
+            </a>
+          </div>
+        </div>
+      </div>
     </configurator-result>
 
   </configurator-wrapper>
@@ -302,7 +316,7 @@ export default {
       filter_results: [],
 
       filter_options: {
-        fi_ls: [0, 1, 2, 4, 5, 7],
+        fi_ls: [0, 1, 2, 3, 5, 6],
         cee_16a_3p: [0, 1],
         ch_16a_t25: [0, 1, 2, 3, 4, 6],
         data_ports: [0, 2, 4],
@@ -315,7 +329,7 @@ export default {
 
       // Routes
       routes: {
-        filter: '/api/product/filter',
+        filter: '/api/products/filter',
       },
 
       // States
@@ -334,24 +348,15 @@ export default {
 
   methods: {
 
-    fetch(type) {
-      this.isFetched = false;
+    filter() {
       NProgress.start();
-      this.axios.get(`${this.routes.list}/${type}`).then(response => {
+      this.axios.post(this.routes.filter, this.filter_items).then(response => {
         this.filter_results = response.data;
-        this.isFetched = true;
         NProgress.done();
+        console.log(this.filter_results);
       });
     },
-
-    filter() {
-      console.log(this.filter_items);
-    },
-
   },
-  watch: {
-    '$route'() {
-    }
-  },
+
 }
 </script>

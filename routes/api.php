@@ -1,7 +1,7 @@
 <?php
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\Api\ProductController;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -13,5 +13,5 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-// Route::get('/', [Controller::class, 'get']);
+Route::post('products/filter', [ProductController::class, 'filter']);
 
