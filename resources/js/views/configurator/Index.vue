@@ -294,7 +294,6 @@ import IconDataPorts from '@/views/configurator/components/icons/data_ports.vue'
 import IconFiSwitch from '@/views/configurator/components/icons/fi_switch.vue';
 import IconCh16at23 from '@/views/configurator/components/icons/ch_16a_t23.vue';
 import IconCee63a32a16a5p from '@/views/configurator/components/icons/cee_63a_32a_16a_5p.vue';
-import Label from '../../components/ui/menu/Label.vue';
 
 export default {
 
