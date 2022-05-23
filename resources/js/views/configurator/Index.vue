@@ -230,8 +230,17 @@
       </div>
     </configurator-filter>
     <configurator-result>
-      <configurator-header>
-        <h1>Passende Produkte</h1>
+      <configurator-header v-if="filter_results.length">
+        <h1>
+          Produkte
+          <span v-if="filter_results.length > 0">
+            ({{filter_results.length}})
+          </span>
+        </h1>
+      </configurator-header>
+      <configurator-header v-else>
+        <h1>Willkommen bla bla bla</h1>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ea tempora dolores adipisci dolorum, atque magni sed, quia voluptas mollitia cumque voluptatum hic quis! Fuga dolor earum amet, dignissimos ipsa incidunt.</p>
       </configurator-header>
       <div v-for="result in filter_results" :key="result.id" class="product">
         <figure>
