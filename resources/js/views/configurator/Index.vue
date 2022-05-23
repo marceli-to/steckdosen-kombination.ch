@@ -312,9 +312,8 @@ export default {
     IconCh16at23,
     IconCee63a32a16a5p
   },
-
   
-    Labelmixins: [ErrorHandling, Helpers],
+  mixins: [ErrorHandling, Helpers],
 
   data() {
     return {
@@ -381,10 +380,6 @@ export default {
       }
       return false;
     }
-  },
-
-  computed: {
-
   },
 
 }
