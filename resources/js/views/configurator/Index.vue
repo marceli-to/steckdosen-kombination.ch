@@ -248,13 +248,16 @@
       </div>
     </configurator-filter>
     <configurator-result>
-      <configurator-header v-if="filter_results.length">
+      <configurator-header v-if="filter_results.length || hasSearch">
         <h1>
           Produkte
           <span v-if="filter_results.length > 0">
             ({{filter_results.length}})
           </span>
         </h1>
+        <p v-if="hasSearch && filter_results.length == 0">
+          {{messages.noResults}} <a href="" @click.prevent="reset()">Neue Suche?</a>
+        </p>
       </configurator-header>
       <configurator-header v-else>
         <h1>Willkommen bla bla bla</h1>
@@ -351,11 +354,12 @@ export default {
       },
 
       // States
-      isFetched: false,
+      hasSearch: false,
 
       // Messages
       messages: {
         emptyData: 'Es sind noch keine Daten vorhanden...',
+        noResults: 'Ihre Suche hat keine Resultate erzeugt...'
       },
     };
   },
@@ -370,8 +374,25 @@ export default {
       NProgress.start();
       this.axios.post(this.routes.filter, this.filter_items).then(response => {
         this.filter_results = response.data;
+        this.hasSearch = true;
         NProgress.done();
       });
+    },
+
+    reset() {
+      this.hasSearch = false;
+      this.filter_items = {
+        fi_ls: null,
+        cee_16a_3p: null,
+        ch_16a_t25: null,
+        data_ports: null,
+        fi_switch: null,
+        ch_16a_t23: null,
+        cee_63a_5p: null,
+        cee_32a_5p: null,
+        cee_16a_5p: null,
+      };
+
     },
 
     selected(attr) {
@@ -379,7 +400,7 @@ export default {
         return true;
       }
       return false;
-    }
+    },
   },
 
 }

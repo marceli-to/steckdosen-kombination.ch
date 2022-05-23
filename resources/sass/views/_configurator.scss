@@ -76,6 +76,10 @@
         width: 100%;
       }
     }
+
+    a:not(.btn-primary) {
+      color: $color-green;
+    }
   }
 }
 
@@ -236,7 +240,7 @@
         display: block;
         @include font-bold();
         @include font-size($fs-xs);
-        padding: 0 12px 0 18px;
+        padding: 0 12px 0 9px;
         text-align: center;
         width: 100%;
 
