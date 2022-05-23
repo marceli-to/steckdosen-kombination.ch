@@ -236,9 +236,13 @@
         display: block;
         @include font-bold();
         @include font-size($fs-xs);
-        padding: 0 12px 0 0 ;
+        padding: 0 12px 0 24px;
         text-align: center;
         width: 100%;
+
+        @include bp-sm() {
+          padding-left: 0;
+        }
     
         &:hover {
           cursor: pointer;
@@ -463,8 +467,6 @@
     top: 235px;
   }
 }
-
-
 
 .product {  
   @extend %pb-8x;
