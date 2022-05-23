@@ -501,6 +501,7 @@
     @extend %mb-4x;
     @include font-bold();
     @include font-size($fs-md);
+    line-height: 1.2 !important;
   }
 
   p {
