@@ -268,7 +268,7 @@
           <h3>{{ result.gehaeuse}}</h3>
           <p>E-Nummer: {{ result.number}}</p>
           <div>
-            <a href="" class="btn-primary">
+            <a :href="`https://www.elektro-material.ch/de/shop/search?searchTerm=${result.number}`" target="_blank" class="btn-primary">
               <span>Im Shop anzeigen</span>
             </a>
           </div>
