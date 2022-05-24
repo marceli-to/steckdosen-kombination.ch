@@ -282,8 +282,8 @@
   }
 }
 
-/** CEE 16A 3P **/
-.selector__pointer.is-cee_16a_3p {
+/** 16A T25 **/
+.selector__pointer.is-ch_16a_t25 {
   height: 38px;
   right: 75px;
   top: 234px;
@@ -295,7 +295,7 @@
 
   .select {
     height: 38px;
-    width: 139px;
+    width: 115px;
   }
 
   @include bp-sm() {
@@ -309,8 +309,8 @@
   }
 }
 
-/** CH 16A T25 **/
-.selector__pointer.is-ch_16a_t25 {
+/** CEE 16A 3P **/
+.selector__pointer.is-cee_16a_3p {
   height: 38px;
   right: 62px;
   top: 382px;
@@ -364,6 +364,7 @@
   }
 
   @include bp-lg() {
+    right: 334px;
     top: 488px;
   }
 }
@@ -458,7 +459,7 @@
     height: 38px;
     left: -32px;
     top: 16px;
-    width: 146px;
+    width: 115px;
   }
 
   @include bp-sm() {
@@ -474,7 +475,6 @@
 
 .product {  
   @extend %pb-8x;
-
 
   @include bp-sm() {
     display: grid;

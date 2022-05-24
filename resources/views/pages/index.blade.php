@@ -68,7 +68,7 @@
               <div>
                 <div class="select">
                   <select>
-                    <option>CH 16A T25</option>
+                    <option>16A T25</option>
                     <option>1</option>
                     <option>2</option>
                   </select>
@@ -113,7 +113,7 @@
                 </svg>
                 <div class="select">
                   <select>
-                    <option>CH 16A T23</option>
+                    <option>16A T23</option>
                     <option>1</option>
                     <option>2</option>
                   </select>
@@ -199,7 +199,7 @@
             <div>
               <div class="select">
                 <select>
-                  <option>CH 16A T25</option>
+                  <option>16A T25</option>
                   <option>1</option>
                   <option>2</option>
                 </select>
@@ -241,7 +241,7 @@
               </svg>
               <div class="select">
                 <select>
-                  <option>CH 16A T23</option>
+                  <option>16A T23</option>
                   <option>1</option>
                   <option>2</option>
                 </select>

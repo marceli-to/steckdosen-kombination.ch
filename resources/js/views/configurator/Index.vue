@@ -40,10 +40,10 @@
             <template v-slot:select>
               <div :class="[selected('ch_16a_t25') ? 'is-selected' : '', 'select']">
                 <select v-model="filter_items.ch_16a_t25" @change="filter()">
-                  <option value="null">CH 16A T25</option>
+                  <option value="null">16A T25</option>
                   <option :value="o" v-for="(o,i) in filter_options.ch_16a_t25" :key="i">{{o}}</option>
                 </select>
-                <label class="is-left">CH 16A T25</label>
+                <label class="is-left">16A T25</label>
               </div>
             </template>
             <template v-slot:icon-after>
@@ -85,10 +85,10 @@
             <template v-slot:select>
               <div :class="[selected('ch_16a_t23') ? 'is-selected' : '', 'select']">
                 <select v-model="filter_items.ch_16a_t23" @change="filter()">
-                  <option value="null">CH 16A T23</option>
+                  <option value="null">16A T23</option>
                   <option :value="o" v-for="(o,i) in filter_options.ch_16a_t23" :key="i">{{o}}</option>
                 </select>
-                <label class="is-right">CH 16A T23</label>
+                <label class="is-right">16A T23</label>
               </div>
             </template>
             <template v-slot:icon-before>
@@ -98,12 +98,12 @@
           <filter-item :attr="'cee_63a_32a_16a_5p'">
             <template v-slot:select>
               <div>
-                <div :class="[selected('cee_63a_5p') ? 'is-selected' : '', 'select']">
-                  <select v-model="filter_items.cee_63a_5p" @change="filter()">
-                    <option value="null">CEE 63A 5P</option>
-                    <option :value="o" v-for="(o,i) in filter_options.cee_63a_5p" :key="i">{{o}}</option>
+                <div :class="[selected('cee_16a_5p') ? 'is-selected' : '', 'select']">
+                  <select v-model="filter_items.cee_16a_5p" @change="filter()">
+                    <option value="null">CEE 16A 5P</option>
+                    <option :value="o" v-for="(o,i) in filter_options.cee_16a_5p" :key="i">{{o}}</option>
                   </select>
-                  <label class="is-right">CEE 63A 5P</label>
+                  <label class="is-right">CEE 16A 5P</label>
                 </div>
                 <div :class="[selected('cee_32a_5p') ? 'is-selected' : '', 'select']">
                   <select v-model="filter_items.cee_32a_5p" @change="filter()">
@@ -112,12 +112,12 @@
                   </select>
                   <label class="is-right">CEE 32A 5P</label>
                 </div>
-                <div :class="[selected('cee_16a_5p') ? 'is-selected' : '', 'select']">
-                  <select v-model="filter_items.cee_16a_5p" @change="filter()">
-                    <option value="null">CEE 16A 5P</option>
-                    <option :value="o" v-for="(o,i) in filter_options.cee_16a_5p" :key="i">{{o}}</option>
+                <div :class="[selected('cee_63a_5p') ? 'is-selected' : '', 'select']">
+                  <select v-model="filter_items.cee_63a_5p" @change="filter()">
+                    <option value="null">CEE 63A 5P</option>
+                    <option :value="o" v-for="(o,i) in filter_options.cee_63a_5p" :key="i">{{o}}</option>
                   </select>
-                  <label class="is-right">CEE 16A 5P</label>
+                  <label class="is-right">CEE 63A 5P</label>
                 </div>
               </div>
             </template>
@@ -162,10 +162,10 @@
           <template v-slot:select>
             <div :class="[selected('ch_16a_t25') ? 'is-selected' : '', 'select']">
               <select v-model="filter_items.ch_16a_t25" @change="filter()">
-                <option value="null">CH 16A T25</option>
+                <option value="null">16A T25</option>
                 <option :value="o" v-for="(o,i) in filter_options.ch_16a_t25" :key="i">{{o}}</option>
               </select>
-              <label class="is-left">CH 16A T25</label>
+              <label class="is-left">16A T25</label>
             </div>
           </template>
           <template v-slot:icon-after>
@@ -190,10 +190,10 @@
           <template v-slot:select>
             <div :class="[selected('ch_16a_t23') ? 'is-selected' : '', 'select']">
               <select v-model="filter_items.ch_16a_t23" @change="filter()">
-                <option value="null">CH 16A T23</option>
+                <option value="null">16A T23</option>
                 <option :value="o" v-for="(o,i) in filter_options.ch_16a_t23" :key="i">{{o}}</option>
               </select>
-              <label class="is-right">CH 16A T23</label>
+              <label class="is-right">16A T23</label>
             </div>
           </template>
           <template v-slot:icon-before>
@@ -203,12 +203,12 @@
         <filter-item :attr="'cee_63a_32a_16a_5p'">
           <template v-slot:select>
             <div>
-              <div :class="[selected('cee_63a_5p') ? 'is-selected' : '', 'select']">
-                <select v-model="filter_items.cee_63a_5p" @change="filter()">
-                  <option value="null">CEE 63A 5P</option>
-                  <option :value="o" v-for="(o,i) in filter_options.cee_63a_5p" :key="i">{{o}}</option>
+              <div :class="[selected('cee_16a_5p') ? 'is-selected' : '', 'select']">
+                <select v-model="filter_items.cee_16a_5p" @change="filter()">
+                  <option value="null">CEE 16A 5P</option>
+                  <option :value="o" v-for="(o,i) in filter_options.cee_16a_5p" :key="i">{{o}}</option>
                 </select>
-                <label class="is-right">CEE 63A 5P</label>
+                <label class="is-right">CEE 16A 5P</label>
               </div>
               <div :class="[selected('cee_32a_5p') ? 'is-selected' : '', 'select']">
                 <select v-model="filter_items.cee_32a_5p" @change="filter()">
@@ -217,12 +217,12 @@
                 </select>
                 <label class="is-right">CEE 32A 5P</label>
               </div>
-              <div :class="[selected('cee_16a_5p') ? 'is-selected' : '', 'select']">
-                <select v-model="filter_items.cee_16a_5p" @change="filter()">
-                  <option value="null">CEE 16A 5P</option>
-                  <option :value="o" v-for="(o,i) in filter_options.cee_16a_5p" :key="i">{{o}}</option>
+              <div :class="[selected('cee_63a_5p') ? 'is-selected' : '', 'select']">
+                <select v-model="filter_items.cee_63a_5p" @change="filter()">
+                  <option value="null">CEE 63A 5P</option>
+                  <option :value="o" v-for="(o,i) in filter_options.cee_63a_5p" :key="i">{{o}}</option>
                 </select>
-                <label class="is-right">CEE 16A 5P</label>
+                <label class="is-right">CEE 63A 5P</label>
               </div>
             </div>
           </template>
