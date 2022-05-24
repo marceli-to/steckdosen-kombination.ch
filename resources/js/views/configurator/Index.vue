@@ -8,7 +8,7 @@
       <div class="selector is-mobile">
         <div class="is-right">
           <img src="/assets/img/powerbox-right.png" width="320" height="590">
-          <filter-item :attr="'fi_ls'">
+          <filter-item :attr="'fi_ls'" :class="[!filter_options.fi_ls ? 'is-disabled' : '']">
             <template v-slot:select>
               <div :class="[selected('fi_ls') ? 'is-selected' : '', 'select']">
                 <select v-model="filter_items.fi_ls" @change="filter()">
@@ -22,7 +22,7 @@
               <icon-fi-ls />
             </template>
           </filter-item>
-          <filter-item :attr="'cee_16a_3p'">
+          <filter-item :attr="'cee_16a_3p'" :class="[!filter_options.cee_16a_3p ? 'is-disabled' : '']">
             <template v-slot:select>
               <div :class="[selected('cee_16a_3p') ? 'is-selected' : '', 'select']">
                 <select v-model="filter_items.cee_16a_3p" @change="filter()">
@@ -36,7 +36,7 @@
               <icon-cee16a3p />
             </template>
           </filter-item>
-          <filter-item :attr="'ch_16a_t25'">
+          <filter-item :attr="'ch_16a_t25'" :class="[!filter_options.ch_16a_t25 ? 'is-disabled' : '']">
             <template v-slot:select>
               <div :class="[selected('ch_16a_t25') ? 'is-selected' : '', 'select']">
                 <select v-model="filter_items.ch_16a_t25" @change="filter()">
@@ -50,7 +50,7 @@
               <icon-ch16at25 />
             </template>
           </filter-item>
-          <filter-item :attr="'data_ports'">
+          <filter-item :attr="'data_ports'" :class="[!filter_options.data_ports ? 'is-disabled' : '']">
             <template v-slot:select>
               <div :class="[selected('data_ports') ? 'is-selected' : '', 'select']">
                 <select v-model="filter_items.data_ports" @change="filter()">
@@ -67,7 +67,7 @@
         </div>
         <div class="is-left">
           <img src="/assets/img/powerbox-left.png" width="320" height="590">
-          <filter-item :attr="'fi_switch'">
+          <filter-item :attr="'fi_switch'" :class="[!filter_options.fi_switch ? 'is-disabled' : '']">
             <template v-slot:select>
               <div :class="[selected('fi_switch') ? 'is-selected' : '', 'select']">
                 <select v-model="filter_items.fi_switch" @change="filter()">
@@ -81,7 +81,7 @@
               <icon-fi-switch />
             </template>
           </filter-item>
-          <filter-item :attr="'ch_16a_t23'">
+          <filter-item :attr="'ch_16a_t23'" :class="[!filter_options.ch_16a_t23 ? 'is-disabled' : '']">
             <template v-slot:select>
               <div :class="[selected('ch_16a_t23') ? 'is-selected' : '', 'select']">
                 <select v-model="filter_items.ch_16a_t23" @change="filter()">
@@ -95,7 +95,7 @@
               <icon-ch16at23 />
             </template>
           </filter-item>
-          <filter-item :attr="'cee_63a_32a_16a_5p'">
+          <filter-item :attr="'cee_63a_32a_16a_5p'" :class="[!filter_options.cee_63a_5p && !filter_options.cee_32a_5p && !filter_options.cee_16a_5p ? 'is-disabled' : '']">>
             <template v-slot:select>
               <div>
                 <div :class="[selected('cee_16a_5p') ? 'is-selected' : '', 'select']">
@@ -130,7 +130,7 @@
       <!-- Tablet and Desktop -->
       <div class="selector is-tablet">
         <img src="/assets/img/powerbox.png" width="590" height="590">
-        <filter-item :attr="'fi_ls'" :class="[selected('fi_ls') ? 'is-selected' : '']">
+        <filter-item :attr="'fi_ls'" :class="[!filter_options.fi_ls ? 'is-disabled' : '']">
           <template v-slot:select>
             <div :class="[selected('fi_ls') ? 'is-selected' : '', 'select']">
               <select v-model="filter_items.fi_ls" @change="filter()">
@@ -144,7 +144,7 @@
             <icon-fi-ls />
           </template>
         </filter-item>
-        <filter-item :attr="'cee_16a_3p'">
+        <filter-item :attr="'cee_16a_3p'" :class="[!filter_options.cee_16a_3p ? 'is-disabled' : '']">
           <template v-slot:select>
             <div :class="[selected('cee_16a_3p') ? 'is-selected' : '', 'select']">
               <select v-model="filter_items.cee_16a_3p" @change="filter()">
@@ -158,7 +158,7 @@
             <icon-cee16a3p />
           </template>
         </filter-item>
-        <filter-item :attr="'ch_16a_t25'">
+        <filter-item :attr="'ch_16a_t25'" :class="[!filter_options.ch_16a_t25 ? 'is-disabled' : '']">
           <template v-slot:select>
             <div :class="[selected('ch_16a_t25') ? 'is-selected' : '', 'select']">
               <select v-model="filter_items.ch_16a_t25" @change="filter()">
@@ -172,7 +172,7 @@
             <icon-ch16at25 />
           </template>
         </filter-item>
-        <filter-item :attr="'fi_switch'">
+        <filter-item :attr="'fi_switch'" :class="[!filter_options.fi_switch ? 'is-disabled' : '']">
           <template v-slot:select>
             <div :class="[selected('fi_switch') ? 'is-selected' : '', 'select']">
               <select v-model="filter_items.fi_switch" @change="filter()">
@@ -186,7 +186,7 @@
             <icon-fi-switch />
           </template>
         </filter-item>
-        <filter-item :attr="'ch_16a_t23'">
+        <filter-item :attr="'ch_16a_t23'" :class="[!filter_options.ch_16a_t23 ? 'is-disabled' : '']">
           <template v-slot:select>
             <div :class="[selected('ch_16a_t23') ? 'is-selected' : '', 'select']">
               <select v-model="filter_items.ch_16a_t23" @change="filter()">
@@ -200,7 +200,7 @@
             <icon-ch16at23 />
           </template>
         </filter-item>
-        <filter-item :attr="'cee_63a_32a_16a_5p'">
+        <filter-item :attr="'cee_63a_32a_16a_5p'" :class="[!filter_options.cee_63a_5p && !filter_options.cee_32a_5p && !filter_options.cee_16a_5p ? 'is-disabled' : '']">
           <template v-slot:select>
             <div>
               <div :class="[selected('cee_16a_5p') ? 'is-selected' : '', 'select']">
@@ -231,7 +231,7 @@
             <icon-cee63a32a16a5p />
           </template>
         </filter-item>
-        <filter-item :attr="'data_ports'">
+        <filter-item :attr="'data_ports'" :class="[!filter_options.data_ports ? 'is-disabled' : '']">
           <template v-slot:select>
             <div :class="[selected('data_ports') ? 'is-selected' : '', 'select']">
               <select v-model="filter_items.data_ports" @change="filter()">
@@ -255,6 +255,9 @@
             ({{filter_results.length}})
           </span>
         </h1>
+        <p v-if="hasSearch && filter_results.length > 0">
+          <a href="" @click.prevent="reset()">Filter zurücksetzen</a>
+        </p>
         <p v-if="hasSearch && filter_results.length == 0">
           {{messages.noResults}} <a href="" @click.prevent="reset()">Neue Suche?</a>
         </p>
@@ -336,7 +339,21 @@ export default {
       // Results
       filter_results: [],
 
+      // Options
       filter_options: {
+        fi_ls: [0, 1, 2, 3, 5, 6],
+        cee_16a_3p: [0, 1],
+        ch_16a_t25: [0, 1, 2, 3, 4, 6],
+        data_ports: [0, 2, 4],
+        fi_switch: [0, 1, 3],
+        ch_16a_t23: [0, 1, 2, 3, 4, 5, 6, 9],
+        cee_63a_5p: [0, 1],
+        cee_32a_5p: [0, 1, 2],
+        cee_16a_5p: [0, 1, 2, 3],
+      },
+
+      // Default options
+      default_filter_options: {
         fi_ls: [0, 1, 2, 3, 5, 6],
         cee_16a_3p: [0, 1],
         ch_16a_t25: [0, 1, 2, 3, 4, 6],
@@ -373,7 +390,8 @@ export default {
     filter() {
       NProgress.start();
       this.axios.post(this.routes.filter, this.filter_items).then(response => {
-        this.filter_results = response.data;
+        this.filter_results = response.data.products;
+        this.setFilterOptions(response.data.filter_options);
         this.hasSearch = true;
         NProgress.done();
       });
@@ -392,6 +410,8 @@ export default {
         cee_32a_5p: null,
         cee_16a_5p: null,
       };
+      this.filter_options = this.default_filter_options;
+      this.filter_results = [];
 
     },
 
@@ -401,6 +421,16 @@ export default {
       }
       return false;
     },
+
+    setFilterOptions(options) {
+      let available_options = {};
+      Object.keys(options).forEach(key => {
+        if (options[key].length) {
+          available_options[key] = options[key]
+        }
+      });
+      this.filter_options = available_options;
+    }
   },
 
 }

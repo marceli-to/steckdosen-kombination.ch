@@ -234,7 +234,7 @@
       }
     
       select {
-        background-color: transparent !important;
+        background-color: transparent;
         border: none;
         color: $color-white;
         display: block;
@@ -255,6 +255,60 @@
     }
   }
 }
+
+/** SVG Element classes for pointer **/
+.selector__pointer {
+
+  .fill-100 {
+    fill: $color-green;
+  }
+  
+  .fill-30 {
+    fill: $color-green;
+    fill-opacity: .3;
+  }
+  
+  .fill-none {
+    fill: none;
+  }
+  
+  .stroke {
+    stroke: $color-green;
+  }
+  
+  .stroke-w2 {
+    stroke-width: 2;
+  }
+  
+  .stroke-50 {
+    stroke-opacity: .5;
+  }
+
+  // Classes for a disabled pointer
+  &.is-disabled {
+    .select {
+      background-color: #ccc !important;
+      select {
+        color: #eee;
+        pointer-events: none;
+        user-select: none;
+      }
+    }
+
+    .fill-100 {
+      fill: #ccc;
+    }
+    
+    .fill-30 {
+      fill: #ccc;
+    }
+    
+    .stroke {
+      stroke: #ccc;
+    }
+  }
+}
+
 
 /** FI/LS **/
 .selector__pointer.is-fi_ls {
@@ -473,6 +527,7 @@
   }
 }
 
+/** Product **/
 .product {  
   @extend %pb-8x;
 
