@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class AlterProductsTableAddLsSchalter extends Migration
+class AlterProductsTableAddElds extends Migration
 {
     /**
      * Run the migrations.
@@ -14,7 +14,8 @@ class AlterProductsTableAddLsSchalter extends Migration
     public function up()
     {
       Schema::table('products', function (Blueprint $table) {
-        $table->tinyInteger('ls_schalter')->nullable()->default(0)->after('40a_63a');
+        $table->string('eldas_number')->nullable()->after('id');
+        $table->string('description')->nullable()->after('eldas_number');
       });
     }
 

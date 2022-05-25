@@ -1,0 +1,29 @@
+/**
+ * -----------------------------------------------------------------------------
+ * File: components/buttons/primary
+ * -----------------------------------------------------------------------------
+ */
+
+.btn-reset {
+  @extend %btn;
+  @extend %p-4x;
+  align-items: center;
+  align-self: center;
+  background-color: $color-red;
+  border-radius: 5000px;
+  border: none;
+  color: $color-white;
+  display: flex;
+  @include font-medium();
+  @include font-size($fs-xs);
+  justify-content: center;
+  height: 48px;
+  text-align: center;
+  width: auto;
+  text-transform: uppercase;
+  transition: background-color .16s ease-out;
+
+  &:hover {
+    background-color: $color-grey;
+  }
+}

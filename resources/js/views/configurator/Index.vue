@@ -95,24 +95,24 @@
               <icon-ch16at23 />
             </template>
           </filter-item>
-          <filter-item :attr="'cee_63a_32a_16a_5p'" :class="[!filter_options.cee_63a_5p && !filter_options.cee_32a_5p && !filter_options.cee_16a_5p ? 'is-disabled' : '']">>
+          <filter-item :attr="'cee_63a_32a_16a_5p'" :class="[!filter_options.cee_63a_5p && !filter_options.cee_32a_5p && !filter_options.cee_16a_5p ? 'is-disabled' : '']">
             <template v-slot:select>
               <div>
-                <div :class="[selected('cee_16a_5p') ? 'is-selected' : '', 'select']">
+                <div :class="[{'is-selected': selected('cee_16a_5p')}, {'is-disabled': !filter_options.cee_16a_5p}, 'select']">
                   <select v-model="filter_items.cee_16a_5p" @change="filter()">
                     <option value="null">CEE 16A 5P</option>
                     <option :value="o" v-for="(o,i) in filter_options.cee_16a_5p" :key="i">{{o}}</option>
                   </select>
                   <label class="is-right">CEE 16A 5P</label>
                 </div>
-                <div :class="[selected('cee_32a_5p') ? 'is-selected' : '', 'select']">
+                <div :class="[{'is-selected': selected('cee_32a_5p')}, {'is-disabled': !filter_options.cee_32a_5p}, 'select']">
                   <select v-model="filter_items.cee_32a_5p" @change="filter()">
                     <option value="null">CEE 32A 5P</option>
                     <option :value="o" v-for="(o,i) in filter_options.cee_32a_5p" :key="i">{{o}}</option>
                   </select>
                   <label class="is-right">CEE 32A 5P</label>
                 </div>
-                <div :class="[selected('cee_63a_5p') ? 'is-selected' : '', 'select']">
+                <div :class="[{'is-selected': selected('cee_63a_5p')}, {'is-disabled': !filter_options.cee_63a_5p}, 'select']">
                   <select v-model="filter_items.cee_63a_5p" @change="filter()">
                     <option value="null">CEE 63A 5P</option>
                     <option :value="o" v-for="(o,i) in filter_options.cee_63a_5p" :key="i">{{o}}</option>
@@ -203,21 +203,21 @@
         <filter-item :attr="'cee_63a_32a_16a_5p'" :class="[!filter_options.cee_63a_5p && !filter_options.cee_32a_5p && !filter_options.cee_16a_5p ? 'is-disabled' : '']">
           <template v-slot:select>
             <div>
-              <div :class="[selected('cee_16a_5p') ? 'is-selected' : '', 'select']">
+                <div :class="[{'is-selected': selected('cee_16a_5p')}, {'is-disabled': !filter_options.cee_16a_5p}, 'select']">
                 <select v-model="filter_items.cee_16a_5p" @change="filter()">
                   <option value="null">CEE 16A 5P</option>
                   <option :value="o" v-for="(o,i) in filter_options.cee_16a_5p" :key="i">{{o}}</option>
                 </select>
                 <label class="is-right">CEE 16A 5P</label>
               </div>
-              <div :class="[selected('cee_32a_5p') ? 'is-selected' : '', 'select']">
+                <div :class="[{'is-selected': selected('cee_32a_5p')}, {'is-disabled': !filter_options.cee_32a_5p}, 'select']">
                 <select v-model="filter_items.cee_32a_5p" @change="filter()">
                   <option value="null">CEE 32A 5P</option>
                   <option :value="o" v-for="(o,i) in filter_options.cee_32a_5p" :key="i">{{o}}</option>
                 </select>
                 <label class="is-right">CEE 32A 5P</label>
               </div>
-              <div :class="[selected('cee_63a_5p') ? 'is-selected' : '', 'select']">
+                <div :class="[{'is-selected': selected('cee_63a_5p')}, {'is-disabled': !filter_options.cee_63a_5p}, 'select']">
                 <select v-model="filter_items.cee_63a_5p" @change="filter()">
                   <option value="null">CEE 63A 5P</option>
                   <option :value="o" v-for="(o,i) in filter_options.cee_63a_5p" :key="i">{{o}}</option>
@@ -226,7 +226,6 @@
               </div>
             </div>
           </template>
-
           <template v-slot:icon-before>
             <icon-cee63a32a16a5p />
           </template>
@@ -245,6 +244,9 @@
             <icon-data-ports />
           </template>
         </filter-item>
+      </div>
+      <div class="flex justify-center" v-if="hasSearch && filter_results.length > 0">
+        <a href="" @click.prevent="reset()" class="btn-reset">Filter zurücksetzen</a>
       </div>
     </configurator-filter>
     <configurator-result>
@@ -341,28 +343,28 @@ export default {
 
       // Options
       filter_options: {
-        fi_ls: [0, 1, 2, 3, 5, 6],
-        cee_16a_3p: [0, 1],
-        ch_16a_t25: [0, 1, 2, 3, 4, 6],
-        data_ports: [0, 2, 4],
-        fi_switch: [0, 1, 3],
-        ch_16a_t23: [0, 1, 2, 3, 4, 5, 6, 9],
-        cee_63a_5p: [0, 1],
-        cee_32a_5p: [0, 1, 2],
-        cee_16a_5p: [0, 1, 2, 3],
+        fi_ls: [1, 2, 3, 5, 6],
+        cee_16a_3p: [1],
+        ch_16a_t25: [1, 2, 3, 4, 6],
+        data_ports: [2, 4],
+        fi_switch: [1, 3],
+        ch_16a_t23: [1, 2, 3, 4, 5, 6, 9],
+        cee_63a_5p: [1],
+        cee_32a_5p: [1, 2],
+        cee_16a_5p: [1, 2, 3],
       },
 
       // Default options
       default_filter_options: {
-        fi_ls: [0, 1, 2, 3, 5, 6],
-        cee_16a_3p: [0, 1],
-        ch_16a_t25: [0, 1, 2, 3, 4, 6],
-        data_ports: [0, 2, 4],
-        fi_switch: [0, 1, 3],
-        ch_16a_t23: [0, 1, 2, 3, 4, 5, 6, 9],
-        cee_63a_5p: [0, 1],
-        cee_32a_5p: [0, 1, 2],
-        cee_16a_5p: [0, 1, 2, 3],
+        fi_ls: [1, 2, 3, 5, 6],
+        cee_16a_3p: [1],
+        ch_16a_t25: [1, 2, 3, 4, 6],
+        data_ports: [2, 4],
+        fi_switch: [1, 3],
+        ch_16a_t23: [1, 2, 3, 4, 5, 6, 9],
+        cee_63a_5p: [1],
+        cee_32a_5p: [1, 2],
+        cee_16a_5p: [1, 2, 3],
       },
 
       // Routes
@@ -426,7 +428,7 @@ export default {
       let available_options = {};
       Object.keys(options).forEach(key => {
         if (options[key].length) {
-          available_options[key] = options[key]
+          available_options[key] = options[key].sort();
         }
       });
       this.filter_options = available_options;

@@ -230,12 +230,13 @@
         position: absolute;
         top: 0;
         width: 16px;
-        z-index: 0;
+        z-index: 5;
       }
     
       select {
-        background-color: transparent;
+        background-color: $color-green;
         border: none;
+        border-radius: 5000px;
         color: $color-white;
         display: block;
         @include font-bold();
@@ -307,6 +308,16 @@
       stroke: #ccc;
     }
   }
+
+  .select.is-disabled {
+    background-color: #ccc !important;
+    select {
+      color: #eee;
+      pointer-events: none;
+      user-select: none;
+    }
+  }
+
 }
 
 
@@ -358,7 +369,7 @@
   }
 
   @include bp-lg() {
-    right: 350px;
+    right: 345px;
     top: 234px;
   }
 }
@@ -385,7 +396,7 @@
   }
 
   @include bp-lg() {
-    right: 340px;
+    right: 333px;
     top: 380px;
   }
 }
