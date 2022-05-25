@@ -257,9 +257,9 @@
             ({{filter_results.length}})
           </span>
         </h1>
-        <p v-if="hasSearch && filter_results.length > 0">
+        <!-- <p v-if="hasSearch && filter_results.length > 0">
           <a href="" @click.prevent="reset()">Filter zurücksetzen</a>
-        </p>
+        </p> -->
         <p v-if="hasSearch && filter_results.length == 0">
           {{messages.noResults}} <a href="" @click.prevent="reset()">Neue Suche?</a>
         </p>
