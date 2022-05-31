@@ -14,12 +14,12 @@
         <h3>Unternehmen</h3>
         <nav class="meta">
           <ul>
-            <li><a href="" target="_blank">Anfahrt</a></li>
-            <li><a href="" target="_blank">Kontakt</a></li>
-            <li><a href="" target="_blank">Offene Stellen</a></li>
-            <li><a href="" target="_blank">AGB</a></li>
-            <li><a href="" target="_blank">Impressum</a></li>
-            <li><a href="" target="_blank">Newsletter</a></li>
+            <li><a href="https://www.ferratec-technics.ch/de/unternehmen/anfahrt/" target="_blank">Anfahrt</a></li>
+            <li><a href="https://www.ferratec-technics.ch/de/kontakt/" target="_blank">Kontakt</a></li>
+            <li><a href="https://www.ferratec-technics.ch/de/unternehmen/offene-stellen/" target="_blank">Offene Stellen</a></li>
+            <li><a href="https://www.ferratec-technics.ch/de/unternehmen/agb/" target="_blank">AGB</a></li>
+            <li><a href="https://www.ferratec-technics.ch/de/impressum/" target="_blank">Impressum</a></li>
+            <li><a href="https://www.ferratec-technics.ch/de/newsletter/" target="_blank">Newsletter</a></li>
           </ul>
         </nav>
       </div>

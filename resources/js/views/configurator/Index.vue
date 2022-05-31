@@ -257,29 +257,49 @@
             ({{filter_results.length}})
           </span>
         </h1>
-        <!-- <p v-if="hasSearch && filter_results.length > 0">
-          <a href="" @click.prevent="reset()">Filter zurücksetzen</a>
-        </p> -->
         <p v-if="hasSearch && filter_results.length == 0">
           {{messages.noResults}} <a href="" @click.prevent="reset()">Neue Suche?</a>
         </p>
       </configurator-header>
       <configurator-header v-else>
-        <h1>Willkommen bla bla bla</h1>
-        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ea tempora dolores adipisci dolorum, atque magni sed, quia voluptas mollitia cumque voluptatum hic quis! Fuga dolor earum amet, dignissimos ipsa incidunt.</p>
+        <h1>Willkommen!</h1>
+        <p>In wenigen Schritten zum richtigen Verteiler! Einfach auf der linken Seite die grünen Filter verwenden und das passende Produkt wird angezeigt und kann bestellt werden.</p> 
+        <h1>Benvenuti!</h1>
+        <p>Basterà seguire pochi e semplici passi per trovare il distributore giusto! Usare i filtri verdi a sinistra e il prodotto adeguato verrà visualizzato e potrà essere ordinato.</p>
+        <h1>Bienvenue !</h1>
+        <p>Trouver le bon distributeur en quelques étapes! Il suffit d'utiliser les filtres verts sur le côté gauche pour que le produit adéquat s'affiche et puisse être commandé.</p>
       </configurator-header>
       <div v-for="result in filter_results" :key="result.id" class="product">
         <figure>
-          <img src="/assets/img/products/dummy.png" width="204" height="346" :alt="result.number">
+          <img 
+            :src="`/assets/img/products/${result.number}.jpg`" 
+            width="512" 
+            height="512" 
+            :alt="result.number"
+            v-if="result.has_image">
+            <img 
+              :src="`/assets/img/products/placeholder.png`" 
+              width="512" 
+              height="512" 
+              :alt="result.number"
+              v-else>
         </figure>
         <div>
-          <h3>{{ result.gehaeuse}}</h3>
-          <p>E-Nummer: {{ result.number}}</p>
-          <div>
+          <template v-if="result.eldas_number">
+            <h3>{{ result.description}}</h3>
+            <p>E-Nummer: {{ result.number}}</p>
             <a :href="`https://www.elektro-material.ch/de/shop/search?searchTerm=${result.number}`" target="_blank" class="btn-primary">
               <span>Im Shop anzeigen</span>
             </a>
-          </div>
+          </template>
+          <template v-else>
+            <h3>{{ result.gehaeuse}}</h3>
+            <p>E-Nummer: {{ result.number}}</p>
+            <p>Dieses Produkt ist noch nicht gelistet. Kontaktieren Sie ihren Grosshändler für eine Preisanfrage.</p>
+            <a href="mailto:info@em.ch" target="_blank" class="btn-secondary">
+              <span>Anfragen</span>
+            </a>
+          </template>
         </div>
       </div>
     </configurator-result>

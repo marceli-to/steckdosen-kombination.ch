@@ -9,6 +9,8 @@ class Product extends Base
   use HasFactory;
 
   protected $fillable = [
+    'eldas_number',
+    'description',
     'cee_63a_5p',
     'cee_32a_5p',
     'cee_16a_5p',
@@ -33,6 +35,8 @@ class Product extends Base
     'ek',
     'uvp_egh',
     'uvp_installateur',
+    'has_image',
+    'publish',
   ];
 
   protected $casts = [
