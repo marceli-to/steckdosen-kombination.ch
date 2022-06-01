@@ -24,6 +24,11 @@ class PageController extends BaseController
     return view($this->viewPath . 'index');
   }
 
+  public function test()
+  {
+    dd(Product::active()->get());
+  }
+
   // public function dev()
   // {
   //   // $images = [

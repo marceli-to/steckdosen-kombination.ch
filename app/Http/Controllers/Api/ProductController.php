@@ -38,7 +38,7 @@ class ProductController extends Controller
     }
 
     // Search products
-    $products = Product::where('publish', 1)->where($match)->orderBy('eldas_number', 'DESC')->get();
+    $products = Product::active()->where($match)->orderBy('eldas_number', 'DESC')->get();
 
     // Loops over resulting products and set new filter options
     foreach($products as $product)

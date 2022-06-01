@@ -44,4 +44,9 @@ class Product extends Base
     'updated_at' => 'date:d.m.Y',
   ];
 
+  public function scopeActive($query)
+  {
+    return $query->where('publish', 1)->where('has_image', 1);
+  }
+
 }
