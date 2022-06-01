@@ -416,8 +416,8 @@ export default {
       this.isFetched = false;
       NProgress.start();
       this.axios.get(`${this.routes.getFilterOptions}`).then(response => {
-        this.filter_options = response.data;
-        this.default_filter_options = response.data;
+        this.filter_options = this.setFilterOptions(response.data);
+        this.default_filter_options = this.setFilterOptions(response.data);
         this.isFetched = true;
         NProgress.done();
       });
