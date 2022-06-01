@@ -11,7 +11,7 @@ return [
   |
   */
 
-  'title' => 'Mennekes CEE Konfigurator',
+  'title' => 'Konfigurator für Wand-Stromverteiler',
 
   /*
   |--------------------------------------------------------------------------
