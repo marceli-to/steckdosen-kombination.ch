@@ -1,5 +1,5 @@
 <template>
-  <configurator-wrapper>
+  <configurator-wrapper v-if="isFetched">
     <configurator-filter>
       <configurator-header>
         <h1>Konfigurator für Wand-Stromverteiler</h1>
@@ -296,7 +296,7 @@
             <h3>{{ result.gehaeuse}}</h3>
             <p>E-Nummer: {{ result.number}}</p>
             <p>Dieses Produkt ist noch nicht gelistet. Kontaktieren Sie ihren Grosshändler für eine Preisanfrage.</p>
-            <a href="mailto:info@em.ch" target="_blank" class="btn-secondary">
+            <a :href="`mailto:info@em.ch?subject=Preisanfrage Artikel Nr. ${result.number}, ${result.gehaeuse}`" target="_blank" class="btn-secondary">
               <span>Anfragen</span>
             </a>
           </template>
@@ -363,37 +363,39 @@ export default {
 
       // Options
       filter_options: {
-        fi_ls: [1, 2, 3, 5, 6],
-        cee_16a_3p: [1],
-        ch_16a_t25: [1, 2, 3, 4, 6],
-        data_ports: [2, 4],
-        fi_switch: [1, 3],
-        ch_16a_t23: [1, 2, 3, 4, 5, 6, 9],
-        cee_63a_5p: [1],
-        cee_32a_5p: [1, 2],
-        cee_16a_5p: [1, 2, 3],
+        // fi_ls: [1, 2, 3, 5, 6],
+        // cee_16a_3p: [1],
+        // ch_16a_t25: [1, 2, 3, 4, 6],
+        // data_ports: [2, 4],
+        // fi_switch: [1, 3],
+        // ch_16a_t23: [1, 2, 3, 4, 5, 6, 9],
+        // cee_63a_5p: [1],
+        // cee_32a_5p: [1, 2],
+        // cee_16a_5p: [1, 2, 3],
       },
 
       // Default options
       default_filter_options: {
-        fi_ls: [1, 2, 3, 5, 6],
-        cee_16a_3p: [1],
-        ch_16a_t25: [1, 2, 3, 4, 6],
-        data_ports: [2, 4],
-        fi_switch: [1, 3],
-        ch_16a_t23: [1, 2, 3, 4, 5, 6, 9],
-        cee_63a_5p: [1],
-        cee_32a_5p: [1, 2],
-        cee_16a_5p: [1, 2, 3],
+        // fi_ls: [1, 2, 3, 5, 6],
+        // cee_16a_3p: [1],
+        // ch_16a_t25: [1, 2, 3, 4, 6],
+        // data_ports: [2, 4],
+        // fi_switch: [1, 3],
+        // ch_16a_t23: [1, 2, 3, 4, 5, 6, 9],
+        // cee_63a_5p: [1],
+        // cee_32a_5p: [1, 2],
+        // cee_16a_5p: [1, 2, 3],
       },
 
       // Routes
       routes: {
         filter: '/api/products/filter',
+        getFilterOptions: '/api/products/filter',
       },
 
       // States
       hasSearch: false,
+      isFetched: false,
 
       // Messages
       messages: {
@@ -405,9 +407,21 @@ export default {
 
   mounted() {
     NProgress.configure({ showBar: false });
+    this.getFilterOptions();
   },
 
   methods: {
+
+    getFilterOptions() {
+      this.isFetched = false;
+      NProgress.start();
+      this.axios.get(`${this.routes.getFilterOptions}`).then(response => {
+        this.filter_options = response.data;
+        this.default_filter_options = response.data;
+        this.isFetched = true;
+        NProgress.done();
+      });
+    },
 
     filter() {
       NProgress.start();
@@ -434,7 +448,6 @@ export default {
       };
       this.filter_options = this.default_filter_options;
       this.filter_results = [];
-
     },
 
     selected(attr) {

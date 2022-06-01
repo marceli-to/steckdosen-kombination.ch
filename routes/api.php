@@ -14,4 +14,5 @@ use App\Http\Controllers\Api\ProductController;
 */
 
 Route::post('products/filter', [ProductController::class, 'filter']);
+Route::get('products/filter', [ProductController::class, 'getFilterOptions']);
 

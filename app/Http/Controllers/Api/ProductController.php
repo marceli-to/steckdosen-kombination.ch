@@ -25,20 +25,31 @@ class ProductController extends Controller
    * @param  \Illuminate\Http\Request $request
    * @return \Illuminate\Http\Response
    */
+
   public function filter(Request $request)
   {
     // Build search query
-    $match = [];
+    $matches = [];
     foreach($request->all() as $key => $value)
     {
       if ($request->input($key) && $request->input($key) != 'null')
       {
-        $match[$key] = $value;
+        $matches[$key] = $value;
       }
     }
+    $products = Product::active()->where($matches)->orderBy('eldas_number', 'DESC')->get();
+    $this->getFilterOptions(TRUE, $matches);
+    return response()->json(['products' => $products, 'filter_options' => $this->filter_options]);
+  }
 
-    // Search products
-    $products = Product::active()->where($match)->orderBy('eldas_number', 'DESC')->get();
+  /**
+   * Get filter options
+   */
+
+  public function getFilterOptions($isQuery = FALSE, $matches = [])
+  {
+
+    $products = $isQuery && !empty($matches) ? Product::active()->where($matches)->orderBy('eldas_number', 'DESC')->get() : Product::active()->orderBy('eldas_number', 'DESC')->get();
 
     // Loops over resulting products and set new filter options
     foreach($products as $product)
@@ -81,7 +92,7 @@ class ProductController extends Controller
       }
     }
 
-    return response()->json(['products' => $products, 'filter_options' => $this->filter_options]);
+    return response()->json($this->filter_options);
   }
 
 }
