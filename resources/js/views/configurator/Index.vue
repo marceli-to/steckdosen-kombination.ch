@@ -435,19 +435,20 @@ export default {
 
     reset() {
       this.hasSearch = false;
-      this.filter_items = {
-        fi_ls: null,
-        cee_16a_3p: null,
-        ch_16a_t25: null,
-        data_ports: null,
-        fi_switch: null,
-        ch_16a_t23: null,
-        cee_63a_5p: null,
-        cee_32a_5p: null,
-        cee_16a_5p: null,
-      };
+      // this.filter_items = {
+      //   fi_ls: null,
+      //   cee_16a_3p: null,
+      //   ch_16a_t25: null,
+      //   data_ports: null,
+      //   fi_switch: null,
+      //   ch_16a_t23: null,
+      //   cee_63a_5p: null,
+      //   cee_32a_5p: null,
+      //   cee_16a_5p: null,
+      // };
       this.filter_options = this.default_filter_options;
       this.filter_results = [];
+      this.getFilterOptions();
     },
 
     selected(attr) {
