@@ -235,11 +235,11 @@
         position: absolute;
         top: 0;
         width: 16px;
-        z-index: 5;
+        z-index: 0;
       }
     
       select {
-        background-color: $color-green;
+        background-color: transparent;
         border: none;
         border-radius: 5000px;
         color: $color-white;
@@ -256,6 +256,10 @@
     
         &:hover {
           cursor: pointer;
+        }
+
+        &:focus {
+          background-color: $color-green;
         }
       }
     }
@@ -295,7 +299,7 @@
     .select {
       background-color: #ccc !important;
       select {
-        background-color: #ccc !important;
+        background-color: transparent;
         color: #eee;
         pointer-events: none;
         user-select: none;
