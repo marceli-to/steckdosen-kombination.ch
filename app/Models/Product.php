@@ -10,6 +10,7 @@ class Product extends Base
 
   protected $fillable = [
     'eldas_number',
+    'em_number',
     'description',
     'cee_63a_5p',
     'cee_32a_5p',
@@ -44,9 +45,23 @@ class Product extends Base
     'updated_at' => 'date:d.m.Y',
   ];
 
+  protected $appends = ['em_number'];
+
   public function scopeActive($query)
   {
     return $query->where('publish', 1)->where('has_image', 1);
+  }
+
+
+  /**
+   * Get the user's full name.
+   *
+   * @param  string  $value
+   * @return string
+   */
+  public function getEmNumberAttribute($value)
+  {
+    return str_replace(['/', ' '], [''], $value);
   }
 
 }
