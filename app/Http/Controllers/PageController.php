@@ -24,9 +24,16 @@ class PageController extends BaseController
     return view($this->viewPath . 'index');
   }
 
-  public function test()
+  /**
+   * Endpoint for testing purposes
+   * @param  \Illuminate\Http\Request $request
+   * @return \Illuminate\Http\Response
+   */
+
+  public function test(Request $request)
   {
-    dd(Product::active()->get());
+    dd($request->all());
+    //dd(Product::active()->get());
   }
 
   // public function dev()
