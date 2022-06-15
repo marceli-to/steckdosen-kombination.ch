@@ -293,7 +293,7 @@
               Hersteller-Artikel-Nummer: {{ result.number }}
             </p>
             <a :href="`https://www.elektro-material.ch/de/shop/search?searchTerm=${result.em_number}`" target="_blank" class="btn-primary">
-              <span>Im Shop anzeigen</span>
+              <span>Im Shop anzeigen ({{result.em_number}})</span>
             </a>
           </template>
           <template v-else>
