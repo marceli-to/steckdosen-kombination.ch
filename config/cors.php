@@ -16,10 +16,10 @@ return [
     */
 
     'paths' => [
-        'api/*',
-        '/login',
-        '/logout',
-        '/aporta/csrf-cookie'
+      'api/*',
+      '/login',
+      '/logout',
+      '/mennekes/csrf-cookie'
     ],
 
     'allowed_methods' => ['*'],

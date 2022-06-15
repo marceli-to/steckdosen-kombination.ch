@@ -12,5 +12,6 @@ class VerifyCsrfToken extends Middleware
   protected $except = [
     'api/image/upload',
     'api/file/upload',
+    'https://testwholesaler.elbridge2.itek.de/'
   ];
 }
