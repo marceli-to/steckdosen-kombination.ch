@@ -45,7 +45,7 @@ class Product extends Base
     'updated_at' => 'date:d.m.Y',
   ];
 
-  // protected $appends = ['em_number'];
+  protected $appends = ['em_number'];
 
   public function scopeActive($query)
   {
@@ -59,9 +59,9 @@ class Product extends Base
    * @param  string  $value
    * @return string
    */
-  // public function getEmNumberAttribute($value)
-  // {
-  //   return str_replace(['/', ' '], [''], $value);
-  // }
+  public function getEmNumberAttribute($value)
+  {
+    return str_replace(['/', ' '], [''], $value);
+  }
 
 }
