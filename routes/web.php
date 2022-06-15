@@ -10,6 +10,7 @@ use App\Http\Controllers\PageController;
 |
 */
 
+Route::post('/', [PageController::class, 'index']);
 Route::get('/', [PageController::class, 'index'])->name('index');
 //Route::get('/test', [PageController::class, 'test']);
 Route::post('/test', [PageController::class, 'test']);
