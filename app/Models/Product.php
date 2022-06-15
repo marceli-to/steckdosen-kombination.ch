@@ -61,7 +61,7 @@ class Product extends Base
    */
   public function getEmNumberAttribute($value)
   {
-    return str_replace(['/', ' '], [''], $value);
+    return str_replace(['/', ' '], [''], $this->em_number);
   }
 
 }
