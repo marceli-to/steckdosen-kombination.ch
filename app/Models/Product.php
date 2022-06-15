@@ -45,7 +45,7 @@ class Product extends Base
     'updated_at' => 'date:d.m.Y',
   ];
 
-  protected $appends = ['em_number'];
+  //protected $appends = ['em_number'];
 
   public function scopeActive($query)
   {
