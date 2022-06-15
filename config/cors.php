@@ -19,7 +19,8 @@ return [
       'api/*',
       '/login',
       '/logout',
-      '/mennekes/csrf-cookie'
+      '/mennekes/csrf-cookie',
+      '/test'
     ],
 
     'allowed_methods' => ['*'],

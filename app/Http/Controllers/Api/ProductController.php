@@ -7,7 +7,6 @@ use Illuminate\Http\Request;
 
 class ProductController extends Controller
 {
-
   protected $filter_options = [
     'fi_ls' => [],
     'fi_switch' => [],
