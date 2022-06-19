@@ -21,6 +21,7 @@ class PageController extends BaseController
 
   public function index()
   {
+    dd($request->all());
     return view($this->viewPath . 'index');
   }
 
