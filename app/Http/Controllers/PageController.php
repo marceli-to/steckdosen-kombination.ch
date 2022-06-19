@@ -16,10 +16,11 @@ class PageController extends BaseController
   /**
    * Show the application
    *
+   * @param  \Illuminate\Http\Request $request
    * @return \Illuminate\Http\Response
    */
 
-  public function index()
+  public function index(Request $request)
   {
     dd($request->all());
     return view($this->viewPath . 'index');
