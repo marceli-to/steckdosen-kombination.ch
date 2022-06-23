@@ -289,23 +289,23 @@
             <h3>{{ result.description }}</h3>
             <p>
               E-Nummer: {{ result.eldas_number }}<br>
-              EM-Nummer: {{ result.em_number }}<br>
+              <!-- EM-Nummer: {{ result.em_number }}<br> -->
               Hersteller-Artikel-Nummer: {{ result.number }}
             </p>
-            <a :href="`https://www.elektro-material.ch/de/shop/search?searchTerm=${result.em_number}`" target="_blank" class="btn-primary" v-if="result.em_number">
+            <!-- <a :href="`https://www.elektro-material.ch/de/shop/search?searchTerm=${result.em_number}`" target="_blank" class="btn-primary" v-if="result.em_number">
               <span>Im Shop anzeigen</span>
             </a>
             <a :href="`https://www.elektro-material.ch/de/shop/search?searchTerm=${result.eldas_number}`" target="_blank" class="btn-primary" v-else>
               <span>Im Shop anzeigen</span>
-            </a>
+            </a> -->
           </template>
           <template v-else>
             <h3>{{ result.gehaeuse }}</h3>
             <p>E-Nummer: {{ result.eldas_number }}</p>
             <p>Dieses Produkt ist noch nicht gelistet. Kontaktieren Sie ihren Grosshändler für eine Preisanfrage.</p>
-            <a :href="`mailto:info@em.ch?subject=Preisanfrage Artikel Nr. ${result.number}, ${result.gehaeuse}`" target="_blank" class="btn-secondary">
+            <!-- <a :href="`mailto:info@em.ch?subject=Preisanfrage Artikel Nr. ${result.number}, ${result.gehaeuse}`" target="_blank" class="btn-secondary">
               <span>Anfragen</span>
-            </a>
+            </a> -->
           </template>
         </div>
       </div>
