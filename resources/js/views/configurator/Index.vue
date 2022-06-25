@@ -36,18 +36,18 @@
               <icon-cee16a3p />
             </template>
           </filter-item>
-          <filter-item :attr="'ch_16a_t25'" :class="[!filter_options.ch_16a_t25 ? 'is-disabled' : '']">
+          <filter-item :attr="'ch_16a_t23'" :class="[!filter_options.ch_16a_t23 ? 'is-disabled' : '']">
             <template v-slot:select>
-              <div :class="[selected('ch_16a_t25') ? 'is-selected' : '', 'select']">
-                <select v-model="filter_items.ch_16a_t25" @change="filter()">
-                  <option value="null">16A T25</option>
-                  <option :value="o" v-for="(o,i) in filter_options.ch_16a_t25" :key="i">{{o}}</option>
+              <div :class="[selected('ch_16a_t23') ? 'is-selected' : '', 'select']">
+                <select v-model="filter_items.ch_16a_t23" @change="filter()">
+                  <option value="null">16A T23</option>
+                  <option :value="o" v-for="(o,i) in filter_options.ch_16a_t23" :key="i">{{o}}</option>
                 </select>
-                <label class="is-left">16A T25</label>
+                <label class="is-right">16A T23</label>
               </div>
             </template>
             <template v-slot:icon-after>
-              <icon-ch16at25 />
+              <icon-ch16at23 />
             </template>
           </filter-item>
           <filter-item :attr="'data_ports'" :class="[!filter_options.data_ports ? 'is-disabled' : '']">
@@ -95,18 +95,18 @@
               <icon-fi-switch />
             </template>
           </filter-item>
-          <filter-item :attr="'ch_16a_t23'" :class="[!filter_options.ch_16a_t23 ? 'is-disabled' : '']">
+          <filter-item :attr="'ch_16a_t25'" :class="[!filter_options.ch_16a_t25 ? 'is-disabled' : '']">
             <template v-slot:select>
-              <div :class="[selected('ch_16a_t23') ? 'is-selected' : '', 'select']">
-                <select v-model="filter_items.ch_16a_t23" @change="filter()">
-                  <option value="null">16A T23</option>
-                  <option :value="o" v-for="(o,i) in filter_options.ch_16a_t23" :key="i">{{o}}</option>
+              <div :class="[selected('ch_16a_t25') ? 'is-selected' : '', 'select']">
+                <select v-model="filter_items.ch_16a_t25" @change="filter()">
+                  <option value="null">16A T25</option>
+                  <option :value="o" v-for="(o,i) in filter_options.ch_16a_t25" :key="i">{{o}}</option>
                 </select>
-                <label class="is-right">16A T23</label>
+                <label class="is-right">16A T25</label>
               </div>
             </template>
             <template v-slot:icon-before>
-              <icon-ch16at23 />
+              <icon-ch16at25 />
             </template>
           </filter-item>
           <filter-item :attr="'cee_63a_32a_16a_5p'" :class="[!filter_options.cee_63a_5p && !filter_options.cee_32a_5p && !filter_options.cee_16a_5p ? 'is-disabled' : '']">
@@ -172,6 +172,20 @@
             <icon-cee16a3p />
           </template>
         </filter-item>
+        <filter-item :attr="'ch_16a_t23'" :class="[!filter_options.ch_16a_t23 ? 'is-disabled' : '']">
+          <template v-slot:select>
+            <div :class="[selected('ch_16a_t23') ? 'is-selected' : '', 'select']">
+              <select v-model="filter_items.ch_16a_t23" @change="filter()">
+                <option value="null">16A T23</option>
+                <option :value="o" v-for="(o,i) in filter_options.ch_16a_t23" :key="i">{{o}}</option>
+              </select>
+              <label class="is-left">16A T23</label>
+            </div>
+          </template>
+          <template v-slot:icon-after>
+            <icon-ch16at23 />
+          </template>
+        </filter-item>
         <filter-item :attr="'ch_16a_t25'" :class="[!filter_options.ch_16a_t25 ? 'is-disabled' : '']">
           <template v-slot:select>
             <div :class="[selected('ch_16a_t25') ? 'is-selected' : '', 'select']">
@@ -179,10 +193,10 @@
                 <option value="null">16A T25</option>
                 <option :value="o" v-for="(o,i) in filter_options.ch_16a_t25" :key="i">{{o}}</option>
               </select>
-              <label class="is-left">16A T25</label>
+              <label class="is-right">16A T25</label>
             </div>
           </template>
-          <template v-slot:icon-after>
+          <template v-slot:icon-before>
             <icon-ch16at25 />
           </template>
         </filter-item>
@@ -201,33 +215,18 @@
           </template>
           
         </filter-item>
-          <filter-item :attr="'ls_switch'" :class="[!filter_options.ls_switch ? 'is-disabled' : '']">
-            <template v-slot:select>
-              <div :class="[selected('ls_switch') ? 'is-selected' : '', 'select']">
-                <select v-model="filter_items.ls_switch" @change="filter()">
-                  <option value="null">LS-Schalter</option>
-                  <option :value="o" v-for="(o,i) in filter_options.ls_switch" :key="i">{{o}}</option>
-                </select>
-                <label class="is-right">LS-Schalter</label>
-              </div>
-            </template>
-            <template v-slot:icon-before>
-              <icon-ls-switch />
-            </template>
-          </filter-item>
-
-        <filter-item :attr="'ch_16a_t23'" :class="[!filter_options.ch_16a_t23 ? 'is-disabled' : '']">
+        <filter-item :attr="'ls_switch'" :class="[!filter_options.ls_switch ? 'is-disabled' : '']">
           <template v-slot:select>
-            <div :class="[selected('ch_16a_t23') ? 'is-selected' : '', 'select']">
-              <select v-model="filter_items.ch_16a_t23" @change="filter()">
-                <option value="null">16A T23</option>
-                <option :value="o" v-for="(o,i) in filter_options.ch_16a_t23" :key="i">{{o}}</option>
+            <div :class="[selected('ls_switch') ? 'is-selected' : '', 'select']">
+              <select v-model="filter_items.ls_switch" @change="filter()">
+                <option value="null">LS-Schalter</option>
+                <option :value="o" v-for="(o,i) in filter_options.ls_switch" :key="i">{{o}}</option>
               </select>
-              <label class="is-right">16A T23</label>
+              <label class="is-right">LS-Schalter</label>
             </div>
           </template>
           <template v-slot:icon-before>
-            <icon-ch16at23 />
+            <icon-ls-switch />
           </template>
         </filter-item>
         <filter-item :attr="'cee_63a_32a_16a_5p'" :class="[!filter_options.cee_63a_5p && !filter_options.cee_32a_5p && !filter_options.cee_16a_5p ? 'is-disabled' : '']">

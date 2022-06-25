@@ -326,7 +326,6 @@
 
 }
 
-
 /** FI/LS **/
 .selector__pointer.is-fi_ls {
   height: 38px;
@@ -355,6 +354,35 @@
 
 /** 16A T25 **/
 .selector__pointer.is-ch_16a_t25 {
+  height: 89px;
+  left: 78px;
+  top: 236px;
+  width: 210px;
+
+  > div {
+    align-items: flex-end;
+  }
+
+  .select {
+    height: 38px;
+    left: -32px;
+    top: 16px;
+    width: 115px;
+  }
+
+  @include bp-sm() {
+    left: 280px;
+    top: 186px;
+  }
+
+  @include bp-lg() {
+    left: 348px;
+    top: 235px;
+  }
+}
+
+/** Ch16aT23 **/
+.selector__pointer.is-ch_16a_t23 {
   height: 38px;
   right: 75px;
   top: 234px;
@@ -541,36 +569,6 @@
   @include bp-lg() {
     left: 318px;
     top: 90px;
-  }
-}
-
-
-/** Ch16aT23 **/
-.selector__pointer.is-ch_16a_t23 {
-  height: 89px;
-  left: 78px;
-  top: 236px;
-  width: 210px;
-
-  > div {
-    align-items: flex-end;
-  }
-
-  .select {
-    height: 38px;
-    left: -32px;
-    top: 16px;
-    width: 115px;
-  }
-
-  @include bp-sm() {
-    left: 280px;
-    top: 186px;
-  }
-
-  @include bp-lg() {
-    left: 348px;
-    top: 235px;
   }
 }
 
