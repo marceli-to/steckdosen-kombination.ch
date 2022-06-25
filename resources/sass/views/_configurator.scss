@@ -516,6 +516,36 @@
 }
 
 /** FI Switch **/
+.selector__pointer.is-ls_switch {
+  height: 67px;
+  left: 48px;
+  top: 90px;
+  width: 275px;
+
+  > div {
+    align-items: flex-start;
+  }
+
+  .select {
+    height: 38px;
+    left: -24px;
+    top: -16px;
+    width: 140px;
+  }
+
+  @include bp-sm() {
+    left: 254px;
+    top: 68px;
+  }
+
+  @include bp-lg() {
+    left: 318px;
+    top: 90px;
+  }
+}
+
+
+/** Ch16aT23 **/
 .selector__pointer.is-ch_16a_t23 {
   height: 89px;
   left: 78px;

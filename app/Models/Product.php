@@ -25,7 +25,7 @@ class Product extends Base
     'ch_10a_t13',
     'fabrikat',
     '40a_63a',
-    'ls_schalter',
+    'ls_switch',
     'fabrikat_absicherung',
     'schutzart',
     'anschluss',

@@ -10,6 +10,7 @@ class ProductController extends Controller
   protected $filter_options = [
     'fi_ls' => [],
     'fi_switch' => [],
+    'ls_switch' => [],
     'cee_16a_3p' => [],
     'ch_16a_t25' => [],
     'data_ports' => [],
@@ -88,6 +89,10 @@ class ProductController extends Controller
       if (!in_array($product->fi_ls, $this->filter_options['fi_ls']) && $product->fi_ls != 0)
       {
         $this->filter_options['fi_ls'][] = $product->fi_ls;
+      }
+      if (!in_array($product->ls_switch, $this->filter_options['ls_switch']) && $product->ls_switch != 0)
+      {
+        $this->filter_options['ls_switch'][] = $product->ls_switch;
       }
     }
 

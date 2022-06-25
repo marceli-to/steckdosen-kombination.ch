@@ -67,6 +67,20 @@
         </div>
         <div class="is-left">
           <img src="/assets/img/powerbox-left.png" width="320" height="590">
+          <filter-item :attr="'ls_switch'" :class="[!filter_options.ls_switch ? 'is-disabled' : '']">
+            <template v-slot:select>
+              <div :class="[selected('ls_switch') ? 'is-selected' : '', 'select']">
+                <select v-model="filter_items.ls_switch" @change="filter()">
+                  <option value="null">LS-Schalter</option>
+                  <option :value="o" v-for="(o,i) in filter_options.ls_switch" :key="i">{{o}}</option>
+                </select>
+                <label class="is-right">LS-Schalter</label>
+              </div>
+            </template>
+            <template v-slot:icon-before>
+              <icon-ls-switch />
+            </template>
+          </filter-item>
           <filter-item :attr="'fi_switch'" :class="[!filter_options.fi_switch ? 'is-disabled' : '']">
             <template v-slot:select>
               <div :class="[selected('fi_switch') ? 'is-selected' : '', 'select']">
@@ -185,7 +199,23 @@
           <template v-slot:icon-before>
             <icon-fi-switch />
           </template>
+          
         </filter-item>
+          <filter-item :attr="'ls_switch'" :class="[!filter_options.ls_switch ? 'is-disabled' : '']">
+            <template v-slot:select>
+              <div :class="[selected('ls_switch') ? 'is-selected' : '', 'select']">
+                <select v-model="filter_items.ls_switch" @change="filter()">
+                  <option value="null">LS-Schalter</option>
+                  <option :value="o" v-for="(o,i) in filter_options.ls_switch" :key="i">{{o}}</option>
+                </select>
+                <label class="is-right">LS-Schalter</label>
+              </div>
+            </template>
+            <template v-slot:icon-before>
+              <icon-ls-switch />
+            </template>
+          </filter-item>
+
         <filter-item :attr="'ch_16a_t23'" :class="[!filter_options.ch_16a_t23 ? 'is-disabled' : '']">
           <template v-slot:select>
             <div :class="[selected('ch_16a_t23') ? 'is-selected' : '', 'select']">
@@ -323,6 +353,7 @@ import ConfiguratorFilter from '@/views/configurator/components/layout/Filter.vu
 import ConfiguratorResult from '@/views/configurator/components/layout/Result.vue';
 import FilterItem from '@/views/configurator/components/form/FilterItem.vue';
 import IconFiLs from '@/views/configurator/components/icons/fi_ls.vue';
+import IconLsSwitch from '@/views/configurator/components/icons/ls_switch.vue';
 import IconCee16a3p from '@/views/configurator/components/icons/cee_16a_3p.vue';
 import IconCh16at25 from '@/views/configurator/components/icons/ch_16a_t25.vue';
 import IconDataPorts from '@/views/configurator/components/icons/data_ports.vue';
@@ -340,6 +371,7 @@ export default {
     ConfiguratorResult,
     FilterItem,
     IconFiLs,
+    IconLsSwitch,
     IconCee16a3p,
     IconCh16at25,
     IconDataPorts,
@@ -355,6 +387,7 @@ export default {
 
       filter_items: {
         fi_ls: null,
+        ls_switch: null,
         cee_16a_3p: null,
         ch_16a_t25: null,
         data_ports: null,
@@ -444,6 +477,7 @@ export default {
       this.hasSearch = false;
       this.filter_items = {
         fi_ls: null,
+        ls_switch: null,
         cee_16a_3p: null,
         ch_16a_t25: null,
         data_ports: null,
