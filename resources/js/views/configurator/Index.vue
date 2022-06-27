@@ -321,10 +321,10 @@
               EM-Nummer: {{ result.em_number }}<br>
               Hersteller-Artikel-Nummer: {{ result.number }}
             </p>
-            <a :href="`https://www.elektro-material.ch/de/shop/search?searchTerm=${result.em_number}`" target="_blank" class="btn-primary" v-if="result.em_number">
+            <a :href="`https://www.elektro-material.ch/de/shop/search?searchTerm=${result.eldas_number}`" target="_blank" class="btn-primary" v-if="result.eldas_number">
               <span>Im Shop anzeigen</span>
             </a>
-            <a :href="`https://www.elektro-material.ch/de/shop/search?searchTerm=${result.eldas_number}`" target="_blank" class="btn-primary" v-else>
+            <a :href="`https://www.elektro-material.ch/de/shop/search?searchTerm=${result.em_number}`" target="_blank" class="btn-primary" v-else>
               <span>Im Shop anzeigen</span>
             </a>
           </template>
@@ -494,11 +494,6 @@ export default {
     },
 
     selected(attr) {
-
-      console.log(parseInt(this.filter_items[attr]));
-      //if (attr == 'fi_40a_63a' && this.filter_items['fi_40a_63a'] == '')
-
-
       if (parseInt(this.filter_items[attr]) >= 0 && this.filter_items[attr] != null) {
         return true;
       }
