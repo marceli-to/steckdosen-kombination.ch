@@ -14,7 +14,7 @@ class AlterProductsTableAddLsSchalter extends Migration
     public function up()
     {
       Schema::table('products', function (Blueprint $table) {
-        $table->tinyInteger('ls_schalter')->nullable()->default(0)->after('40a_63a');
+        $table->tinyInteger('ls_schalter')->nullable()->default(0)->after('fi_40a_63a');
       });
     }
 

@@ -24,7 +24,7 @@ class Product extends Base
     'schuko',
     'ch_10a_t13',
     'fabrikat',
-    '40a_63a',
+    'fi_40a_63a',
     'ls_switch',
     'fabrikat_absicherung',
     'schutzart',

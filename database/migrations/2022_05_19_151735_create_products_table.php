@@ -27,7 +27,7 @@ class CreateProductsTable extends Migration
             $table->tinyInteger('schuko')->nullable()->default(0);
             $table->tinyInteger('ch_10a_t13')->nullable()->default(0);
             $table->string('fabrikat')->nullable();
-            $table->string('40a_63a')->nullable();
+            $table->string('fi_40a_63a')->nullable();
             $table->string('fabrikat_absicherung')->nullable();
             $table->string('schutzart')->nullable();
             $table->string('anschluss')->nullable();

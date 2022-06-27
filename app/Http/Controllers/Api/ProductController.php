@@ -8,9 +8,10 @@ use Illuminate\Http\Request;
 class ProductController extends Controller
 {
   protected $filter_options = [
-    'fi_ls' => [],
-    'fi_switch' => [],
-    'ls_switch' => [],
+    'fi_ls'      => [],
+    'fi_switch'  => [],
+    'ls_switch'  => [],
+    'fi_40a_63a' => [],
     'cee_16a_3p' => [],
     'ch_16a_t25' => [],
     'data_ports' => [],
@@ -48,7 +49,6 @@ class ProductController extends Controller
 
   public function getFilterOptions($isQuery = FALSE, $matches = [])
   {
-
     $products = $isQuery && !empty($matches) ? Product::active()->where($matches)->orderBy('eldas_number', 'DESC')->get() : Product::active()->orderBy('eldas_number', 'DESC')->get();
 
     // Loops over resulting products and set new filter options
@@ -82,10 +82,17 @@ class ProductController extends Controller
       {
         $this->filter_options['data_ports'][] = $product->data_ports;
       }
-      if (!in_array($product->fi_switch, $this->filter_options['fi_switch']) && $product->fi_switch != 0)
+
+      // if (!in_array($product->fi_switch, $this->filter_options['fi_switch']) && $product->fi_switch != 0)
+      // {
+      //   $this->filter_options['fi_switch'][] = $product->fi_switch;
+      // }
+      
+      if (!in_array($product->fi_40a_63a, $this->filter_options['fi_40a_63a']) && $product->fi_40a_63a != 0)
       {
-        $this->filter_options['fi_switch'][] = $product->fi_switch;
+        $this->filter_options['fi_40a_63a'][] = $product->fi_40a_63a;
       }
+
       if (!in_array($product->fi_ls, $this->filter_options['fi_ls']) && $product->fi_ls != 0)
       {
         $this->filter_options['fi_ls'][] = $product->fi_ls;

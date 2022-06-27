@@ -81,12 +81,12 @@
               <icon-ls-switch />
             </template>
           </filter-item>
-          <filter-item :attr="'fi_switch'" :class="[!filter_options.fi_switch ? 'is-disabled' : '']">
+          <filter-item :attr="'fi_40a_63a'" :class="[!filter_options.fi_40a_63a ? 'is-disabled' : '']">
             <template v-slot:select>
-              <div :class="[selected('fi_switch') ? 'is-selected' : '', 'select']">
-                <select v-model="filter_items.fi_switch" @change="filter()">
+              <div :class="[selected('fi_40a_63a') ? 'is-selected' : '', 'select']">
+                <select v-model="filter_items.fi_40a_63a" @change="filter()">
                   <option value="null">FI-Schalter</option>
-                  <option :value="o" v-for="(o,i) in filter_options.fi_switch" :key="i">{{o}}</option>
+                  <option :value="o" v-for="(o,i) in filter_options.fi_40a_63a" :key="i">{{o}}</option>
                 </select>
                 <label class="is-right">FI-Schalter</label>
               </div>
@@ -200,12 +200,12 @@
             <icon-ch16at25 />
           </template>
         </filter-item>
-        <filter-item :attr="'fi_switch'" :class="[!filter_options.fi_switch ? 'is-disabled' : '']">
+        <filter-item :attr="'fi_40a_63a'" :class="[!filter_options.fi_40a_63a ? 'is-disabled' : '']">
           <template v-slot:select>
-            <div :class="[selected('fi_switch') ? 'is-selected' : '', 'select']">
-              <select v-model="filter_items.fi_switch" @change="filter()">
+            <div :class="[selected('fi_40a_63a') ? 'is-selected' : '', 'select']">
+              <select v-model="filter_items.fi_40a_63a" @change="filter()">
                 <option value="null">FI-Schalter</option>
-                <option :value="o" v-for="(o,i) in filter_options.fi_switch" :key="i">{{o}}</option>
+                <option :value="o" v-for="(o,i) in filter_options.fi_40a_63a" :key="i">{{o}}</option>
               </select>
               <label class="is-right">FI-Schalter</label>
             </div>
@@ -391,6 +391,7 @@ export default {
         ch_16a_t25: null,
         data_ports: null,
         fi_switch: null,
+        fi_40a_63a: null,
         ch_16a_t23: null,
         cee_63a_5p: null,
         cee_32a_5p: null,
@@ -481,6 +482,7 @@ export default {
         ch_16a_t25: null,
         data_ports: null,
         fi_switch: null,
+        fi_40a_63a: null,
         ch_16a_t23: null,
         cee_63a_5p: null,
         cee_32a_5p: null,
@@ -492,7 +494,12 @@ export default {
     },
 
     selected(attr) {
-      if (this.filter_items[attr] >= 0 && this.filter_items[attr] != null) {
+
+      console.log(parseInt(this.filter_items[attr]));
+      //if (attr == 'fi_40a_63a' && this.filter_items['fi_40a_63a'] == '')
+
+
+      if (parseInt(this.filter_items[attr]) >= 0 && this.filter_items[attr] != null) {
         return true;
       }
       return false;
