@@ -34,7 +34,7 @@ class PageController extends BaseController
       session(['elbridge' => $data]);
     }
 
-    dd(session('elbridge'));
+    dd('data', session('elbridge'));
     
 
 
