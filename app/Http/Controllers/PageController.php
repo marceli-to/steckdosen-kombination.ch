@@ -25,9 +25,9 @@ class PageController extends BaseController
   {
     // Save request data from wholesale shop
     $data = [];
+    session()->flush();
     if ($request->all())
     {
-      $request->session()->flush();
       foreach($request->all() as $key => $value)
       {
         $data[$key] = $value;
