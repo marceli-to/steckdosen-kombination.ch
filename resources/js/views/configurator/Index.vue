@@ -320,7 +320,7 @@
               EM-Nummer: {{ result.em_number }}<br>
               Hersteller-Artikel-Nummer: {{ result.number }}
             </p>
-            <form :action="api_connection.hookurl" method="post" target="_blank" enctype="multipart/form-data" v-if="result.eldas_number" class="mb-3x"> 
+            <form :action="api_connection.hookurl" method="post" target="_blank" enctype="multipart/form-data" v-if="result.eldas_number && api_connection" class="mb-3x"> 
               <input type="hidden" name="version" :value="api_connection.version"/>
               <input type="hidden" name="country" :value="api_connection.country"/>
               <input type="hidden" name="language" :value="api_connection.language"/>
