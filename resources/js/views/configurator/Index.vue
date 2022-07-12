@@ -110,7 +110,7 @@
             </template>
           </filter-item>
           <filter-item :attr="'cee_63a_32a_16a_5p'" :class="[!filter_options.cee_63a_5p && !filter_options.cee_32a_5p && !filter_options.cee_16a_5p ? 'is-disabled' : '']">
-            <!-- <template v-slot:select>
+            <template v-slot:select>
               <div>
                 <div :class="[{'is-selected': selected('cee_16a_5p')}, {'is-disabled': !filter_options.cee_16a_5p}, 'select']">
                   <select v-model="filter_items.cee_16a_5p" @change="filter()">
@@ -134,7 +134,7 @@
                   <label class="is-right">CEE 63A 5P</label>
                 </div>
               </div>
-            </template> -->
+            </template>
             <template v-slot:icon-before>
               <icon-cee63a32a16a5p />
             </template>
@@ -231,7 +231,7 @@
         <filter-item :attr="'cee_63a_32a_16a_5p'" :class="[!filter_options.cee_63a_5p && !filter_options.cee_32a_5p && !filter_options.cee_16a_5p ? 'is-disabled' : '']">
           <template v-slot:select>
             <div>
-              <!-- <div :class="[{'is-selected': selected('cee_16a_5p')}, {'is-disabled': !filter_options.cee_16a_5p}, 'select']">
+              <div :class="[{'is-selected': selected('cee_16a_5p')}, {'is-disabled': !filter_options.cee_16a_5p}, 'select']">
                 <select v-model="filter_items.cee_16a_5p" @change="filter()">
                   <option value="null">CEE 16A 5P</option>
                   <option :value="o" v-for="(o,i) in filter_options.cee_16a_5p" :key="i">{{o}}</option>
@@ -251,7 +251,7 @@
                   <option :value="o" v-for="(o,i) in filter_options.cee_63a_5p" :key="i">{{o}}</option>
                 </select>
                 <label class="is-right">CEE 63A 5P</label>
-              </div> -->
+              </div>
             </div>
           </template>
           <template v-slot:icon-before>
@@ -320,19 +320,16 @@
               EM-Nummer: {{ result.em_number }}<br>
               Hersteller-Artikel-Nummer: {{ result.number }}
             </p>
-
             <form :action="api_connection.hookurl" method="post" target="_blank" enctype="multipart/form-data" v-if="result.eldas_number" class="mb-3x"> 
               <input type="hidden" name="version" :value="api_connection.version"/>
               <input type="hidden" name="country" :value="api_connection.country"/>
               <input type="hidden" name="language" :value="api_connection.language"/>
               <input type="hidden" name="result" :value="result.form_data"/>
-              <input  type="submit" value="Im Shop anzeigen (Elbridge)" class="btn-primary">
+              <input  type="submit" value="Shop (Elbridge)" class="btn-primary">
             </form>
-
             <a :href="`https://www.elektro-material.ch/de/shop/search?searchTerm=${result.eldas_number}`" target="_blank" class="btn-primary" v-if="result.eldas_number">
               <span>Im Shop anzeigen</span>
             </a>
-            
             <a :href="`https://www.elektro-material.ch/de/shop/search?searchTerm=${result.em_number}`" target="_blank" class="btn-primary" v-else>
               <span>Im Shop anzeigen</span>
             </a>
