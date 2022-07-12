@@ -21,8 +21,9 @@ class PageController extends BaseController
    * @return \Illuminate\Http\Response
    */
 
-  public function index()
+  public function index(Request $request)
   {
+    dd($request->all());
     return view($this->viewPath . 'index');
   }
 
@@ -34,7 +35,6 @@ class PageController extends BaseController
 
   public function test(Request $request)
   {
-    dd($request->all());
     //dd(Product::active()->get());
   }
 
