@@ -34,7 +34,7 @@ class PageController extends BaseController
       session(['elbridge' => $data]);
     }
 
-    if ($request->session->has('elbridge'))
+    if ($request->session()->has('elbridge'))
     {
       dd('session data available', session('elbridge'));
     }
