@@ -37,6 +37,7 @@ class Product extends Base
     'uvp_egh',
     'uvp_installateur',
     'has_image',
+    'form_data',
     'publish',
   ];
 

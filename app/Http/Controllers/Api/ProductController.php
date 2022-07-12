@@ -46,6 +46,15 @@ class ProductController extends Controller
     if ($request->session()->has('elbridge'))
     {
       $api_data = session('elbridge');
+      
+      foreach($products as $product)
+      {
+        $product->form_data = 'test';
+        $product->save();
+      }
+
+      dd($products);
+      
     }
     return response()->json(['products' => $products, 'filter_options' => $this->filter_options, 'api' => $api_data]);
   }
