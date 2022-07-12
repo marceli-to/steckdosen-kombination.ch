@@ -321,13 +321,13 @@
               Hersteller-Artikel-Nummer: {{ result.number }}
             </p>
 
-            <FORM action="https://testwholesaler.elbridge2.itek.de/TestOppositionWholesalerResponse.php?ID=<?php echo time(); ?>" method="post" target="_blank" enctype="multipart/form-data"> 
-              <INPUT type="hidden" name="version" value="2.0"/>
-              <INPUT type="hidden" name="country" value="DE"/>
-              <INPUT type="hidden" name="language" value="deu"/>
-              <INPUT type="hidden" name="result" value="<?php echo $r2; ?>"/>
-              <input  type="submit" value="Senden">
-            </FORM>
+            <form action="{{ api.hookurl }}" method="post" target="_blank" enctype="multipart/form-data"> 
+              <input type="hidden" name="version" value="{{ api.version }}"/>
+              <input type="hidden" name="country" value="{{ api.country }}"/>
+              <input type="hidden" name="language" value="{{ api.language }}"/>
+              <input type="hidden" name="result" value="{{ result.form_data }}"/>
+              <input  type="submit" value="Im Shop anzeigen" class="btn-primary">
+            </form>
 
 
             <a :href="`https://www.elektro-material.ch/de/shop/search?searchTerm=${result.eldas_number}`" target="_blank" class="btn-primary" v-if="result.eldas_number">
@@ -336,6 +336,7 @@
             <a :href="`https://www.elektro-material.ch/de/shop/search?searchTerm=${result.em_number}`" target="_blank" class="btn-primary" v-else>
               <span>Im Shop anzeigen</span>
             </a>
+            
           </template>
           <template v-else>
             <h3>{{ result.gehaeuse }}</h3>
@@ -453,7 +454,6 @@ export default {
       this.axios.post(this.routes.filter, this.filter_items).then(response => {
         this.filter_results = response.data.products;
         this.api = response.data.api;
-        console.log(this.api);
         this.setFilterOptions(response.data.filter_options);
         this.hasSearch = true;
         NProgress.done();
