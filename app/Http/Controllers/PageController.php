@@ -23,7 +23,7 @@ class PageController extends BaseController
 
   public function index(Request $request)
   {
-    // Save request data from wholesale shop
+    // Save request data from wholesale shop / elbridge
     $data = [];
     session()->flush();
     if ($request->all())
@@ -32,7 +32,7 @@ class PageController extends BaseController
       {
         $data[$key] = $value;
       }
-      session(['elbridge' => $data]);
+      session(['api_elbridge' => $data]);
     }
     return view($this->viewPath . 'index');
   }

@@ -321,22 +321,21 @@
               Hersteller-Artikel-Nummer: {{ result.number }}
             </p>
 
-            <form :action="api.hookurl" method="post" target="_blank" enctype="multipart/form-data"> 
-              <input type="hidden" name="version" :value="api.version"/>
-              <input type="hidden" name="country" :value="api.country"/>
-              <input type="hidden" name="language" :value="api.language"/>
+            <form :action="api_connection.hookurl" method="post" target="_blank" enctype="multipart/form-data" v-if="result.eldas_number" class="mb-3x"> 
+              <input type="hidden" name="version" :value="api_connection.version"/>
+              <input type="hidden" name="country" :value="api_connection.country"/>
+              <input type="hidden" name="language" :value="api_connection.language"/>
               <input type="hidden" name="result" :value="result.form_data"/>
-              <input  type="submit" value="Im Shop anzeigen" class="btn-primary">
+              <input  type="submit" value="Im Shop anzeigen (Elbridge)" class="btn-primary">
             </form>
-
 
             <a :href="`https://www.elektro-material.ch/de/shop/search?searchTerm=${result.eldas_number}`" target="_blank" class="btn-primary" v-if="result.eldas_number">
               <span>Im Shop anzeigen</span>
             </a>
+            
             <a :href="`https://www.elektro-material.ch/de/shop/search?searchTerm=${result.em_number}`" target="_blank" class="btn-primary" v-else>
               <span>Im Shop anzeigen</span>
             </a>
-            
           </template>
           <template v-else>
             <h3>{{ result.gehaeuse }}</h3>
@@ -411,7 +410,7 @@ export default {
       // Results
       filter_results: [],
 
-      api: null,
+      api_connection: null,
 
       // Routes
       routes: {
@@ -453,7 +452,7 @@ export default {
       NProgress.start();
       this.axios.post(this.routes.filter, this.filter_items).then(response => {
         this.filter_results = response.data.products;
-        this.api = response.data.api;
+        this.api_connection = response.data.api_connection;
         this.setFilterOptions(response.data.filter_options);
         this.hasSearch = true;
         NProgress.done();

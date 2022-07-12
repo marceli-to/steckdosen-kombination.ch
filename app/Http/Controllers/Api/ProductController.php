@@ -41,37 +41,38 @@ class ProductController extends Controller
     $products = Product::active()->where($matches)->orderBy('eldas_number', 'DESC')->get();
     $this->getFilterOptions(TRUE, $matches);
 
-    // elbridge data
-    $api_data = [];
-    if ($request->session()->has('elbridge'))
+    // Build form data for connection with Elbridge
+    foreach($products as $product)
     {
-      $api_data = session('elbridge');
-      
-      foreach($products as $product)
-      {
-        $product->form_data = json_encode([
-          "CONFIGURATION_URL" => "https://demo.steckdosen-kombination.ch/",
-          "ITEM" => [
-            [
-              "SUPPLIER_ID_GLN" => "7611971000000", 
-              "MANUFACTURER_PID" => $product->eldas_number, 
-              "MANUFACTURER_TYPE_DESCR" => $product->description, 
-              "INTERNATIONAL_PID" => "1234567890128", 
-              "DESCRIPTION_SHORT" => $product->description, 
-              "PRICE_AMOUNT" => "0.00",
-              "CURRENCY" => "CHF",
-              "PRICE_QUANTITY" => "1", 
-              "UDX.EDXF.DISCOUNT_GROUP_MANUFACTURER" => "D123", 
-              "QUANTITY" => "1.00",
-              "ORDER_UNIT" => "C62",
-              "VALIDITY_END" => "2025-12-31",
-            ],
-          ]
-        ]);
-        $product->save();
-      }
+      $product->form_data = json_encode([
+        "CONFIGURATION_URL" => "https://demo.steckdosen-kombination.ch/",
+        "ITEM" => [
+          [
+            "SUPPLIER_ID_GLN" => "7611971000000", 
+            "MANUFACTURER_PID" => $product->eldas_number, 
+            "MANUFACTURER_TYPE_DESCR" => $product->description, 
+            "INTERNATIONAL_PID" => "1234567890128", 
+            "DESCRIPTION_SHORT" => $product->description, 
+            "PRICE_AMOUNT" => "0.00",
+            "CURRENCY" => "CHF",
+            "PRICE_QUANTITY" => "1", 
+            "UDX.EDXF.DISCOUNT_GROUP_MANUFACTURER" => "D123", 
+            "QUANTITY" => "1.00",
+            "ORDER_UNIT" => "C62",
+            "VALIDITY_END" => "2025-12-31",
+          ],
+        ]
+      ]);
+      $product->save();
     }
-    return response()->json(['products' => $products, 'filter_options' => $this->filter_options, 'api' => $api_data]);
+    
+    return response()->json(
+      [
+        'products' => $products, 
+        'filter_options' => $this->filter_options, 
+        'api_connection' => session()->has('api_connection_data') ? session('api_connection_data') : null
+      ]
+    );
   }
 
   /**
