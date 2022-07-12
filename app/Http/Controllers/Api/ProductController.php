@@ -47,8 +47,6 @@ class ProductController extends Controller
     {
       $api_data = session('elbridge');
     }
-    dd($api_data);
-
     return response()->json(['products' => $products, 'filter_options' => $this->filter_options, 'api' => $api_data]);
   }
 
