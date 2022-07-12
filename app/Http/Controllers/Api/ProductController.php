@@ -49,7 +49,7 @@ class ProductController extends Controller
       
       foreach($products as $product)
       {
-        $product->form_data = json_encode([
+        $product->form_data = str_replace('"', '&quot;', json_encode([
           "CONFIGURATION_URL" => "https://demo.steckdosen-kombination.ch/",
           "ITEM" => [
             [
@@ -67,12 +67,9 @@ class ProductController extends Controller
               "VALIDITY_END" => "2025-12-31",
             ],
           ]
-        ]);
+        ]));
         $product->save();
       }
-
-      dd($products);
-      
     }
     return response()->json(['products' => $products, 'filter_options' => $this->filter_options, 'api' => $api_data]);
   }

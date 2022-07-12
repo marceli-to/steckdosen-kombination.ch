@@ -110,7 +110,7 @@
             </template>
           </filter-item>
           <filter-item :attr="'cee_63a_32a_16a_5p'" :class="[!filter_options.cee_63a_5p && !filter_options.cee_32a_5p && !filter_options.cee_16a_5p ? 'is-disabled' : '']">
-            <template v-slot:select>
+            <!-- <template v-slot:select>
               <div>
                 <div :class="[{'is-selected': selected('cee_16a_5p')}, {'is-disabled': !filter_options.cee_16a_5p}, 'select']">
                   <select v-model="filter_items.cee_16a_5p" @change="filter()">
@@ -134,7 +134,7 @@
                   <label class="is-right">CEE 63A 5P</label>
                 </div>
               </div>
-            </template>
+            </template> -->
             <template v-slot:icon-before>
               <icon-cee63a32a16a5p />
             </template>
@@ -213,7 +213,6 @@
           <template v-slot:icon-before>
             <icon-fi-switch />
           </template>
-          
         </filter-item>
         <filter-item :attr="'ls_switch'" :class="[!filter_options.ls_switch ? 'is-disabled' : '']">
           <template v-slot:select>
@@ -232,27 +231,27 @@
         <filter-item :attr="'cee_63a_32a_16a_5p'" :class="[!filter_options.cee_63a_5p && !filter_options.cee_32a_5p && !filter_options.cee_16a_5p ? 'is-disabled' : '']">
           <template v-slot:select>
             <div>
-                <div :class="[{'is-selected': selected('cee_16a_5p')}, {'is-disabled': !filter_options.cee_16a_5p}, 'select']">
+              <!-- <div :class="[{'is-selected': selected('cee_16a_5p')}, {'is-disabled': !filter_options.cee_16a_5p}, 'select']">
                 <select v-model="filter_items.cee_16a_5p" @change="filter()">
                   <option value="null">CEE 16A 5P</option>
                   <option :value="o" v-for="(o,i) in filter_options.cee_16a_5p" :key="i">{{o}}</option>
                 </select>
                 <label class="is-right">CEE 16A 5P</label>
               </div>
-                <div :class="[{'is-selected': selected('cee_32a_5p')}, {'is-disabled': !filter_options.cee_32a_5p}, 'select']">
+              <div :class="[{'is-selected': selected('cee_32a_5p')}, {'is-disabled': !filter_options.cee_32a_5p}, 'select']">
                 <select v-model="filter_items.cee_32a_5p" @change="filter()">
                   <option value="null">CEE 32A 5P</option>
                   <option :value="o" v-for="(o,i) in filter_options.cee_32a_5p" :key="i">{{o}}</option>
                 </select>
                 <label class="is-right">CEE 32A 5P</label>
               </div>
-                <div :class="[{'is-selected': selected('cee_63a_5p')}, {'is-disabled': !filter_options.cee_63a_5p}, 'select']">
+              <div :class="[{'is-selected': selected('cee_63a_5p')}, {'is-disabled': !filter_options.cee_63a_5p}, 'select']">
                 <select v-model="filter_items.cee_63a_5p" @change="filter()">
                   <option value="null">CEE 63A 5P</option>
                   <option :value="o" v-for="(o,i) in filter_options.cee_63a_5p" :key="i">{{o}}</option>
                 </select>
                 <label class="is-right">CEE 63A 5P</label>
-              </div>
+              </div> -->
             </div>
           </template>
           <template v-slot:icon-before>
@@ -321,6 +320,16 @@
               EM-Nummer: {{ result.em_number }}<br>
               Hersteller-Artikel-Nummer: {{ result.number }}
             </p>
+
+            <FORM action="https://testwholesaler.elbridge2.itek.de/TestOppositionWholesalerResponse.php?ID=<?php echo time(); ?>" method="post" target="_blank" enctype="multipart/form-data"> 
+              <INPUT type="hidden" name="version" value="2.0"/>
+              <INPUT type="hidden" name="country" value="DE"/>
+              <INPUT type="hidden" name="language" value="deu"/>
+              <INPUT type="hidden" name="result" value="<?php echo $r2; ?>"/>
+              <input  type="submit" value="Senden">
+            </FORM>
+
+
             <a :href="`https://www.elektro-material.ch/de/shop/search?searchTerm=${result.eldas_number}`" target="_blank" class="btn-primary" v-if="result.eldas_number">
               <span>Im Shop anzeigen</span>
             </a>
@@ -401,31 +410,7 @@ export default {
       // Results
       filter_results: [],
 
-      // Options
-      filter_options: {
-        // fi_ls: [1, 2, 3, 5, 6],
-        // cee_16a_3p: [1],
-        // ch_16a_t25: [1, 2, 3, 4, 6],
-        // data_ports: [2, 4],
-        // fi_switch: [1, 3],
-        // ch_16a_t23: [1, 2, 3, 4, 5, 6, 9],
-        // cee_63a_5p: [1],
-        // cee_32a_5p: [1, 2],
-        // cee_16a_5p: [1, 2, 3],
-      },
-
-      // Default options
-      default_filter_options: {
-        // fi_ls: [1, 2, 3, 5, 6],
-        // cee_16a_3p: [1],
-        // ch_16a_t25: [1, 2, 3, 4, 6],
-        // data_ports: [2, 4],
-        // fi_switch: [1, 3],
-        // ch_16a_t23: [1, 2, 3, 4, 5, 6, 9],
-        // cee_63a_5p: [1],
-        // cee_32a_5p: [1, 2],
-        // cee_16a_5p: [1, 2, 3],
-      },
+      api: null,
 
       // Routes
       routes: {
@@ -467,6 +452,8 @@ export default {
       NProgress.start();
       this.axios.post(this.routes.filter, this.filter_items).then(response => {
         this.filter_results = response.data.products;
+        this.api = response.data.api;
+        console.log(this.api);
         this.setFilterOptions(response.data.filter_options);
         this.hasSearch = true;
         NProgress.done();
