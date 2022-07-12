@@ -32,7 +32,7 @@ class PageController extends BaseController
       {
         $data[$key] = $value;
       }
-      session(['api_elbridge' => $data]);
+      session(['api_connection_data' => $data]);
     }
     return view($this->viewPath . 'index');
   }
