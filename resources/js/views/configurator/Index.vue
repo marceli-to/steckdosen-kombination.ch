@@ -321,11 +321,11 @@
               Hersteller-Artikel-Nummer: {{ result.number }}
             </p>
 
-            <form action="{{ api.hookurl }}" method="post" target="_blank" enctype="multipart/form-data"> 
-              <input type="hidden" name="version" value="{{ api.version }}"/>
-              <input type="hidden" name="country" value="{{ api.country }}"/>
-              <input type="hidden" name="language" value="{{ api.language }}"/>
-              <input type="hidden" name="result" value="{{ result.form_data }}"/>
+            <form :action="api.hookurl" method="post" target="_blank" enctype="multipart/form-data"> 
+              <input type="hidden" name="version" :value="api.version"/>
+              <input type="hidden" name="country" :value="api.country"/>
+              <input type="hidden" name="language" :value="api.language"/>
+              <input type="hidden" name="result" :value="result.form_data"/>
               <input  type="submit" value="Im Shop anzeigen" class="btn-primary">
             </form>
 
