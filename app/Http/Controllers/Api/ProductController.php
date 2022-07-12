@@ -40,7 +40,15 @@ class ProductController extends Controller
     }
     $products = Product::active()->where($matches)->orderBy('eldas_number', 'DESC')->get();
     $this->getFilterOptions(TRUE, $matches);
-    return response()->json(['products' => $products, 'filter_options' => $this->filter_options]);
+
+    // elbridge data
+    $api_data = [];
+    if ($request->session()->has('elbridge'))
+    {
+      $api_data = session('elbridge');
+    }
+
+    return response()->json(['products' => $products, 'filter_options' => $this->filter_options, 'api' => $api_data]);
   }
 
   /**
