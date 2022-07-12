@@ -23,7 +23,22 @@ class PageController extends BaseController
 
   public function index(Request $request)
   {
-    dd($request->all());
+    // Save request data from wholesale shop
+    $data = [];
+    if ($request->all())
+    {
+      foreach($request->all() as $key => $value)
+      {
+        $data[$key] = $value;
+      }
+      session(['elbridge' => $data]);
+    }
+
+    dd(session('elbridge'));
+    
+
+
+
     return view($this->viewPath . 'index');
   }
 
