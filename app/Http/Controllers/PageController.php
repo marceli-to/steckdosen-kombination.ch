@@ -25,15 +25,15 @@ class PageController extends BaseController
   {
     // Save request data from wholesale shop
     $data = [];
-    // session()->flush();
-    // if ($request->all())
-    // {
-    //   foreach($request->all() as $key => $value)
-    //   {
-    //     $data[$key] = $value;
-    //   }
-    //   session(['elbridge' => $data]);
-    // }
+    session()->flush();
+    if ($request->all())
+    {
+      foreach($request->all() as $key => $value)
+      {
+        $data[$key] = $value;
+      }
+      session(['elbridge' => $data]);
+    }
     return view($this->viewPath . 'index');
   }
 
