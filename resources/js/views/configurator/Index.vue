@@ -331,7 +331,7 @@
             </form>
             -->
             
-            <form :action="api_connection.hookurl" method="post" target="_blank" enctype="multipart/form-data" v-if="result.eldas_number && api_connection" class="mb-3x"> 
+            <form action="https://www.elektro-material.ch/de/shop/cart/elbridge" method="post" target="_blank" enctype="multipart/form-data" v-if="result.eldas_number" class="mb-3x"> 
               <input type="hidden" name="version" value="1.0"/>
               <input type="hidden" name="country" value="CH"/>
               <input type="hidden" name="language" value="deu"/>
