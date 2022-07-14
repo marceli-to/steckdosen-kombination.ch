@@ -49,8 +49,8 @@ class PageController extends BaseController
     foreach($products as $product)
     {
       $product->form_data = json_encode([
-        "CONFIGURATION_URL" => "https://steckdosen-kombination.ch/",
-        "ITEM" => [
+        //"CONFIGURATION_URL" => "https://steckdosen-kombination.ch/",
+        //"ITEM" => [
           // [
           //   "SUPPLIER_ID_GLN" => "7611971000000", 
           //   "MANUFACTURER_PID" => $product->number, 
@@ -79,7 +79,7 @@ class PageController extends BaseController
             "ORDER_UNIT" => "C62",
             "VALIDITY_END" => "2025-12-31",
           ]
-        ],
+        //],
       ]);
       $product->save();
     }
