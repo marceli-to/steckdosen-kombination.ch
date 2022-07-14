@@ -26,6 +26,7 @@ class PageController extends BaseController
     // Save request data from wholesale shop / elbridge
     $data = [];
     session()->flush();
+    \Log::error($request->all());
     if ($request->all())
     {
       foreach($request->all() as $key => $value)

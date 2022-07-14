@@ -326,7 +326,7 @@
               <input type="hidden" name="country" :value="api_connection.country"/>
               <input type="hidden" name="language" :value="api_connection.language"/>
               <input type="hidden" name="result" :value="result.form_data"/>
-              <input  type="submit" value="Shop (Elbridge)" class="btn-primary">
+              <input type="submit" value="Shop (Elbridge)" class="btn-primary">
             </form>
                         
             <!--
