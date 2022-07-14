@@ -47,7 +47,7 @@ class PageController extends BaseController
     $products = Product::get();
     foreach($products as $product)
     {
-      $product->form_data = str_replace('"', '&quot;', json_encode([
+      $product->form_data = json_encode([
         "CONFIGURATION_URL" => "https://steckdosen-kombination.ch/",
         "ITEM" => [
           [
@@ -65,7 +65,7 @@ class PageController extends BaseController
             "VALIDITY_END" => "2025-12-31",
           ],
         ]
-      ]));
+      ]);
       $product->save();
     }
     dd($products[mt_rand(0,172)]);
