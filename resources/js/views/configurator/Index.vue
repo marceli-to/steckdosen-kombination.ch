@@ -332,9 +332,9 @@
             -->
             
             <form action="https://www.elektro-material.ch/de/shop/cart/elbridge" method="post" target="_blank" enctype="multipart/form-data" v-if="result.eldas_number && api_connection" class="mb-3x"> 
-              <input type="hidden" name="version" :value="1.0"/>
-              <input type="hidden" name="country" :value="CH"/>
-              <input type="hidden" name="language" :value="deu"/>
+              <input type="hidden" name="version" value="1.0"/>
+              <input type="hidden" name="country" value="CH"/>
+              <input type="hidden" name="language" value="deu"/>
               <input type="hidden" name="result" :value="result.form_data"/>
               <input  type="submit" value="Shop (Elbridge)" class="btn-primary">
             </form>
