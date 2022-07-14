@@ -48,7 +48,7 @@ class PageController extends BaseController
     foreach($products as $product)
     {
       $product->form_data = json_encode([
-        "CONFIGURATION_URL" => "https://demo.steckdosen-kombination.ch/",
+        "CONFIGURATION_URL" => "https://steckdosen-kombination.ch/",
         "ITEM" => [
           [
             "SUPPLIER_ID_GLN" => "7611971000000", 
