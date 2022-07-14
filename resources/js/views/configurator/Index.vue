@@ -320,13 +320,24 @@
               EM-Nummer: {{ result.em_number }}<br>
               Hersteller-Artikel-Nummer: {{ result.number }}
             </p>
-            <form :action="api_connection.hookurl" method="post" target="_blank" enctype="multipart/form-data" v-if="result.eldas_number && api_connection" class="mb-3x"> 
-              <input type="hidden" name="version" :value="api_connection.version"/>
-              <input type="hidden" name="country" :value="api_connection.country"/>
-              <input type="hidden" name="language" :value="api_connection.language"/>
+            
+            // <form :action="api_connection.hookurl" method="post" target="_blank" enctype="multipart/form-data" v-if="result.eldas_number && api_connection" class="mb-3x"> 
+            //   <input type="hidden" name="version" :value="api_connection.version"/>
+            //   <input type="hidden" name="country" :value="api_connection.country"/>
+            //   <input type="hidden" name="language" :value="api_connection.language"/>
+            //   <input type="hidden" name="result" :value="result.form_data"/>
+            //   <input  type="submit" value="Shop (Elbridge)" class="btn-primary">
+            // </form>
+
+            <form action="https://www.elektro-material.ch/de/shop/cart/elbridge" method="post" target="_blank" enctype="multipart/form-data" v-if="result.eldas_number && api_connection" class="mb-3x"> 
+              <input type="hidden" name="version" :value="1.0"/>
+              <input type="hidden" name="country" :value="CH"/>
+              <input type="hidden" name="language" :value="deu"/>
               <input type="hidden" name="result" :value="result.form_data"/>
               <input  type="submit" value="Shop (Elbridge)" class="btn-primary">
             </form>
+
+
             <a :href="`https://www.elektro-material.ch/de/shop/search?searchTerm=${result.eldas_number}`" target="_blank" class="btn-primary" v-if="result.eldas_number">
               <span>Im Shop anzeigen</span>
             </a>
