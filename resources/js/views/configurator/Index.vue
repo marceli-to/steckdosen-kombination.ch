@@ -448,11 +448,13 @@ export default {
 
     filter() {
       NProgress.start();
+      this.isFetched = false;
       this.axios.post(this.routes.filter, this.filter_items).then(response => {
         this.filter_results = response.data.products;
         this.api_connection = response.data.api_connection;
         this.setFilterOptions(response.data.filter_options);
         this.hasSearch = true;
+        this.isFetched = true;
         NProgress.done();
       });
     },
