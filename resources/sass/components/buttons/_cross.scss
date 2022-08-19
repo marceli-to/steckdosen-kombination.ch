@@ -1,0 +1,23 @@
+/**
+ * -----------------------------------------------------------------------------
+ * File: components/buttons/cross
+ * -----------------------------------------------------------------------------
+ */
+
+.btn-cross {
+  @include background-default();
+  background-image: url('../img/cross.svg');
+  background-size: 100%;
+  display: block;
+  height: 24px;
+  right: $space-8x;
+  position: absolute;
+  top: $space-9x;
+  width: 24px;
+
+  @include bp-sm() {
+    left: auto;
+    top: $space-8x;
+  }
+
+}

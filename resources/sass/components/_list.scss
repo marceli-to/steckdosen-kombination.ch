@@ -1,0 +1,72 @@
+/**
+ * -----------------------------------------------------------------------------
+ * File: components/lists/global
+ * -----------------------------------------------------------------------------
+ */
+
+%unordered-list,
+.unordered-list {
+  list-style-type: none;
+  margin: 0 0 inherit 0;
+  padding: 0;
+}
+
+ 
+%unordered-list-item,
+.unordered-list-item {
+  display: list-item;
+  list-style-type: none;
+  margin: 0 0 0 $space-5x;
+  position: relative;
+
+  &:before {
+    content: '\2013';
+    position: absolute;
+    top: 3px;
+    margin-left: -18px;
+  }
+}
+
+.list-checkmark,
+.list-info {
+  @extend %unordered-list;
+
+  li {
+    display: list-item;
+    list-style-type: none;
+    margin: 0 0 $space-8x $space-12x;
+    min-height: 24px;
+    padding-left:  $space-8x;
+    position: relative;
+
+    &:before {
+      background-size: 24px 24px;
+      background-repeat: no-repeat;
+      background-position: top left;
+      display: block;
+      content: '';
+      height: 24px;
+      left: -24px;
+      position: absolute;
+      top: $space-1x;
+      width: 24px;
+      z-index: 1;
+    }
+  }
+}
+
+.list-checkmark {
+  li {
+    &:before {
+      background-image: url($url-images + 'check.svg');
+    }
+  }
+}
+
+.list-info {
+  li {
+    &:before {
+      background-image: url($url-images + 'info.svg');
+    }
+  }
+}

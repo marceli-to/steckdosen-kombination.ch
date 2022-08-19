@@ -35,6 +35,32 @@
   } 
 }
 
+%grid,
+.grid {
+  display: grid;
+}
+
+%sm\:grid,
+%sm\:grid {
+  @include bp-sm() {
+    display: grid;
+  }
+}
+
+%md\:grid,
+%md\:grid {
+  @include bp-md() {
+    display: grid;
+  }
+}
+
+%lg\:grid,
+%lg\:grid {
+  @include bp-lg() {
+    display: grid;
+  }
+}
+
 %grid-cols-none,
 .grid-cols-none {
   grid-template-columns: none;

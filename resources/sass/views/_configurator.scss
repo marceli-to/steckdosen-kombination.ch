@@ -548,40 +548,6 @@
   }
 }
 
-
-// /** FI Switch **/
-// .selector__pointer.is-fi_switch {
-//   height: 107px;
-//   left: 8px;
-//   top: 180px;
-//   width: 277px;
-
-//   > div {
-//     align-items: flex-start;
-//   }
-
-//   .select {
-//     height: 38px;
-//     left: -6px;
-//     top: -15px;
-//     width: 140px;
-
-//     @include bp-sm() {
-//       left: -24px;
-//     }
-//   }
-
-//   @include bp-sm() {
-//     left: 222px;
-//     top: 130px;
-//   }
-
-//   @include bp-lg() {
-//     left: 280px;
-//     top: 179px;
-//   }
-// }
-
 /** FI Switch **/
 .selector__pointer.is-ls_switch {
   height: 67px;

@@ -29,11 +29,15 @@
 @import 'components/alerts';
 @import 'components/blocks';
 @import 'components/buttons/global';
+@import 'components/buttons/cross';
+@import 'components/buttons/cta';
+@import 'components/buttons/language';
 @import 'components/buttons/primary';
 @import 'components/buttons/secondary';
 @import 'components/buttons/reset';
 @import 'components/icons/global';
 @import 'components/headings/global';
+@import 'components/list';
 @import 'components/logo';
 @import 'components/images';
 @import 'components/ratio';
@@ -60,6 +64,9 @@
 // Menu
 @import 'menu/global';
 @import 'menu/meta';
+@import 'menu/language-switcher';
+@import 'menu/language-menu';
 
 // Views
 @import 'views/configurator';
+@import 'views/landing';

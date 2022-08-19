@@ -1,0 +1,22 @@
+
+/**
+ * -----------------------------------------------------------------------------
+ * File: menu/language-switcher
+ * -----------------------------------------------------------------------------
+ */
+
+nav.language-switcher {
+
+  @include bp-sm() {
+    right: $space-8x;
+    position: absolute;
+  }
+
+  @include bp-md() {
+    right: $space-12x;
+  }
+
+  @include bp-lg() {
+    right: $space-16x;
+  }
+}

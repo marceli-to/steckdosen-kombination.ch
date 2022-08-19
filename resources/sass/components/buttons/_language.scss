@@ -1,0 +1,28 @@
+/**
+ * -----------------------------------------------------------------------------
+ * File: components/buttons/menu
+ * -----------------------------------------------------------------------------
+ */
+
+.btn-language {
+  align-items: center;
+  border: 1px solid $color-light-grey;
+  border-radius: 500px;
+  color: $color-dark;
+  display: flex;
+  justify-content: center;
+  height: 40px;
+  width: 76px;
+
+  img {
+    @extend %mr-2x;
+    display: block;
+    height: 12px;
+    width: 16px;
+  }
+
+  span {
+    display: block;
+    text-transform: uppercase;  
+  }
+}

@@ -5,26 +5,37 @@
  */
 
 header.site-header {
+  border-bottom: 1px solid $color-light-grey;
   height: $header-height;
   width: 100%;
 
   @include bp-sm() {
-    border-bottom: 1px solid $color-light-grey;
     height: $header-height-sm;
   }
 
   > div {
     @extend %inner-block;
     @extend %flex;
-    @extend %flex-column;
-    @extend %sm\:flex-row;
+    @extend %flex-row;
     @extend %items-center;
-    @extend %justify-center;
+    @extend %justify-between;
     height: inherit;
+    position: relative;
 
     @include bp-sm() {
-      max-width: 360px;
+      justify-content: center;
     }
 
+    > div {
+      @extend %flex;
+      @extend %flex-column;
+      @extend %sm\:flex-row;
+      @extend %items-center;
+      @extend %justify-center;
+      height: inherit;
+      @include bp-sm() {
+        max-width: 360px;
+      }
+    }
   }
 }

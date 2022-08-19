@@ -14,9 +14,8 @@ class PageController extends BaseController
   }
 
   /**
-   * Show the application
+   * Show the homepage
    *
-   * @todo Add request parameter
    * @param  \Illuminate\Http\Request $request
    * @return \Illuminate\Http\Response
    */
@@ -24,9 +23,12 @@ class PageController extends BaseController
   public function index(Request $request)
   {
     // Save request data from wholesale shop / elbridge
+
+    // Debug only
+    // \Log::error($request->all());
+    
     $data = [];
     session()->flush();
-    \Log::error($request->all());
     if ($request->all())
     {
       foreach($request->all() as $key => $value)
@@ -35,14 +37,24 @@ class PageController extends BaseController
       }
       session(['api_connection_data' => $data]);
     }
-    return view($this->viewPath . 'index');
+    return view($this->viewPath . 'landing');
+  }
+
+  /**
+   * Show the app
+   *
+   * @return \Illuminate\Http\Response
+   */
+  public function app()
+  {
+    return view($this->viewPath . 'app');
   }
 
   /**
    * Endpoint for testing purposes
    * @return \Illuminate\Http\Response
    */
-
+  /*
   public function updateFormData()
   {
     $products = Product::get();
@@ -68,5 +80,5 @@ class PageController extends BaseController
     }
     dd($products[mt_rand(0,172)]);
   }
-
+  */
 }

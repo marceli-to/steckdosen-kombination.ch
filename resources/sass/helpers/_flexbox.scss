@@ -72,6 +72,14 @@
   justify-content: center;
 }
 
+%sm\:justify-center,
+.sm\:justify-center {
+  @include bp-sm() {
+    justify-content: center;
+  }
+}
+
+
 %justify-between,
 .justify-between {
   justify-content: space-between;

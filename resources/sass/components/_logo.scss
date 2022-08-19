@@ -10,11 +10,14 @@
 
   img {
     @extend %is-responsive;
-    @extend %mx-auto;
+    @include bp-sm() {
+      margin-right: auto;
+      margin-left: auto;
+    }
   }
 
   &.logo--ferratec {
-    @extend %mb-5x;
+    @extend %mb-2x;
     @extend %sm\:mb-0;
     @extend %sm\:mr-10x;
     img {
@@ -23,7 +26,7 @@
   }
 
   &.logo--mennekes {
-    @extend %mt-5x;
+    @extend %mt-2x;
     @extend %sm\:mt-0;
     @extend %sm\:ml-10x;
     img {

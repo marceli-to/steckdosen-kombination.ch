@@ -1,7 +1,7 @@
-@include('partials.head')
+@include('layout.partials.head')
 <body>
-@include('partials.header')
+@include('layout.partials.header')
 @yield('content')
-@include('partials.footer')
+@include('layout.partials.footer')
 </body>
 </html>

@@ -1,0 +1,186 @@
+/**
+ * -----------------------------------------------------------------------------
+ * File: views/landing
+ * -----------------------------------------------------------------------------
+ *
+ */
+
+%landing-item {
+  @extend %mb-16x;
+  @extend %sm\:mb-24x;
+  @extend %lg\:mb-48x;
+  @extend %lg\:pr-8x;
+  @extend %lg\:pl-8x;
+}
+
+%landing-item-full {
+  @extend %mb-16x;
+  @extend %sm\:mb-24x;
+  @extend %lg\:mb-48x;
+  @extend %pt-6x;
+  @extend %pr-4x;
+  @extend %pb-8x;
+  @extend %pl-4x;
+  @extend %sm\:pt-8x;
+  @extend %sm\:pr-6x;
+  @extend %sm\:pb-10x;
+  @extend %sm\:pl-6x;
+  @extend %lg\:pr-12x;
+  @extend %lg\:pl-12x;
+  width: 100%;
+}
+
+%landing-item-rounded {
+  border-radius: $space-12x;
+}
+
+%landing-item-dark {
+  background-color: $color-light-grey;
+}
+
+.landing-tiles {
+  @extend %mt-12x;
+
+  .landing-tile {
+    @extend %p-7x;
+    border: 1px solid $color-light-grey;
+    border-radius: 12px;
+    display: block;
+    @include font-size($fs-xs);
+
+    p {
+      @extend %mb-3x;
+    }
+
+    &--mennekes {
+      color: $color-grey;
+
+      h4 {
+        color: $color-mennekes;
+        @include font-size($fs-sm);
+      }
+
+      em {
+        color: $color-mennekes;
+        @include font-medium();
+      }
+    }
+  }
+}
+
+.landing {
+  
+  > div {
+    @extend %inner-block;
+    @extend %pb-8x;
+    @extend %pt-8x;
+  }
+
+  h1, h2 {
+    @extend %mb-4x;
+    @extend %sm\:mb-6x;
+    color: $color-dark;
+    @include font-bold();
+    @include font-size($fs-xl);
+  }
+
+  h4 {
+    @include font-size($fs-sm);
+    @include font-bold();
+  }
+
+  article {
+    @include font-size($fs-sm);
+    color: $color-grey;
+
+    strong {
+      color: $color-dark;
+    }
+
+    &.sm\:grid,
+    &.md\:grid {
+      @include bp-sm() {
+        grid-column-gap: $space-16x;
+      }
+      @include bp-md() {
+        grid-column-gap: $space-24x;
+      }
+      @include bp-lg() {
+        grid-column-gap: $space-32x;
+      }      
+    }
+
+    &.sm\:grid {
+      @include bp-sm() {
+        display: grid;
+        grid-template-columns: repeat(16, minmax(0, 1fr));
+      }
+    }
+
+    &.md\:grid {
+      @include bp-md() {
+        display: grid;
+        grid-template-columns: repeat(16, minmax(0, 1fr));
+      }
+    }
+
+    .md\:order-1 {
+      order: 1;
+    }
+
+    .md\:order-2 {
+      order: 2;
+    }
+
+    .md\:order-3 {
+      order: 3;
+    }
+
+    > div {
+      @include bp-sm() {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+    }
+  }
+
+  img {
+    @extend %is-responsive;
+    object-fit: contain;
+  }
+
+  &__intro {
+    @extend %landing-item-full;
+    @extend %landing-item-rounded;
+    @extend %landing-item-dark;
+
+    figure {
+      @extend %mb-16x;
+      @extend %sm\:mb-0;
+
+      img {
+        @extend %mb-6x;
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 500px;
+      }
+    }
+  }
+
+  &__usage {
+    @extend %landing-item;
+
+    figure {
+      @extend %mb-8x;
+      @extend %md\:mb-0;
+
+      // replace with video
+      img {
+        @extend %mb-6x;
+        margin-left: auto;
+        margin-right: auto;
+      }
+    }
+  }
+}
