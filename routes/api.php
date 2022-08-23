@@ -2,6 +2,8 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Api\ProductController;
+use App\Http\Controllers\Api\TranslationController;
+
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -15,4 +17,3 @@ use App\Http\Controllers\Api\ProductController;
 
 Route::post('products/filter', [ProductController::class, 'filter']);
 Route::get('products/filter', [ProductController::class, 'getFilterOptions']);
-

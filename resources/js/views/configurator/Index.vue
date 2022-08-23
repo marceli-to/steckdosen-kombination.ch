@@ -290,8 +290,9 @@
         </p>
       </configurator-header>
       <configurator-header v-else>
-        <h1>Willkommen!</h1>
+        <h1>{{ __('Willkommen!') }}</h1>
         <p>In wenigen Schritten zum richtigen Verteiler! Einfach auf der linken Seite die grünen Filter verwenden und das passende Produkt wird angezeigt und kann bestellt werden.</p> 
+        
         <h1>Benvenuti!</h1>
         <p>Basterà seguire pochi e semplici passi per trovare il distributore giusto! Usare i filtri verdi a sinistra e il prodotto adeguato verrà visualizzato e potrà essere ordinato.</p>
         <h1>Bienvenue !</h1>
@@ -331,7 +332,7 @@
             </template>
             <template v-else>
               <a :href="`https://www.elektro-material.ch/de/shop/search?searchTerm=${result.eldas_number}`" target="_blank" class="btn-primary">
-                <span>Im Shop anzeigen</span>
+                <span>{{ __('Im Shop anzeigen') }}</span>
               </a>
             </template>
           </template>
@@ -340,7 +341,7 @@
             <p>E-Nummer: {{ result.eldas_number }}</p>
             <p>Dieses Produkt ist noch nicht gelistet. Kontaktieren Sie ihren Grosshändler für eine Preisanfrage.</p>
             <a :href="`mailto:info@em.ch?subject=Preisanfrage Artikel Nr. ${result.number}, ${result.gehaeuse}`" target="_blank" class="btn-secondary">
-              <span>Anfragen</span>
+              <span>{{ __('Anfragen') }}</span>
             </a>
           </template>
         </div>
@@ -353,6 +354,7 @@
 import NProgress from 'nprogress';
 import ErrorHandling from "@/mixins/ErrorHandling";
 import Helpers from "@/mixins/Helpers";
+import i18n from "@/mixins/i18n";
 import ConfiguratorWrapper from '@/views/configurator/components/layout/Wrapper.vue';
 import ConfiguratorHeader from '@/views/configurator/components/layout/Header.vue';
 import ConfiguratorFilter from '@/views/configurator/components/layout/Filter.vue';
@@ -386,7 +388,7 @@ export default {
     IconCee63a32a16a5p
   },
   
-  mixins: [ErrorHandling, Helpers],
+  mixins: [ErrorHandling, Helpers, i18n],
 
   data() {
     return {

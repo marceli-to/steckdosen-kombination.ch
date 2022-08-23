@@ -22,5 +22,8 @@ export default new Vuex.Store({
     filter(state, filter) {
       state.filter = filter;
     },
+    i18n(state, i18n) {
+      state.i18n = i18n;
+    },
   }
 });
