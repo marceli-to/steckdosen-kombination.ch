@@ -41,9 +41,16 @@
 }
 
 %sm\:grid,
-%sm\:grid {
+.sm\:grid {
   @include bp-sm() {
     display: grid;
+  }
+}
+
+%\!sm\:grid,
+.\!sm\:grid {
+  @include bp-sm() {
+    display: grid !important;
   }
 }
 

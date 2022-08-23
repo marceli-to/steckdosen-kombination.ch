@@ -79,8 +79,14 @@
   }
 }
 
-
 %justify-between,
 .justify-between {
   justify-content: space-between;
+}
+
+%sm\:justify-between,
+.sm\:justify-between {
+  @include bp-sm() {
+    justify-content: space-between;
+  }
 }

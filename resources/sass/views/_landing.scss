@@ -40,13 +40,18 @@
 
 .landing-tiles {
   @extend %mt-12x;
+  @extend %sm\:mt-16x;
 
   .landing-tile {
     @extend %p-7x;
+    @extend %mb-6x;
+    @extend %sm\:mb-0;
     border: 1px solid $color-light-grey;
     border-radius: 12px;
-    display: block;
+    display: grid;
     @include font-size($fs-xs);
+    grid-template-columns: 35px auto;
+    max-width: 352px;
 
     p {
       @extend %mb-3x;
@@ -63,6 +68,17 @@
       em {
         color: $color-mennekes;
         @include font-medium();
+      }
+    }
+
+    &--help {
+      background-color: $color-white;
+      color: $color-help;
+      max-width: none;
+
+      h4 {
+        color: $color-help;
+        @include font-size($fs-sm);
       }
     }
   }
@@ -174,13 +190,35 @@
     figure {
       @extend %mb-8x;
       @extend %md\:mb-0;
+    }
+  }
 
-      // replace with video
-      img {
-        @extend %mb-6x;
-        margin-left: auto;
-        margin-right: auto;
-      }
+  &__product {
+    @extend %landing-item;
+
+    figure {
+      @extend %mb-10x;
+      @extend %sm\:mb-0;
+    }
+  }
+
+  &__help {
+    @extend %landing-item-full;
+    @extend %landing-item-rounded;
+    @extend %landing-item-dark;
+
+    h2 {
+      margin-bottom: 0;
+      letter-spacing: 0;
+      text-align: center;
+    }
+
+    .landing-tiles {
+      @extend %sm\:grid-cols-12;
+      margin-left: auto;
+      margin-right: auto;
+      max-width: 636px;
+      grid-gap: $space-32x;
     }
   }
 }

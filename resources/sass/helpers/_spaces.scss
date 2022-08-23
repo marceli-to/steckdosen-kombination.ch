@@ -22,6 +22,7 @@ $step: 4px;
 @for $i from 1 through 50 { %lg\:mx-#{$i}x, .lg\:mx-#{$i}x { @include bp-lg() { margin: 0 $i * $step; } } }
 
 @for $i from 1 through 50 { %mt-#{$i}x, .mt-#{$i}x { margin-top: $i * $step; } }
+@for $i from 1 through 50 { %sm\:mt-#{$i}x, .sm\:mt-#{$i}x { @include bp-sm() { margin-top: $i * $step; } } }
 @for $i from 1 through 50 { %md\:mt-#{$i}x, .md\:mt-#{$i}x { @include bp-md() { margin-top: $i * $step; } } }
 @for $i from 1 through 50 { %lg\:mt-#{$i}x, .lg\:mt-#{$i}x { @include bp-lg() { margin-top: $i * $step; } } }
 

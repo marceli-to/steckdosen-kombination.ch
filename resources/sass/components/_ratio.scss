@@ -5,6 +5,7 @@
  */
 
 .ratio-container {
+  border-radius: 12px;
   position: relative; 
   padding-bottom: 56.25%;
   height: 0; 
@@ -17,9 +18,11 @@
   }
   
   &.is-16x9 {
-    padding-bottom: 56.25%;
+    padding-bottom: 100%;
+    @include bp-sm() {
+      padding-bottom: 56.25%;
+    }
   }
-
 }
 
 .ratio-container iframe,
