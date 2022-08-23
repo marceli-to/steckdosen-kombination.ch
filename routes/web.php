@@ -11,7 +11,7 @@ use App\Http\Controllers\PageController;
 */
 
 Route::post('/', [PageController::class, 'index']);
-Route::get('/', [PageController::class, 'app'])->name('page.app');
-Route::get('/landing', [PageController::class, 'index'])->name('page.landing');
+Route::get('/', [PageController::class, 'index'])->name('page.landing');
+Route::get('/app', [PageController::class, 'app'])->name('page.app');
 
 // Route::get('/update-product-form-data', [PageController::class, 'updateFormData']);
