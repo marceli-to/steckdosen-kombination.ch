@@ -8,6 +8,7 @@
         @include('pages.partials.landing-usage')
         @include('pages.partials.landing-product')
         @include('pages.partials.landing-help')
+        @include('pages.partials.landing-form')
       </div>
     </div>
   </div>

@@ -5,5 +5,13 @@
  */
 
 .form-group {
+  @extend %mb-5x;
+  @extend %sm\:mb-8x;
+}
 
+.form-helper {
+  @extend %mt-1x;
+  @extend %sm\:mt-2x;
+  @include font-size($fs-xs);
+  color: $color-grey;
 }

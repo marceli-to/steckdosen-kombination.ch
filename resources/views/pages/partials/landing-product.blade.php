@@ -6,18 +6,26 @@
     <div class="sm:span-8 md:span-9">
       <h1>{{ __('EverGum') }}</h1>
       <p>
-        {{ __('Robust and safe - socket outlet combinations in solid rubber enclosures.') }}
+        {{ __('Robust und sicher – Steckdosen-Kombinationen in Vollgummi-Gehäusen.') }}
       </p>
       <p>
-        {{ __('With the EverGUM product range, solid rubber is used as a material in addition to AMAPLAST. MENNEKES thus offers a comprehensive range of alternatives for a wide variety of applications. EverGUM devices are used wherever harsh mechanical conditions or aggressive cleaning agents are encountered.') }}
+        {{ __('Mit der EverGUM Produktreihe wird neben AMAPLAST Vollgummi als Werkstoff eingesetzt. Damit bietet MENNEKES ein umfassendes Alternativ- Programm für die unterschiedlichsten Einsatzgebiete. Überall dort, wo raue, mechanische Bedingungen oder aggressive Reinigungsmittel anzutreffen sind, finden EverGUM Geräte ihren Einsatz.') }}
       </p>
-      <h3>{{ __('The decisive advantages:') }}</h3>
+      <h3>{{ __('Die entscheidenden Vorteile:') }}</h3>
       <ul class="list-checkmark">
-        <li>{{ __('Weather and ageing resistant.') }}</li>
-        <li>{{ __('High dimensional stability and accuracy.') }}</li>
-        <li>{{ __('Good resistance to acids and alkalis.') }}</li>
-        <li>{{ __('High electric strength and tracking resistance.') }}</li>
+        <li>{{ __('Wetter- und alterungsbeständig') }}</li>
+        <li>{{ __('Hohe Formstabilität und genauigkeit') }}</li>
+        <li>{{ __('Gute Säuren- und Laugenresistenz') }}</li>
+        <li>{{ __('Hohe Durchschlags- und Kriechstromfestigkeit') }}</li>
       </ul>
     </div>
   </article>
 </section>
+
+
+
+
+
+
+
+

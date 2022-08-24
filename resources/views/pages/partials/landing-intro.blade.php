@@ -7,22 +7,33 @@
       </a>
     </figure>
     <div class="sm:span-8 md:span-9">
-      <h1>{{ __('Discover the MENNEKES configurator') }}</h1>
+      <h1>{{ __('Entdecken Sie die zeitsparende Auswahlhilfe vom MENNEKES-Konfigurator.') }}</h1>
       <p>
-        <strong>{{ __('Find the right power distributor with just a few clicks') }}</strong><br>
-        {{ __('Whether AMAXX, EverGum variants as strips or mobile types in the configurator you will find all products.') }}
+        <strong>{{ __('Diese neue Möglichkeit hilft ihnen schnell und mit wenigen Klicks den richtigen Stromverteiler für ihre Projekte zu finden.') }}</strong><br>
+        {{ __('Egal ob AMAXX-, EverGum Varianten als Leisten oder Mobile Typen im Konfigurator finden Sie alle Produkte welche ELDAS gelistet sind.') }}
       </p>
       <ul class="list-checkmark mb-10x sm:mb-16x">
-        <li>{{ __('Link to the shop for direct ordering without enquiry Products with.') }}</li>
-        <li>{{ __('Web-based and therefore always up-to-date.') }}</li>
-        <li>{{ __('No software installation necessary Usable on PC, tablet and mobile phone.') }}</li>
-        <li>{{ __('Stock and availability immediately visible.') }}</li>
+        <li>{{ __('Verlinkung zum EM Shop für Direkt-Bestellung ohne Anfrage') }}</li>
+        <li>{{ __('Webbasiert und daher immer aktuell') }}</li>
+        <li>{{ __('Keine Software-Installation notwendig Nutzbar auf PC, Tablet und Handy') }}</li>
+        <li>{{ __('Lager und Verfügbarkeit sofort ersichtlich') }}</li>
       </ul>
       <h3>Good to know</h3>
       <ul class="list-info">
-        <li>{{ __('Questions? Use our chat.') }}</li>
-        <li>{{ __('Training requests for MENNEKES industrial plug-in unit.') }}</li>
+        <li>{{ __('Noch Fragen? Nutzen Sie unseren Chat') }}</li>
+        <li>{{ __('Schulungsanfragen für MENNEKES Stromverteiler') }}</li>
       </ul>
     </div>
   </article>
 </section>
+
+ 
+
+ 
+
+
+
+
+
+
+

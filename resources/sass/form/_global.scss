@@ -16,18 +16,30 @@ button {
 	background-color: transparent;
 	border-radius: 0;
 	border: none;
-  border-bottom: 1px solid $color-black;
+  border-bottom: 2px solid $color-light-grey;
 	color: $color-black;
 	display: block;
 	@include font-regular();
   @include font-size($fs-sm);
-  padding: 0;
 	position: relative;
 	outline: none !important;
   width: 100%;
 	z-index: 1;
 	-webkit-appearance: none;
 	-webkit-tap-highlight-color: $color-white;
+}
+
+input[type=text],
+input[type=email],
+input[type=number],
+input[type=password],
+input[type=date],
+input[type=time] {
+  @extend %py-2x;
+
+  &:focus {
+    border-bottom-color: $color-green;
+  }
 }
 
 input:-webkit-autofill,

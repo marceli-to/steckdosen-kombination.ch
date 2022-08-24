@@ -1,6 +1,6 @@
 <section class="landing__help">
   <article>
-    <h2>{{ __('How can we be of service?') }}</h2>
+    <h2>{{ __('Wie können wir Ihnen behilflich sein?') }}</h2>
     <div class="landing-tiles">
       <a href="javascript:;" class="landing-tile landing-tile--help sm:span-6">
         <span class="landing-tile__icon">
@@ -10,7 +10,7 @@
         </span>
         <span class="landing-tile__text">
           <h4>{{ __('Livechat') }}</h4>
-          <p>{{ __('Talk to one of our product experts.') }}</p>
+          <p>{{ __('Sprechen Sie mit einem unserer Produkt-Experten.') }}</p>
         </span>
       </a>
       <a href="javascript:;" class="landing-tile landing-tile--help sm:span-6">
@@ -21,8 +21,8 @@
           </svg>          
         </span>
         <span class="landing-tile__text">
-          <h4>{{ __('Training') }}</h4>
-          <p>{{ __('Make an appointment for an individual product training.') }}</p>
+          <h4>{{ __('Schulung') }}</h4>
+          <p>{{ __('Vereinbaren Sie einen Termin für eine individuelle Produkteschulung.') }}</p>
         </span>
       </a>
     </div>

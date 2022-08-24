@@ -5,5 +5,9 @@
  */
  
 label {
+  @extend %mb-2x;
+  @extend %sm\:mb-3x;
+  @include font-size($fs-xs);
+  color: $color-grey;
   display: block;
 }

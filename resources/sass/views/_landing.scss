@@ -221,4 +221,25 @@
       grid-gap: $space-32x;
     }
   }
+
+  &__form {
+    @extend %landing-item;
+
+    article {
+
+      > div {
+        justify-content: flex-start;
+      }
+
+      form {
+        @extend %mt-6x;
+        @extend %sm\:mt-0;
+      }
+
+      .btn-primary {
+        margin-left: auto;
+        margin-right: 0;
+      }
+    }
+  }
 }

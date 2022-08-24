@@ -2,11 +2,11 @@
   <article class="md:grid">
     <figure class="md:order-2 md:span-9">
       <div class="ratio-container is-16x9">
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/-bmq3Bp2RcI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/-bmq3Bp2RcI" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
       </div>
     </figure>
     <div class="md:order-1 md:span-7">
-      <h1>{{ __('AMAXX® For Worldwide Use') }}</h1>
+      <h1>{{ __('AMAXX® – weltweit im Einsatz') }}</h1>
       {!! __('<p>Robust and durable, can be equipped individually, quickly assembled and available for a wide range of applications.</p><p>Our AMAXX® socket outlet combinations are the perfect everyday helpers for safe power distribution. The product family reflects our decades of experience as a specialist for industrial plugs and sockets. AMAXX® has been reliably used in various industries worldwide for years - as our international reference projects show.</p>') !!}
     </div>
   </article>
