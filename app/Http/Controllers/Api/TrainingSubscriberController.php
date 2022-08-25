@@ -20,6 +20,7 @@ class TrainingSubscriberController extends BaseController
   public function store(TrainingSubscriberStoreRequest $request)
   { 
     $data = $request->all();
+    $subscriber = TrainingSubscriber::create($data);
     Mail::to($data['email'])->send(new TrainingUser($data));
     Mail::to(env('MAIL_TO'))->send(new TrainingOwner($data));
     return response()->json($data);
