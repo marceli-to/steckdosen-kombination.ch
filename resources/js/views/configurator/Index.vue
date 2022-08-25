@@ -2,7 +2,7 @@
   <configurator-wrapper v-if="isFetched">
     <configurator-filter>
       <configurator-header>
-        <h1>Konfigurator für Wand-Stromverteiler</h1>
+        <h1>{{ __('Konfigurator für Wand-Stromverteiler') }}</h1>
       </configurator-header>
       <!-- Mobile -->
       <div class="selector is-mobile">
@@ -71,10 +71,10 @@
             <template v-slot:select>
               <div :class="[selected('ls_switch') ? 'is-selected' : '', 'select']">
                 <select v-model="filter_items.ls_switch" @change="filter()">
-                  <option value="null">LS-Schalter</option>
+                  <option value="null">{{ __('LS-Schalter') }}</option>
                   <option :value="o" v-for="(o,i) in filter_options.ls_switch" :key="i">{{o}}</option>
                 </select>
-                <label class="is-right">LS-Schalter</label>
+                <label class="is-right">{{ __('LS-Schalter') }}</label>
               </div>
             </template>
             <template v-slot:icon-before>
@@ -85,10 +85,10 @@
             <template v-slot:select>
               <div :class="[selected('fi_40a_63a') ? 'is-selected' : '', 'select']">
                 <select v-model="filter_items.fi_40a_63a" @change="filter()">
-                  <option value="null">FI-Schalter</option>
+                  <option value="null">{{ __('FI-Schalter') }}</option>
                   <option :value="o" v-for="(o,i) in filter_options.fi_40a_63a" :key="i">{{o}}</option>
                 </select>
-                <label class="is-right">FI-Schalter</label>
+                <label class="is-right">{{ __('FI-Schalter') }}</label>
               </div>
             </template>
             <template v-slot:icon-before>
@@ -204,10 +204,10 @@
           <template v-slot:select>
             <div :class="[selected('fi_40a_63a') ? 'is-selected' : '', 'select']">
               <select v-model="filter_items.fi_40a_63a" @change="filter()">
-                <option value="null">FI-Schalter</option>
+                <option value="null">{{ __('FI-Schalter') }}</option>
                 <option :value="o" v-for="(o,i) in filter_options.fi_40a_63a" :key="i">{{o}}</option>
               </select>
-              <label class="is-right">FI-Schalter</label>
+              <label class="is-right">{{ __('FI-Schalter') }}</label>
             </div>
           </template>
           <template v-slot:icon-before>
@@ -218,10 +218,10 @@
           <template v-slot:select>
             <div :class="[selected('ls_switch') ? 'is-selected' : '', 'select']">
               <select v-model="filter_items.ls_switch" @change="filter()">
-                <option value="null">LS-Schalter</option>
+                <option value="null">{{ __('LS-Schalter') }}</option>
                 <option :value="o" v-for="(o,i) in filter_options.ls_switch" :key="i">{{o}}</option>
               </select>
-              <label class="is-right">LS-Schalter</label>
+              <label class="is-right">{{ __('LS-Schalter') }}</label>
             </div>
           </template>
           <template v-slot:icon-before>
@@ -274,7 +274,7 @@
         </filter-item>
       </div>
       <div class="flex justify-center" v-if="hasSearch && filter_results.length > 0">
-        <a href="" @click.prevent="reset()" class="btn-reset">Filter zurücksetzen</a>
+        <a href="" @click.prevent="reset()" class="btn-reset">{{ __('Filter zurücksetzen') }}</a>
       </div>
     </configurator-filter>
     <configurator-result>
@@ -291,12 +291,7 @@
       </configurator-header>
       <configurator-header v-else>
         <h1>{{ __('Willkommen!') }}</h1>
-        <p>In wenigen Schritten zum richtigen Verteiler! Einfach auf der linken Seite die grünen Filter verwenden und das passende Produkt wird angezeigt und kann bestellt werden.</p> 
-        
-        <h1>Benvenuti!</h1>
-        <p>Basterà seguire pochi e semplici passi per trovare il distributore giusto! Usare i filtri verdi a sinistra e il prodotto adeguato verrà visualizzato e potrà essere ordinato.</p>
-        <h1>Bienvenue !</h1>
-        <p>Trouver le bon distributeur en quelques étapes! Il suffit d'utiliser les filtres verts sur le côté gauche pour que le produit adéquat s'affiche et puisse être commandé.</p>
+        <p>{{ __('In wenigen Schritten zum richtigen Verteiler! Einfach auf der linken Seite die grünen Filter verwenden und das passende Produkt wird angezeigt und kann bestellt werden.') }}</p> 
       </configurator-header>
       <div v-for="result in filter_results" :key="result.id" class="product">
         <figure>
@@ -317,9 +312,9 @@
           <template v-if="result.eldas_number">
             <h3>{{ result.description }}</h3>
             <p>
-              E-Nummer: {{ result.eldas_number }}<br>
-              EM-Nummer: {{ result.em_number }}<br>
-              Hersteller-Artikel-Nummer: {{ result.number }}
+              {{ __('E-Nummer') }}: {{ result.eldas_number }}<br>
+              {{ __('EM-Nummer') }}: {{ result.em_number }}<br>
+              {{ __('Hersteller-Artikel-Nummer') }}: {{ result.number }}
             </p>
             <template v-if="api_connection">
               <form :action="api_connection.hookurl" method="post" target="_blank" enctype="multipart/form-data" class="mb-3x"> 
@@ -338,8 +333,8 @@
           </template>
           <template v-else>
             <h3>{{ result.gehaeuse }}</h3>
-            <p>E-Nummer: {{ result.eldas_number }}</p>
-            <p>Dieses Produkt ist noch nicht gelistet. Kontaktieren Sie ihren Grosshändler für eine Preisanfrage.</p>
+            <p>{{ __('E-Nummer') }}: {{ result.eldas_number }}</p>
+            <p>{{ __('Dieses Produkt ist noch nicht gelistet. Kontaktieren Sie ihren Grosshändler für eine Preisanfrage.') }}</p>
             <a :href="`mailto:info@em.ch?subject=Preisanfrage Artikel Nr. ${result.number}, ${result.gehaeuse}`" target="_blank" class="btn-secondary">
               <span>{{ __('Anfragen') }}</span>
             </a>

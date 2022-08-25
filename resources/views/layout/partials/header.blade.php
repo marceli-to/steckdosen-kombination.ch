@@ -26,25 +26,25 @@
       <h2>{{ __('Sprache wählen') }}</h2>
       <ul>
         <li>
-          <a href="/de/" class="{{ app()->getLocale() == 'de' ? 'is-active' : '' }}">
+          <a href="{{ request()->routeIs('*.page.landing') ? '/de' : '/de/app' }}" class="{{ app()->getLocale() == 'de' ? 'is-active' : '' }}">
             <img src="/assets/img/flag-ch.svg" height="12" width="16">
             <span>{{ __('Deutsch') }}</span>
           </a>
         </li>
         <li>
-          <a href="/en/" class="{{ app()->getLocale() == 'en' ? 'is-active' : '' }}">
+          <a href="{{ request()->routeIs('*.page.landing') ? '/en' : '/en/app' }}" class="{{ app()->getLocale() == 'en' ? 'is-active' : '' }}">
             <img src="/assets/img/flag-en.svg" height="12" width="16">
             <span>{{ __('English') }}</span>
           </a>
         </li>
         <li>
-          <a href="/fr/" class="{{ app()->getLocale() == 'fr' ? 'is-active' : '' }}">
+          <a href="{{ request()->routeIs('*.page.landing') ? '/fr' : '/fr/app' }}" class="{{ app()->getLocale() == 'fr' ? 'is-active' : '' }}">
             <img src="/assets/img/flag-fr.svg" height="12" width="16">
             <span>{{ __('Français') }}</span>
           </a>
         </li>
         <li>
-          <a href="/it/" class="{{ app()->getLocale() == 'it' ? 'is-active' : '' }}">
+          <a href="{{ request()->routeIs('*.page.landing') ? '/it' : '/it/app' }}" class="{{ app()->getLocale() == 'it' ? 'is-active' : '' }}">
             <img src="/assets/img/flag-it.svg" height="12" width="16">
             <span>{{ __('Italiano') }}</span>
           </a>

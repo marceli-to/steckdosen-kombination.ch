@@ -20,5 +20,9 @@ Route::get('/it', [PageController::class, 'index'])->name('it.page.landing');
 Route::get('/en', [PageController::class, 'index'])->name('en.page.landing');
 
 Route::get('/app', [PageController::class, 'app'])->name('page.app');
+Route::get('/de/app', [PageController::class, 'app'])->name('de.page.app');
+Route::get('/fr/app', [PageController::class, 'app'])->name('fr.page.app');
+Route::get('/it/app', [PageController::class, 'app'])->name('it.page.app');
+Route::get('/en/app', [PageController::class, 'app'])->name('en.page.app');
 
 // Route::get('/update-product-form-data', [PageController::class, 'updateFormData']);

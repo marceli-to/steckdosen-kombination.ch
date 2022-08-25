@@ -2,7 +2,7 @@
   <article class="sm:grid">
     <figure class="sm:span-8 md:span-7">
       <img src="/assets/img/powerbox.png" width="500" height="500" alt="MENNEKES Konfigurator">
-      <a href="{{ route('page.app') }}" class="btn-cta" title="{{ __('Konfigurator starten') }}">
+      <a href="{{ route(app()->getLocale() . '.page.app') }}" class="btn-cta" title="{{ __('Konfigurator starten') }}">
         {{ __('Konfigurator starten') }}
       </a>
     </figure>
