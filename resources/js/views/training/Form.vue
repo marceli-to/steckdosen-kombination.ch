@@ -71,11 +71,11 @@ export default {
 
       // Form
       form: {
-        firstname: 'Marcel',
-        name: 'Stadelmann',
-        company: 'Marceli.to',
-        phone: '078 749 74 09',
-        email: 'm@marceli.to',
+        firstname: null,
+        name: null,
+        company: null,
+        phone: null,
+        email: null,
         participants: null,
         date: null,
       },
