@@ -7,11 +7,11 @@
     </figure>
     <div class="md:order-1 md:span-7">
       <h1>{{ __('AMAXX® – weltweit im Einsatz') }}</h1>
-      {!! __('<p>Robust and durable, can be equipped individually, quickly assembled and available for a wide range of applications.</p><p>Our AMAXX® socket outlet combinations are the perfect everyday helpers for safe power distribution. The product family reflects our decades of experience as a specialist for industrial plugs and sockets. AMAXX® has been reliably used in various industries worldwide for years - as our international reference projects show.</p>') !!}
+      {!! __('<p>Mit AMAXX® kombinieren Sie clever und sparen dadurch wertvolle Montagezeit. Nur eine Zuleitung, weniger Bohrlöcher, weniger Kabel- und Rohrschellen und nur ein Gehäuse, dessen Aussenbefestigung die Ein-Mann-Montage ermöglicht. Der anscharnierte, seitlich öffnende Gehäusedeckel sowie die vorziehbaren Hutprofilschienen und der grosse Anschlussraum erleichtern die Anschlussarbeiten. AMAXX® ist anschlussfertig vorverdrahtet und auf elektrische Sicherheit und Qualität nach IEC 61439 geprüft.</p><p><strong>Der Kunststoff AMAPLAST® - die bewährte Qualität</strong><br>Die Gehäuse und Einsätze der gängigen und bewährten CEE-Steckvorrichtungen von MENNEKES werden aus dem hochwertigen Kunststoff AMAPLAST® gefertigt und sind nahezu unverwüstlich.</p>') !!}
     </div>
   </article>
   <div class="landing-tiles sm:flex">
-    <a href="javascript:;" class="landing-tile landing-tile--mennekes sm:mr-8x">
+    <a href="https://www.mennekes.ch/produkte/highlights/amaxx/" class="landing-tile landing-tile--mennekes sm:mr-8x" target="_blank">
       <span class="landing-tile__icon">
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M3 21L10.3094 13.7901V18.9116L21 6.33149V3L13.4917 10.9558V5.13812L3 17.6685V21Z" fill="white"/>
@@ -32,7 +32,7 @@
         </div>
       </span>
     </a>
-    <a href="javascript:;" class="landing-tile landing-tile--mennekes">
+    <a href="https://www.mennekes.ch/loesungen-und-leistungen/power-your-business/" class="landing-tile landing-tile--mennekes" target="_blank">
       <span class="landing-tile__icon">
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M3 21L10.3094 13.7901V18.9116L21 6.33149V3L13.4917 10.9558V5.13812L3 17.6685V21Z" fill="white"/>

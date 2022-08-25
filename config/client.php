@@ -9,7 +9,7 @@ return [
   |
   */
 
-  'company' => env('MENNEKES_KONFIGURATOR_COMPANY_NAME', 'Konfigurator für Wand-Stromverteiler'),
+  'company' => env('MENNEKES_KONFIGURATOR_COMPANY_NAME', 'Konfigurator für Wand- und Stromverteiler'),
 
   /*
   |--------------------------------------------------------------------------

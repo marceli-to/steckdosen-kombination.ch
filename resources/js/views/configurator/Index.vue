@@ -2,7 +2,7 @@
   <configurator-wrapper v-if="isFetched">
     <configurator-filter>
       <configurator-header>
-        <h1>{{ __('Konfigurator für Wand-Stromverteiler') }}</h1>
+        <h1>{{ __('Konfigurator für Wand- und Stromverteiler') }}</h1>
       </configurator-header>
       <!-- Mobile -->
       <div class="selector is-mobile">

@@ -11,7 +11,7 @@ return [
   |
   */
 
-  'title' => 'Konfigurator für Wand-Stromverteiler',
+  'title' => 'Konfigurator für Wand- und Stromverteiler',
 
   /*
   |--------------------------------------------------------------------------

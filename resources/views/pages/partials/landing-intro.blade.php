@@ -14,11 +14,13 @@
       </p>
       <ul class="list-checkmark mb-10x sm:mb-16x">
         <li>{{ __('Verlinkung zum EM Shop für Direkt-Bestellung ohne Anfrage') }}</li>
+        <li>{{ __('Bestellpositionen direkt per EM Shop eingegeben') }}
         <li>{{ __('Webbasiert und daher immer aktuell') }}</li>
-        <li>{{ __('Keine Software-Installation notwendig Nutzbar auf PC, Tablet und Handy') }}</li>
+        <li>{{ __('Keine Software-Installation notwendig') }}</li>
+        <li>{{ __('Nutzbar auf PC, Tablet und Handy') }}</li>
         <li>{{ __('Lager und Verfügbarkeit sofort ersichtlich') }}</li>
       </ul>
-      <h3>Good to know</h3>
+      <h3>{{ __('Gut zu wissen') }}</h3>
       <ul class="list-info">
         <li>{{ __('Noch Fragen? Nutzen Sie unseren Chat') }}</li>
         <li>{{ __('Schulungsanfragen für MENNEKES Stromverteiler') }}</li>
