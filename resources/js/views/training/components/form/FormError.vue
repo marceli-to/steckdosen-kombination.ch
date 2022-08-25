@@ -1,7 +1,5 @@
 <template>
-<main class="site">
-  <div>
+  <div class="error-message">
     <slot />
   </div>
-</main>
 </template>

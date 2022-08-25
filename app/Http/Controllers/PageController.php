@@ -29,6 +29,7 @@ class PageController extends BaseController
     
     $data = [];
     session()->flush();
+    session()->regenerate();
     if ($request->all())
     {
       foreach($request->all() as $key => $value)

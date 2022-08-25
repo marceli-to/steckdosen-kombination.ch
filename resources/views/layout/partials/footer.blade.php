@@ -32,5 +32,6 @@
   </div>
 </footer>
 <script src="{{ mix('assets/js/language.js') }}" type="text/javascript"></script>
+<script src="{{ mix('assets/js/form.js') }}"></script>
 <script src="{{ mix('assets/js/app.js') }}" defer></script>
 <!-- made with ❤ by marceli.to -->

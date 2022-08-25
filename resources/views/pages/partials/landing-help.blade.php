@@ -13,7 +13,7 @@
           <p>{{ __('Sprechen Sie mit einem unserer Produkt-Experten.') }}</p>
         </span>
       </a>
-      <a href="javascript:;" class="landing-tile landing-tile--help sm:span-6">
+      <a href="javascript:;" class="landing-tile landing-tile--help sm:span-6 js-btn-training-form">
         <span class="landing-tile__icon">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M2 13C2 12.4477 2.44772 12 3 12H21C21.5523 12 22 12.4477 22 13V19C22 20.6569 20.6569 22 19 22H5C3.34315 22 2 20.6569 2 19V13Z" fill="#1D8649"/>

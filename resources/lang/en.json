@@ -44,8 +44,17 @@
   "Impressum": "Imprint",
   "Newsletter": "Newsletter",
   "Kontaktieren Sie uns": "Get in touch",
-  "Alle Rechte vorbehalten.": "All rights reserved."
-
-
-
+  "Alle Rechte vorbehalten.": "All rights reserved.",
+  "Individuelle Produkteschulung": "Individual product training",
+  "Bevorzugen Sie für sich und Ihr Team (minimum 10 Personen) eine individuelle Schulung, benützen Sie bitte untenstehendes Formular. Ihre Daten werden nur von den beteiligten Unternehmen verwendet und nicht an Dritte weitergegeben.": "If you prefer an individual training for you and your team (minimum 10 persons), please use the form below. Your data will only be used by the participating companies and will not be passed on to third parties.",
+  "Bestätigung Produkteschulung": "Confirmation product training",
+  "Vielen Dank für Ihre Anfrage. Wir prüfen Ihre Anfrage und melden uns raschmöglichst bei Ihnen. Ihre Angaben wie folgt:": "Thank you for your request. We will review your request and get back to you as soon as possible. Your information as follows:",
+  "Produkt": "Product",
+  "name": "Firstname, Name",
+  "Firma": "Company",
+  "Telefon": "Phone",
+  "E-Mail": "Email",
+  "Gewünschter Termin": "Desired date",
+  "Hallo": "Hello",
+  "Freundliche Grüsse": "Best regards,"
 }

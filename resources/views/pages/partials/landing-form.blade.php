@@ -1,11 +1,12 @@
-<section class="landing__form">
+<section class="landing__form js-training-form" style="display: none">
   <article class="md:grid">
     <div class="md:span-7">
       <h1>{{ __('Individuelle Produkteschulung') }}</h1>
       <p>{{ __('Bevorzugen Sie für sich und Ihr Team (minimum 10 Personen) eine individuelle Schulung, benützen Sie bitte untenstehendes Formular. Ihre Daten werden nur von den beteiligten Unternehmen verwendet und nicht an Dritte weitergegeben.') }}</p>
     </div>
-    <div class="md:span-9">
-      <form method="POST" action="">
+    <div class="md:span-9" id="training-form">
+      <training-form></training-form>
+      {{-- <form method="POST" action="">
         <div class="form-group ">
           <label for="name">
             Name *
@@ -56,7 +57,7 @@
             <input type="submit" name="submit" value="Absenden" class="btn-primary">
           </div>
         </div>
-      </form>
+      </form> --}}
     </div>
   </article>
 

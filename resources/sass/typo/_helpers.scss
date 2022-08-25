@@ -55,6 +55,14 @@
   @include font-size($fs-md);
 }
 
+.text-sucess {
+  color: $color-success;
+}
+
+.text-danger {
+  color: $color-danger;
+}
+
 
 /**
  * Typography - Generic elements

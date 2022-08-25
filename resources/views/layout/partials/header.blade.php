@@ -10,7 +10,7 @@
     </div>
     <nav class="language-switcher">
       <a href="javascript:;" class="btn-language js-language-menu-show-btn">
-        <img src="/assets/img/flag-{{ app()->getLocale() }}.svg" height="12" width="16">
+        <img src="/assets/img/flag-{{ app()->getLocale() == 'de' ? 'ch' : app()->getLocale() }}.svg" height="12" width="16">
         @if (app()->getLocale() == 'de')<span>de</span>@endif
         @if (app()->getLocale() == 'en')<span>en</span>@endif
         @if (app()->getLocale() == 'fr')<span>fr</span>@endif
@@ -27,7 +27,7 @@
       <ul>
         <li>
           <a href="/de/" class="{{ app()->getLocale() == 'de' ? 'is-active' : '' }}">
-            <img src="/assets/img/flag-de.svg" height="12" width="16">
+            <img src="/assets/img/flag-ch.svg" height="12" width="16">
             <span>{{ __('Deutsch') }}</span>
           </a>
         </li>

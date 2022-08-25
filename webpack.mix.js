@@ -24,3 +24,4 @@ mix.webpackConfig({
 mix.sass('resources/sass/app.scss', 'public/assets/css/app.css').options({processCssUrls: false}).version();
 mix.js('resources/js/app.js', 'public/assets/js/app.js').version();
 mix.js('resources/js/modules/language.js', 'public/assets/js/language.js').version();
+mix.js('resources/js/views/training/app.js', 'public/assets/js/form.js').version();

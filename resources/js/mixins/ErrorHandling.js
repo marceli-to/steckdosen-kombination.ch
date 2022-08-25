@@ -1,12 +1,18 @@
+import NProgress from 'nprogress';
+
 export default {
 
   data() {
     return { 
       errors: null,
-    }
+    };
   },
   
   mounted() {
+
+    window.intercepted.$on('response', data => {
+      console.log(data); // { status: 404, code: 'Not found', body: null }
+    });
 
     window.intercepted.$on('response:401', data => {
       this.unauthorized(data);
@@ -24,6 +30,10 @@ export default {
       this.notAllowed(data);
     });
 
+    window.intercepted.$on('response:419', data => {
+      this.unauthorized(data);
+    });
+
     window.intercepted.$on('response:422', data => {
       this.validationError(data);
     });
@@ -39,6 +49,7 @@ export default {
     window.intercepted.$off('response:403', this.listener);
     window.intercepted.$off('response:404', this.listener);
     window.intercepted.$off('response:405', this.listener);
+    window.intercepted.$off('response:419', this.listener);
     window.intercepted.$off('response:422', this.listener);
     window.intercepted.$off('response:500', this.listener);
   },
@@ -48,16 +59,17 @@ export default {
     validationError(data) {
       let errors = {};
       data.body.forEach(function(key) {
-        errors[key.field] = true;
+        errors[key.field] = key.error;
       });
       this.errors = errors;
       this.isLoading = false;
-      this.$notify({ type: "error", text: `Bitte alle mit * markierten Felder prüfen!`});
+      NProgress.done();
     },
 
     serverError(data) {
       this.isLoading = false;
-      this.$notify({ type: "error", text: `${data.status} ${data.code}<br>${data.body.message}`});
+      NProgress.done();
+      alert(`${data.status} ${data.code}<br>${data.body.message}`);
     },
 
     notFoundError(data) {
@@ -67,17 +79,23 @@ export default {
 
     notAllowed(data) {
       this.isLoading = false;
-      this.$notify({ type: "error", text: `${data.status} ${data.code}`});
+      NProgress.done();
+      alert(`${data.status} ${data.code}<br>${data.body.message}`);
     },
 
     forbiddenError(data) {
       this.isLoading = false;
-      this.$notify({ type: "error", text: `${data.status} - Zugriff verweigert!`});
+      NProgress.done();
+      alert(`${data.status} - Zugriff verweigert!`);
       this.$router.push({ name: 'forbidden' });
     },
 
     unauthorized(data) {
       document.location.href = '/login';
+    },
+
+    removeError(field) {
+      this.errors[field] = null;
     }
   },
 
