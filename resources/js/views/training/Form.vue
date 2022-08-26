@@ -160,6 +160,10 @@ export default {
       form.scrollIntoView({ 
         behavior: 'smooth' 
       });
+    },
+    
+    removeError(field) {
+      this.errors[field] = null;
     }
   },
 }
