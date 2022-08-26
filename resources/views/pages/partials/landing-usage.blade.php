@@ -20,8 +20,8 @@
         </svg>
       </span>
       <span class="landing-tile__text">
-        <h4>{{ __('AMAXX®') }}</h4>
-        <p>{{ __('Für jeden Anspruch die passenden AMAXX®Steckdosenkombinationen...') }}</p>
+        <h4>AMAXX®</h4>
+        <p>{{ __('Robust und langlebig, individuell bestückbar, schnell montiert') }}</p>
         <div class="flex items-center">
           <em class="block mr-2x">mennekes.de</em>
           <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -42,7 +42,7 @@
       </span>
       <span class="landing-tile__text">
         <h4>{{ __('Aktuelle Referenzen') }}</h4>
-        <p>{{ __('Aktuelle Referenzen von der Industrie, den öffentlichen Verkehrsmitteln...') }}</p>
+        <p>{{ __('Industrielle Anwendungen, Messen und Events, Tunnel und Bahnhöfe') }}</p>
         <div class="flex items-center">
           <em class="block mr-2x">mennekes.de</em>
           <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
