@@ -7,7 +7,7 @@
       <!-- Mobile -->
       <div class="selector is-mobile">
         <div class="is-right">
-          <img src="/assets/img/powerbox-right.png" width="320" height="590">
+          <img src="/assets/img/powerbox-v2-right.png" width="320" height="590">
           <filter-item :attr="'fi_ls'" :class="[!filter_options.fi_ls ? 'is-disabled' : '']">
             <template v-slot:select>
               <div :class="[selected('fi_ls') ? 'is-selected' : '', 'select']">
@@ -66,7 +66,7 @@
           </filter-item>
         </div>
         <div class="is-left">
-          <img src="/assets/img/powerbox-left.png" width="320" height="590">
+          <img src="/assets/img/powerbox-v2-left.png" width="320" height="590">
           <filter-item :attr="'ls_switch'" :class="[!filter_options.ls_switch ? 'is-disabled' : '']">
             <template v-slot:select>
               <div :class="[selected('ls_switch') ? 'is-selected' : '', 'select']">
@@ -143,7 +143,7 @@
       </div>
       <!-- Tablet and Desktop -->
       <div class="selector is-tablet">
-        <img src="/assets/img/powerbox.png" width="590" height="590">
+        <img src="/assets/img/powerbox-v2.png" width="590" height="590">
         <filter-item :attr="'fi_ls'" :class="[!filter_options.fi_ls ? 'is-disabled' : '']">
           <template v-slot:select>
             <div :class="[selected('fi_ls') ? 'is-selected' : '', 'select']">
