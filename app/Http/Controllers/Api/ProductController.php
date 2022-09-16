@@ -35,9 +35,10 @@ class ProductController extends Controller
     {
       if ($request->input($key) && $request->input($key) != 'null')
       {
-        $matches[$key] = $value;
+        $matches[] = [$key, '>=', $value];
       }
     }
+    
     $products = Product::active()->where($matches)->orderBy('eldas_number', 'DESC')->get();
     $this->getFilterOptions(TRUE, $matches);
     
