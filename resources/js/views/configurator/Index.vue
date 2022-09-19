@@ -309,7 +309,7 @@
               v-else>
         </figure>
         <div>
-          <template v-if="result.eldas_number">
+          <!-- <template v-if="result.eldas_number">
             <h3>{{ result.description }}</h3>
             <p>
               {{ __('E-Nummer') }}: {{ result.eldas_number }}<br>
@@ -338,7 +338,7 @@
             <a :href="`mailto:info@em.ch?subject=Preisanfrage Artikel Nr. ${result.number}, ${result.gehaeuse}`" target="_blank" class="btn-secondary">
               <span>{{ __('Anfragen') }}</span>
             </a>
-          </template>
+          </template> -->
         </div>
       </div>
     </configurator-result>
