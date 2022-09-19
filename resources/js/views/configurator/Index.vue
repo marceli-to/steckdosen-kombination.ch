@@ -309,13 +309,14 @@
               v-else>
         </figure>
         <div>
-          <!-- <template v-if="result.eldas_number">
+          <template v-if="result.eldas_number">
             <h3>{{ result.description }}</h3>
             <p>
               {{ __('E-Nummer') }}: {{ result.eldas_number }}<br>
               {{ __('EM-Nummer') }}: {{ result.em_number }}<br>
               {{ __('Hersteller-Artikel-Nummer') }}: {{ result.number }}
             </p>
+            <!-- 
             <template v-if="api_connection">
               <form :action="api_connection.hookurl" method="post" target="_blank" enctype="multipart/form-data" class="mb-3x"> 
                 <input type="hidden" name="version" :value="api_connection.version"/>
