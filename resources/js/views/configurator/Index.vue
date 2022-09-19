@@ -316,6 +316,8 @@
               {{ __('EM-Nummer') }}: {{ result.em_number }}<br>
               {{ __('Hersteller-Artikel-Nummer') }}: {{ result.number }}
             </p>
+          </template>
+          
             <!-- 
             <template v-if="api_connection">
               <form :action="api_connection.hookurl" method="post" target="_blank" enctype="multipart/form-data" class="mb-3x"> 
