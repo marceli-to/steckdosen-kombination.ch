@@ -316,8 +316,7 @@
               {{ __('EM-Nummer') }}: {{ result.em_number }}<br>
               {{ __('Hersteller-Artikel-Nummer') }}: {{ result.number }}
             </p>
-          </template>
-          
+
             <!-- 
             <template v-if="api_connection">
               <form :action="api_connection.hookurl" method="post" target="_blank" enctype="multipart/form-data" class="mb-3x"> 
@@ -333,15 +332,16 @@
                 <span>{{ __('Im Shop anzeigen') }}</span>
               </a>
             </template>
+             -->
           </template>
           <template v-else>
             <h3>{{ result.gehaeuse }}</h3>
             <p>{{ __('E-Nummer') }}: {{ result.eldas_number }}</p>
             <p>{{ __('Dieses Produkt ist noch nicht gelistet. Kontaktieren Sie ihren Grosshändler für eine Preisanfrage.') }}</p>
-            <a :href="`mailto:info@em.ch?subject=Preisanfrage Artikel Nr. ${result.number}, ${result.gehaeuse}`" target="_blank" class="btn-secondary">
+            <!-- <a :href="`mailto:info@em.ch?subject=Preisanfrage Artikel Nr. ${result.number}, ${result.gehaeuse}`" target="_blank" class="btn-secondary">
               <span>{{ __('Anfragen') }}</span>
-            </a>
-          </template> -->
+            </a> -->
+          </template>
         </div>
       </div>
     </configurator-result>
