@@ -313,7 +313,7 @@
             <h3>{{ result.description }}</h3>
             <p>
               {{ __('E-Nummer') }}: {{ result.eldas_number }}<br>
-              {{ __('EM-Nummer') }}: {{ result.em_number }}<br>
+              <!-- {{ __('EM-Nummer') }}: {{ result.em_number }}<br> -->
               {{ __('Hersteller-Artikel-Nummer') }}: {{ result.number }}
             </p>
 
