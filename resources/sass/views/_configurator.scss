@@ -577,6 +577,16 @@
   }
 }
 
+[lang="fr"], [lang="it"]  {
+  .selector__pointer.is-ls_switch .select {
+    width: 160px;
+  }
+
+  .selector__pointer.is-fi_40a_63a .select {
+    width: 160px;
+  }
+}
+
 /** Product **/
 .product {  
   @extend %pb-8x;

@@ -13,7 +13,7 @@
         {{ __('Egal ob AMAXX-, EverGum Varianten als Leisten oder Mobile Typen im Konfigurator finden Sie alle Produkte welche ELDAS gelistet sind.') }}
       </p>
       <ul class="list-checkmark mb-10x sm:mb-16x">
-        {{-- <li>{{ __('Verlinkung zum EM Shop für Direkt-Bestellung ohne Anfrage') }}</li> --}}
+        <li>{{ __('Verlinkung zum EM Shop für Direkt-Bestellung ohne Anfrage') }}</li>
         <li>{{ __('Bestellpositionen direkt per EM Shop eingegeben') }}
         <li>{{ __('Webbasiert und daher immer aktuell') }}</li>
         <li>{{ __('Keine Software-Installation notwendig') }}</li>
