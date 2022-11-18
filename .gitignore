@@ -7,6 +7,7 @@ public/.well-known
 /vendor
 .env
 .env.backup
+.env.*
 .phpunit.result.cache
 Homestead.json
 Homestead.yaml
@@ -14,3 +15,7 @@ npm-debug.log
 yarn-error.log
 INSTALL.TXT
 /INSTALL.TXT
+
+storage/em_steckdosen-kombination_ch_local
+storage/sonepar_steckdosen-kombination_ch_local
+storage/saesseli_steckdosen-kombination_ch_local

@@ -27,6 +27,8 @@ class PageController extends BaseController
     // Debug only
     // \Log::error($request->all());
     
+    dd(env('SUBDOMAIN_KEY'));
+
     $data = [];
     session()->flush();
     session()->regenerate();
