@@ -311,7 +311,7 @@
         <div>
           
           <template v-if="api_client == 'em'">
-            
+
             <template v-if="result.eldas_number">
               <h3>{{ result.description }}</h3>
               <p>{{ __('E-Nummer') }}: {{ result.eldas_number }}</p>
@@ -325,8 +325,8 @@
                 </form>
               </template>
               <template v-else>
-                <a  href="" target="_blank" class="btn-primary">
-                  <span>{{ __('Im Shop anzeigen') }} [shop url fehlt]</span>
+                <a :href="`https://www.elektro-material.ch/de/shop/search?searchTerm=${result.eldas_number}`" target="_blank" class="btn-primary">
+                  <span>{{ __('Im Shop anzeigen') }}</span>
                 </a>
               </template>
 
