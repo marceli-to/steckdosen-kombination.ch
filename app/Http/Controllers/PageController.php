@@ -47,6 +47,20 @@ class PageController extends BaseController
    */
   public function app()
   {
+    $products = Product::get();
+
+    foreach($products as $product)
+    {
+      $form_data = $product->form_data;
+      $prefix = '{"CONFIGURATION_URL":"https:\/\/saesseli.steckdosen-kombination.ch\/","ITEM":';
+      $suffix = '}';
+      $form_data_2 = $prefix . $form_data . $suffix;
+
+      $product->form_data_saesseli = $form_data_2;
+      $product->save();
+    }
+
+    dd($products);
     return view($this->viewPath . 'app');
   }
 

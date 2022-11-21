@@ -38,6 +38,7 @@ class Product extends Base
     'uvp_installateur',
     'has_image',
     'form_data',
+    'form_data_saesseli',
     'publish',
   ];
 
@@ -50,17 +51,5 @@ class Product extends Base
   {
     return $query->where('publish', 1)->where('has_image', 1);
   }
-
-
-  /**
-   * Get the user's full name.
-   *
-   * @param  string  $value
-   * @return string
-   */
-  // public function getEmNumberAttribute($value)
-  // {
-  //   return str_replace(['/', ' '], [''], $value);
-  // }
 
 }
