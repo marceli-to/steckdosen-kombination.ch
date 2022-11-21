@@ -314,7 +314,7 @@
 
             <template v-if="result.eldas_number">
               <h3>{{ result.description }}</h3>
-              <p>{{ __('E-Nummer') }}: {{ result.eldas_number }}</p>
+              <p>{{ __('E-Nummer') }}: {{ result.eldas_number }}<br>{{ __('EM-Nummer') }}: {{ result.em_number }}</p>
               <template v-if="api_connection">
                 <form :action="api_connection.hookurl" method="post" target="_blank" enctype="multipart/form-data" class="mb-3x"> 
                   <input type="hidden" name="version" :value="api_connection.version"/>
@@ -325,7 +325,6 @@
                 </form>
               </template>
               <template v-else>
-                <p>{{ __('EM-Nummer') }}: {{ result.em_number }}</p>
                 <a :href="`https://www.elektro-material.ch/de/shop/search?searchTerm=${result.eldas_number}`" target="_blank" class="btn-primary">
                   <span>{{ __('Im Shop anzeigen') }}</span>
                 </a>
