@@ -23,12 +23,6 @@ class PageController extends BaseController
   public function index(Request $request)
   {
     // Save request data from wholesale shop / elbridge
-
-    // Debug only
-    // \Log::error($request->all());
-    
-    dd(env('SUBDOMAIN_KEY'));
-
     $data = [];
     session()->flush();
     session()->regenerate();
