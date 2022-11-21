@@ -320,7 +320,8 @@
                   <input type="hidden" name="version" :value="api_connection.version"/>
                   <input type="hidden" name="country" :value="api_connection.country"/>
                   <input type="hidden" name="language" :value="api_connection.language"/>
-                  <input type="hidden" name="result" :value="result.form_data"/>
+                  <input type="hidden" name="result" :value="result.form_data_saesseli" v-if="api_client == 'saesseli'" />
+                  <input type="hidden" name="result" :value="result.form_data" v-else />
                   <input type="submit" value="In den Warenkorb" class="btn-primary">
                 </form>
               </template>
