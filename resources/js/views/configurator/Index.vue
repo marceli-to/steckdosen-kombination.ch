@@ -515,6 +515,7 @@ export default {
       this.axios.post(this.routes.filter, this.filter_items).then(response => {
         this.filter_results = response.data.products;
         this.api_connection = response.data.api_connection;
+        this.api_client = response.data.api_client;
         this.setFilterOptions(response.data.filter_options);
         this.hasSearch = true;
         this.isFetched = true;
