@@ -325,6 +325,7 @@
                 </form>
               </template>
               <template v-else>
+                <p>{{ __('EM-Nummer') }}: {{ result.em_number }}</p>
                 <a :href="`https://www.elektro-material.ch/de/shop/search?searchTerm=${result.eldas_number}`" target="_blank" class="btn-primary">
                   <span>{{ __('Im Shop anzeigen') }}</span>
                 </a>
