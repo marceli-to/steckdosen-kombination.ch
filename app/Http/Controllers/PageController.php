@@ -26,6 +26,9 @@ class PageController extends BaseController
     $data = [];
     session()->flush();
     session()->regenerate();
+
+    session(['api_client' => env('SUBDOMAIN_KEY')]);
+
     if ($request->all())
     {
       foreach($request->all() as $key => $value)

@@ -46,7 +46,8 @@ class ProductController extends Controller
       [
         'products' => $products, 
         'filter_options' => $this->filter_options, 
-        'api_connection' => session()->has('api_connection_data') ? session('api_connection_data') : null
+        'api_connection' => session()->has('api_connection_data') ? session('api_connection_data') : null,
+        'api_client' => session()->has('api_client') ? session('api_client') : null
       ]
     );
   }
