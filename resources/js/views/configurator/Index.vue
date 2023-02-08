@@ -403,7 +403,7 @@
             <template v-if="result.eldas_number">
               <h3>{{ result.description }}</h3>
               <p>
-                {{ __('E-Nummer') }}: {{ result.eldas_number }}
+                {{ __('E-Nummer') }}: {{ result.eldas_number }}<br>
                 {{ __('Hersteller-Artikel-Nummer') }}: {{ result.number }}
               </p>
               [ Text ? ]
