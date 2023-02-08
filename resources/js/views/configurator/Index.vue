@@ -402,7 +402,10 @@
           <template v-else>
             <template v-if="result.eldas_number">
               <h3>{{ result.description }}</h3>
-              <p>{{ __('E-Nummer') }}: {{ result.eldas_number }}</p>
+              <p>
+                {{ __('E-Nummer') }}: {{ result.eldas_number }}
+                {{ __('Hersteller-Artikel-Nummer') }}: {{ result.number }}
+              </p>
               [ Text ? ]
             </template>
           </template>
