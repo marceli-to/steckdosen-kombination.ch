@@ -29,6 +29,7 @@ class ProductController extends Controller
 
   public function filter(Request $request)
   {
+    app()->setLocale('de');
     // Build search query
     $matches = [];
     foreach($request->all() as $key => $value)

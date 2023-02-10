@@ -313,7 +313,7 @@
           <template v-if="api_client == 'em'">
 
             <template v-if="result.eldas_number">
-              <h3>{{ result.description }}</h3>
+              <h3>{{ result.title[_getLocale()] }}</h3>
               <p>{{ __('E-Nummer') }}: {{ result.eldas_number }}<br>{{ __('EM-Nummer') }}: {{ result.em_number }}</p>
               <template v-if="api_connection">
                 <form :action="api_connection.hookurl" method="post" target="_blank" enctype="multipart/form-data" class="mb-3x"> 
@@ -343,7 +343,7 @@
           
           <template v-else-if="api_client == 'sonepar'">
             <template v-if="result.eldas_number">
-              <h3>{{ result.description }}</h3>
+              <h3>{{ result.title[_getLocale()] }}</h3>
               <p>{{ __('E-Nummer') }}: {{ result.eldas_number }}</p>
               <template v-if="api_connection">
                 <form :action="api_connection.hookurl" method="post" target="_blank" enctype="multipart/form-data" class="mb-3x"> 
@@ -372,7 +372,7 @@
           
           <template v-else-if="api_client == 'saesseli'">
             <template v-if="result.eldas_number">
-              <h3>{{ result.description }}</h3>
+              <h3>{{ result.title[_getLocale()] }}</h3>
               <p>{{ __('E-Nummer') }}: {{ result.eldas_number }}</p>
               <template v-if="api_connection">
                 <form :action="api_connection.hookurl" method="post" target="_blank" enctype="multipart/form-data" class="mb-3x"> 
@@ -401,12 +401,11 @@
 
           <template v-else>
             <template v-if="result.eldas_number">
-              <h3>{{ result.description }}</h3>
+              <h3>{{ result.title[_getLocale()] }}</h3>
               <p>
                 {{ __('E-Nummer') }}: {{ result.eldas_number }}<br>
                 {{ __('Hersteller-Artikel-Nummer') }}: {{ result.number }}
               </p>
-              [ Text ? ]
             </template>
           </template>
         </div>

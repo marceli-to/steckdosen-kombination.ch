@@ -2,15 +2,19 @@
 namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Spatie\Translatable\HasTranslations;
 use App\Models\Base;
 
 class Product extends Base
 {
-  use HasFactory;
+  use HasFactory, HasTranslations;
+
+  public $translatable = ['title'];
 
   protected $fillable = [
     'eldas_number',
     'em_number',
+    'title',
     'description',
     'cee_63a_5p',
     'cee_32a_5p',
@@ -45,6 +49,13 @@ class Product extends Base
   protected $casts = [
     'created_at' => 'date:d.m.Y',
     'updated_at' => 'date:d.m.Y',
+    'title' => 'array',
+  ];
+
+  protected $attributes = [
+    'title' => '{
+      "de": "null", "en": "null", "fr": "null", "it": "null"
+    }',
   ];
 
   public function scopeActive($query)
