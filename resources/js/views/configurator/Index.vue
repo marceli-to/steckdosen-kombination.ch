@@ -400,11 +400,15 @@
           </template>
 
           <template v-else>
-            <template v-if="result.eldas_number">
-              <h3>{{ result.title[_getLocale()] }}</h3>
+            <template>
+              <h3>{{ result.title[_getLocale()] ? result.title[_getLocale()] : result.gehaeuse }}</h3>
               <p>
-                {{ __('E-Nummer') }}: {{ result.eldas_number }}<br>
-                {{ __('Hersteller-Artikel-Nummer') }}: {{ result.number }}
+                <template v-if="result.eldas_number">
+                  {{ __('E-Nummer') }}: {{ result.eldas_number }}<br>
+                </template>
+                <template v-if="result.number">
+                  {{ __('Hersteller-Artikel-Nummer') }}: {{ result.number }}
+                </template>
               </p>
             </template>
           </template>
