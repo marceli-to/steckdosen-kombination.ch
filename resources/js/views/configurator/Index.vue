@@ -313,7 +313,7 @@
           <template v-if="api_client == 'em'">
 
             <template v-if="result.eldas_number">
-              <h3>{{ result.title[_getLocale()] }}</h3>
+              <h3>{{ result.title[_getLocale()] ? result.title[_getLocale()] : result.gehaeuse }}</h3>
               <p>{{ __('E-Nummer') }}: {{ result.eldas_number }}<br>{{ __('EM-Nummer') }}: {{ result.em_number }}</p>
               <template v-if="api_connection">
                 <form :action="api_connection.hookurl" method="post" target="_blank" enctype="multipart/form-data" class="mb-3x"> 
@@ -332,7 +332,7 @@
 
             </template>
             <template v-else>
-              <h3>{{ result.gehaeuse }}</h3>
+              <h3>{{ result.title[_getLocale()] ? result.title[_getLocale()] : result.gehaeuse }}</h3>
               <p>{{ __('E-Nummer') }}: {{ result.eldas_number }}</p>
               <p>{{ __('Dieses Produkt ist noch nicht gelistet. Kontaktieren Sie ihren Grosshändler für eine Preisanfrage.') }}</p>
               <a :href="`mailto:info@em.ch?subject=Preisanfrage Artikel Nr. ${result.number}, ${result.gehaeuse}`" target="_blank" class="btn-secondary">
@@ -343,7 +343,7 @@
           
           <template v-else-if="api_client == 'sonepar'">
             <template v-if="result.eldas_number">
-              <h3>{{ result.title[_getLocale()] }}</h3>
+              <h3>{{ result.title[_getLocale()] ? result.title[_getLocale()] : result.gehaeuse }}</h3>
               <p>{{ __('E-Nummer') }}: {{ result.eldas_number }}</p>
               <template v-if="api_connection">
                 <form :action="api_connection.hookurl" method="post" target="_blank" enctype="multipart/form-data" class="mb-3x"> 
@@ -361,7 +361,7 @@
               </template>
             </template>
             <template v-else>
-              <h3>{{ result.gehaeuse }}</h3>
+              <h3>{{ result.title[_getLocale()] ? result.title[_getLocale()] : result.gehaeuse }}</h3>
               <p>{{ __('E-Nummer') }}: {{ result.eldas_number }}</p>
               <p>{{ __('Dieses Produkt ist noch nicht gelistet. Kontaktieren Sie ihren Grosshändler für eine Preisanfrage.') }}</p>
               <a :href="`mailto:info@sonepar.ch?subject=Preisanfrage Artikel Nr. ${result.number}, ${result.gehaeuse}`" target="_blank" class="btn-secondary">
@@ -372,7 +372,7 @@
           
           <template v-else-if="api_client == 'saesseli'">
             <template v-if="result.eldas_number">
-              <h3>{{ result.title[_getLocale()] }}</h3>
+              <h3>{{ result.title[_getLocale()] ? result.title[_getLocale()] : result.gehaeuse }}</h3>
               <p>{{ __('E-Nummer') }}: {{ result.eldas_number }}</p>
               <template v-if="api_connection">
                 <form :action="api_connection.hookurl" method="post" target="_blank" enctype="multipart/form-data" class="mb-3x"> 
@@ -390,7 +390,7 @@
               </template>
             </template>
             <template v-else>
-              <h3>{{ result.gehaeuse }}</h3>
+              <h3>{{ result.title[_getLocale()] ? result.title[_getLocale()] : result.gehaeuse }}</h3>
               <p>{{ __('E-Nummer') }}: {{ result.eldas_number }}</p>
               <p>{{ __('Dieses Produkt ist noch nicht gelistet. Kontaktieren Sie ihren Grosshändler für eine Preisanfrage.') }}</p>
               <a :href="`mailto:info@saesseli.ch?subject=Preisanfrage Artikel Nr. ${result.number}, ${result.gehaeuse}`" target="_blank" class="btn-secondary">
@@ -412,6 +412,7 @@
               </p>
             </template>
           </template>
+          
         </div>
       </div>
     </configurator-result>
