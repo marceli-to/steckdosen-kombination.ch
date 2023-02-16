@@ -14,6 +14,7 @@ class Product extends Base
   protected $fillable = [
     'eldas_number',
     'em_number',
+    'ean_number',
     'title',
     'description',
     'cee_63a_5p',
