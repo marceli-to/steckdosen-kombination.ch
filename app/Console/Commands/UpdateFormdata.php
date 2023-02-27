@@ -40,11 +40,23 @@ class UpdateFormdata extends Command
     $products = Product::all();
     foreach ($products as $product)
     {
+      // Formdata
       $json = json_decode($product->form_data);
       if ($product->ean_number)
       {
-        $json[0]->INTERNATIONAL_PID = $product->ean_number;
+        $json[0]->INTERNATIONAL_PID = trim($product->ean_number);
         $product->form_data = json_encode($json);
+        $product->ean_number = trim($product->ean_number);
+        $product->save();
+      }
+
+      // Formdata Saesseli
+      $json = json_decode($product->form_data_saesseli);
+
+      if ($product->ean_number)
+      {
+        $json->ITEM[0]->INTERNATIONAL_PID = trim($product->ean_number);
+        $product->form_data_saesseli = json_encode($json);
         $product->save();
       }
     }
