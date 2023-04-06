@@ -44,6 +44,8 @@ class Product extends Base
     'has_image',
     'form_data',
     'form_data_saesseli',
+    'ferratec_shop_url_de',
+    'ferratec_shop_url_fr',
     'publish',
   ];
 

@@ -410,9 +410,16 @@
                   {{ __('Hersteller-Artikel-Nummer') }}: {{ result.number }}
                 </template>
               </p>
+              <template v-if="result.ferratec_shop_url_de || result.ferratec_shop_url_fr">
+                <a :href="result.ferratec_shop_url_fr" target="_blank" class="btn-primary" v-if="_getLocale() == 'fr'">
+                  <span>{{ __('Im Shop anzeigen') }}</span>
+                </a>
+                <a :href="result.ferratec_shop_url_de" target="_blank" class="btn-primary" v-else>
+                  <span>{{ __('Im Shop anzeigen') }}</span>
+                </a>
+              </template>
             </template>
           </template>
-          
         </div>
       </div>
     </configurator-result>
