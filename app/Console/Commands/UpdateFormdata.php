@@ -52,7 +52,6 @@ class UpdateFormdata extends Command
 
       // Formdata Saesseli
       $json = json_decode($product->form_data_saesseli);
-
       if ($product->ean_number)
       {
         $json->ITEM[0]->INTERNATIONAL_PID = trim($product->ean_number);
