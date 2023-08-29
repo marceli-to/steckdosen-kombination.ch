@@ -355,9 +355,7 @@
                 </form>
               </template>
               <template v-else>
-                <a  href="" target="_blank" class="btn-primary">
-                  <span>{{ __('Im Shop anzeigen') }} [shop url fehlt]</span>
-                </a>
+                {{ __('Login im Sonepar-Shop wird benötigt, um dieses Produkt bestellen zu können.') }}
               </template>
             </template>
             <template v-else>
@@ -384,9 +382,7 @@
                 </form>
               </template>
               <template v-else>
-                <a  href="" target="_blank" class="btn-primary">
-                  <span>{{ __('Im Shop anzeigen') }} [shop url fehlt]</span>
-                </a>
+                {{ __('Login im Sässeli-Shop wird benötigt, um dieses Produkt bestellen zu können.') }}
               </template>
             </template>
             <template v-else>

@@ -34,7 +34,9 @@ export default {
           'Datum wird benötigt': 'Date is required',
           'Anzahl Teilnehmer wird benötigt': 'Number of participants is required',
           'Mind. 10 Teilnehmer': 'Min. 10 participants',
-          'Vielen Dank für Ihre Anmeldung. Wir werden uns in Kürze bei Ihnen melden.': 'Thank you for your registration. We will get back to you shortly.'
+          'Vielen Dank für Ihre Anmeldung. Wir werden uns in Kürze bei Ihnen melden.': 'Thank you for your registration. We will get back to you shortly.',
+          'Login im Sonepar-Shop wird benötigt, um dieses Produkt bestellen zu können.': 'Login in the Sonepar shop is required to order this product.',
+          'Login im Sässeli-Shop wird benötigt, um dieses Produkt bestellen zu können.': 'Login in the Sässeli shop is required to order this product.',
         },
         fr: {
           'Konfigurator für Wand- und Stromverteiler': 'Configurateur pour distributeurs muraux et électriques',
@@ -67,7 +69,9 @@ export default {
           'Datum wird benötigt': 'Date requise',
           'Anzahl Teilnehmer wird benötigt': 'Nombre de participants requis',
           'Mind. 10 Teilnehmer': 'Au moins 10 participants',
-          'Vielen Dank für Ihre Anmeldung. Wir werden uns in Kürze bei Ihnen melden.': 'Nous vous remercions de votre inscription. Nous vous contacterons prochainement.'
+          'Vielen Dank für Ihre Anmeldung. Wir werden uns in Kürze bei Ihnen melden.': 'Nous vous remercions de votre inscription. Nous vous contacterons prochainement.',
+          'Login im Sonepar-Shop wird benötigt, um dieses Produkt bestellen zu können.': 'La connexion au magasin Sonepar est nécessaire pour commander ce produit.', 
+          'Login im Sässeli-Shop wird benötigt, um dieses Produkt bestellen zu können.': 'La connexion au magasin Sässeli est nécessaire pour commander ce produit.',
         },
         it: {
           'Konfigurator für Wand- und Stromverteiler': 'Configuratore per ripartitori a parete e distributori di corrente',
@@ -100,7 +104,9 @@ export default {
           'Datum wird benötigt': 'La data è richiesta',
           'Anzahl Teilnehmer wird benötigt': 'Numero di partecipanti necessari',
           'Mind. 10 Teilnehmer': 'Almeno 10 partecipanti',
-          'Vielen Dank für Ihre Anmeldung. Wir werden uns in Kürze bei Ihnen melden.': 'Grazie per l\'iscrizione. Vi risponderemo a breve.'
+          'Vielen Dank für Ihre Anmeldung. Wir werden uns in Kürze bei Ihnen melden.': 'Grazie per l\'iscrizione. Vi risponderemo a breve.',
+          'Login im Sonepar-Shop wird benötigt, um dieses Produkt bestellen zu können.': 'È necessario accedere al negozio Sonepar per ordinare questo prodotto.', 
+          'Login im Sässeli-Shop wird benötigt, um dieses Produkt bestellen zu können.': 'È necessario accedere al negozio Sässeli per ordinare questo prodotto.',
         },
       },
 
