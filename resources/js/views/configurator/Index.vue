@@ -382,7 +382,9 @@
                 </form>
               </template>
               <template v-else>
-                {{ __('Login im Sässeli-Shop wird benötigt, um dieses Produkt bestellen zu können.') }}
+                <p class="text-danger mt-4x">
+                  {{ __('Login im Sässeli-Shop wird benötigt, um dieses Produkt bestellen zu können.') }}
+                </p>
               </template>
             </template>
             <template v-else>
