@@ -11,7 +11,7 @@ export default {
   mounted() {
 
     window.intercepted.$on('response', data => {
-      console.log(data); // { status: 404, code: 'Not found', body: null }
+      //console.log(data); // { status: 404, code: 'Not found', body: null }
     });
 
     window.intercepted.$on('response:401', data => {
