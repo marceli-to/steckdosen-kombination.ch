@@ -1,0 +1,77 @@
+.privacy {
+  color: $color-grey;
+
+  strong {
+    color: $color-dark;
+  }
+
+  a {
+    color: $color-grey;
+    text-decoration: underline;
+    &:hover {
+      text-decoration: none;
+    }
+  }
+
+  > div {
+    @extend %inner-block;
+    max-width: 1024px;
+    @extend %pb-8x;
+    @extend %pt-8x;
+    @extend %lg\:pb-16x;
+  }
+
+  h1, h2 {
+    @extend %mb-4x;
+    @extend %sm\:mb-6x;
+    color: $color-dark;
+    @include font-bold();
+    @include font-size($fs-xl);
+  }
+
+  h4 {
+    @include font-size($fs-sm);
+    @include font-bold();
+  }
+
+  p, ul, ol, table {
+    @include font-size($fs-sm);
+  }
+
+  ul, ol {
+    @extend %mb-4x;
+    @extend %sm\:mb-6x;
+  }
+
+  li {
+    display: list-item;
+    @extend %mb-2x;
+  }
+
+  table {
+    @extend %mb-6x;
+  }
+
+  table th {
+    text-align: left;
+  }
+
+  table th, table td {
+    vertical-align: top;
+  }
+
+  table tr {
+    border-bottom: 1px solid $color-light-grey;
+  }
+
+  table th,
+  table td {
+    @extend %pt-1x;
+    @extend %pb-1x;
+  }
+
+  table th:not(:last-of-type),
+  table tr td:not(:last-of-type) {
+    @extend %pr-4x;
+  }
+}

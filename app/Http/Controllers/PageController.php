@@ -41,6 +41,26 @@ class PageController extends BaseController
   }
 
   /**
+   * Show the privacy page
+   *
+   * @return \Illuminate\Http\Response
+   */
+  public function privacy()
+  {
+    return view($this->viewPath . 'privacy.privacy');
+  }
+
+  /**
+   * Show the cookies page
+   *
+   * @return \Illuminate\Http\Response
+   */
+  public function cookies()
+  {
+    return view($this->viewPath . 'privacy.cookies');
+  }
+
+  /**
    * Show the app
    *
    * @return \Illuminate\Http\Response

@@ -1,14 +1,27 @@
 <footer class="site-footer">
   <div>
     <div class="sm:flex justify-between md:grid-cols-12">
-      <div class="site-footer__item md:span-4">
+      <div class="site-footer__item md:span-3">
         <h3>FERRATEC TECHNICS AG</h3>
         <p>Grossmattstrasse 19<br>8964 Rudolfstetten<br>{{ __('Telefon') }} +41 56 649 21 21<br>{{ __('Fax') }} +41 56 649 21 41</p>
         <p><a href="mailto:info@ferratec.ch" target="_blank" title="Get in touch info@ferratec.ch">info@ferratec.ch</a></p>
       </div>
-      <div class="site-footer__item md:span-6">
+      <div class="site-footer__item md:span-3">
         <h3>{{ __('Öffnungszeiten') }}</h3>
         <p>{{ __('Montag bis Freitag') }}<br>{{ __('07.30 – 12.00 Uhr') }}<br>{{ __('13.00 – 17.00 Uhr') }}</p>
+      </div>
+      <div class="site-footer__item md:span-4">
+        <h3>{{ __('Datenschutz & Cookies') }}</h3>
+        <nav class="meta">
+          <ul>
+            <li>
+              <a href="{{localized_route('page.privacy')}}" title="{{ __('Datenschutzerklärung') }}">{{ __('Datenschutzerklärung') }}</a>
+            </li>
+            <li>
+              <a href="{{localized_route('page.cookies')}}" title="{{ __('Cookies') }}">{{ __('Cookies') }}</a>
+            </li>
+          </ul>
+        </nav>
       </div>
       <div class="site-footer__item md:span-2">
         <h3>{{ __('Unternehmen') }}</h3>
