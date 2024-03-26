@@ -5,5 +5,4 @@
     <app-component />
   </div>
 </main>
-
 @endsection
