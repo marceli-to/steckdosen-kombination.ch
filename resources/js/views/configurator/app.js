@@ -1,16 +1,17 @@
 require('@/bootstrap');
 
 // Vue
-window.Vue = require('vue');
-
-// Axios Interceptors
-require('vue-axios-interceptors');
+import Vue from 'vue';
+window.Vue = Vue;
 
 // Axios, Vue-Axios
 import VueAxios from 'vue-axios';
 import axios from 'axios';
 window.axios = require('axios');
 Vue.use(VueAxios, axios);
+
+// Axios Interceptors
+require('vue-axios-interceptors');
 
 // Filters
 require('@/mixins/Filters');
@@ -25,33 +26,13 @@ Vue.use(Notifications);
 // Store
 import store from '@/config/store';
 
-// Vue-Router
-import VueRouter from 'vue-router';
-Vue.use(VueRouter);
-
-// Routes
-import baseRoutes from '@/config/routes';
-
-const router = new VueRouter(
-  { 
-    mode: 'history', 
-    routes: [
-      ...baseRoutes,
-    ]
-  }
-);
-
-// App component
-import AppComponent from '@/App.vue';
+// Import your main component - assuming your current Index.vue content
+import MainComponent from '@/views/configurator/Index.vue';
 
 // Mount App
 if (document.getElementById("app")) {
   const app = new Vue({
-    mixins: [],
-    components: { 
-      AppComponent
-    },
-    router,
-    store
+    store,
+    render: h => h(MainComponent)
   }).$mount('#app');
 }

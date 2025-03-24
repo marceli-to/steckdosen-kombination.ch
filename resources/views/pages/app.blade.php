@@ -1,8 +1,7 @@
 @extends('layout.main')
 @section('content')
-<main class="site site--app" id="app">
-  <div>
-    <app-component />
+<main class="site site--app">
+  <div id="app">
   </div>
 </main>
 @endsection
