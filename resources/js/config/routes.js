@@ -1,4 +1,4 @@
-import Configurator from '@/views/configurator/Index.vue';
+import Configurator from '@/views/mennekes/Index.vue';
 const routes = [
   {
     name: 'configurator',

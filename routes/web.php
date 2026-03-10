@@ -10,15 +10,50 @@ use App\Http\Controllers\PageController;
 |
 */
 
-Route::post('/', [PageController::class, 'index']);
-Route::get('/', [PageController::class, 'index'])->name('page.landing');
+// Product selection homepage
+Route::get('/', [PageController::class, 'home'])->name('page.home');
+Route::get('/de', [PageController::class, 'home'])->name('de.page.home');
+Route::get('/fr', [PageController::class, 'home'])->name('fr.page.home');
+Route::get('/it', [PageController::class, 'home'])->name('it.page.home');
+Route::get('/en', [PageController::class, 'home'])->name('en.page.home');
 
-Route::get('/', [PageController::class, 'index'])->name('page.landing');
-Route::get('/de', [PageController::class, 'index'])->name('de.page.landing');
-Route::get('/fr', [PageController::class, 'index'])->name('fr.page.landing');
-Route::get('/it', [PageController::class, 'index'])->name('it.page.landing');
-Route::get('/en', [PageController::class, 'index'])->name('en.page.landing');
+// Steckdosen-Kombination (existing product)
+Route::post('/steckdosen-kombination', [PageController::class, 'steckdosenKombinationLanding']);
+Route::get('/steckdosen-kombination', [PageController::class, 'steckdosenKombinationLanding'])->name('page.steckdosen-kombination');
+Route::get('/de/steckdosen-kombination', [PageController::class, 'steckdosenKombinationLanding'])->name('de.page.steckdosen-kombination');
+Route::get('/fr/steckdosen-kombination', [PageController::class, 'steckdosenKombinationLanding'])->name('fr.page.steckdosen-kombination');
+Route::get('/it/steckdosen-kombination', [PageController::class, 'steckdosenKombinationLanding'])->name('it.page.steckdosen-kombination');
+Route::get('/en/steckdosen-kombination', [PageController::class, 'steckdosenKombinationLanding'])->name('en.page.steckdosen-kombination');
+Route::post('/de/steckdosen-kombination', [PageController::class, 'steckdosenKombinationLanding']);
+Route::post('/fr/steckdosen-kombination', [PageController::class, 'steckdosenKombinationLanding']);
+Route::post('/it/steckdosen-kombination', [PageController::class, 'steckdosenKombinationLanding']);
+Route::post('/en/steckdosen-kombination', [PageController::class, 'steckdosenKombinationLanding']);
 
+Route::get('/steckdosen-kombination/app', [PageController::class, 'steckdosenKombinationApp'])->name('page.steckdosen-kombination.app');
+Route::get('/de/steckdosen-kombination/app', [PageController::class, 'steckdosenKombinationApp'])->name('de.page.steckdosen-kombination.app');
+Route::get('/fr/steckdosen-kombination/app', [PageController::class, 'steckdosenKombinationApp'])->name('fr.page.steckdosen-kombination.app');
+Route::get('/it/steckdosen-kombination/app', [PageController::class, 'steckdosenKombinationApp'])->name('it.page.steckdosen-kombination.app');
+Route::get('/en/steckdosen-kombination/app', [PageController::class, 'steckdosenKombinationApp'])->name('en.page.steckdosen-kombination.app');
+
+// Wandsteckdose DUOi (new product)
+Route::post('/wandsteckdose-duoi', [PageController::class, 'wandsteckdoseDuoiLanding']);
+Route::get('/wandsteckdose-duoi', [PageController::class, 'wandsteckdoseDuoiLanding'])->name('page.wandsteckdose-duoi');
+Route::get('/de/wandsteckdose-duoi', [PageController::class, 'wandsteckdoseDuoiLanding'])->name('de.page.wandsteckdose-duoi');
+Route::get('/fr/wandsteckdose-duoi', [PageController::class, 'wandsteckdoseDuoiLanding'])->name('fr.page.wandsteckdose-duoi');
+Route::get('/it/wandsteckdose-duoi', [PageController::class, 'wandsteckdoseDuoiLanding'])->name('it.page.wandsteckdose-duoi');
+Route::get('/en/wandsteckdose-duoi', [PageController::class, 'wandsteckdoseDuoiLanding'])->name('en.page.wandsteckdose-duoi');
+Route::post('/de/wandsteckdose-duoi', [PageController::class, 'wandsteckdoseDuoiLanding']);
+Route::post('/fr/wandsteckdose-duoi', [PageController::class, 'wandsteckdoseDuoiLanding']);
+Route::post('/it/wandsteckdose-duoi', [PageController::class, 'wandsteckdoseDuoiLanding']);
+Route::post('/en/wandsteckdose-duoi', [PageController::class, 'wandsteckdoseDuoiLanding']);
+
+Route::get('/wandsteckdose-duoi/app', [PageController::class, 'wandsteckdoseDuoiApp'])->name('page.wandsteckdose-duoi.app');
+Route::get('/de/wandsteckdose-duoi/app', [PageController::class, 'wandsteckdoseDuoiApp'])->name('de.page.wandsteckdose-duoi.app');
+Route::get('/fr/wandsteckdose-duoi/app', [PageController::class, 'wandsteckdoseDuoiApp'])->name('fr.page.wandsteckdose-duoi.app');
+Route::get('/it/wandsteckdose-duoi/app', [PageController::class, 'wandsteckdoseDuoiApp'])->name('it.page.wandsteckdose-duoi.app');
+Route::get('/en/wandsteckdose-duoi/app', [PageController::class, 'wandsteckdoseDuoiApp'])->name('en.page.wandsteckdose-duoi.app');
+
+// Privacy & Cookies
 Route::get('/de/datenschutzerklaerung', [PageController::class, 'privacy'])->name('de.page.privacy');
 Route::get('/fr/declaration-de-protection-des-donnees', [PageController::class, 'privacy'])->name('fr.page.privacy');
 Route::get('/it/informativa-sulla-privacy', [PageController::class, 'privacy'])->name('it.page.privacy');
@@ -29,10 +64,9 @@ Route::get('/fr/cookies', [PageController::class, 'cookies'])->name('fr.page.coo
 Route::get('/it/cookies', [PageController::class, 'cookies'])->name('it.page.cookies');
 Route::get('/en/cookies', [PageController::class, 'cookies'])->name('en.page.cookies');
 
-Route::get('/app', [PageController::class, 'app'])->name('page.app');
-Route::get('/de/app', [PageController::class, 'app'])->name('de.page.app');
-Route::get('/fr/app', [PageController::class, 'app'])->name('fr.page.app');
-Route::get('/it/app', [PageController::class, 'app'])->name('it.page.app');
-Route::get('/en/app', [PageController::class, 'app'])->name('en.page.app');
-
-// Route::get('/update-product-form-data', [PageController::class, 'updateFormData']);
+// 301 Redirects (old routes)
+Route::get('/app', function () { return redirect('/steckdosen-kombination/app', 301); });
+Route::get('/de/app', function () { return redirect('/de/steckdosen-kombination/app', 301); });
+Route::get('/fr/app', function () { return redirect('/fr/steckdosen-kombination/app', 301); });
+Route::get('/it/app', function () { return redirect('/it/steckdosen-kombination/app', 301); });
+Route::get('/en/app', function () { return redirect('/en/steckdosen-kombination/app', 301); });

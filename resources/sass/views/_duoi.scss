@@ -1,0 +1,164 @@
+/**
+ * -----------------------------------------------------------------------------
+ * File: views/duoi
+ * -----------------------------------------------------------------------------
+ */
+
+/** DUOi Selector overrides **/
+.selector--duoi {
+
+  &.is-mobile {
+    height: 620px;
+    max-width: 320px;
+
+    > img {
+      display: block;
+      height: 590px;
+      width: 320px;
+      margin: 0 auto;
+    }
+  }
+
+  &.is-tablet {
+    height: 480px;
+    width: 480px;
+
+    @include bp-lg() {
+      height: 590px;
+      width: 590px;
+    }
+  }
+}
+
+/** DUOi pointer positions – mobile **/
+.selector--duoi.is-mobile {
+
+  .selector__pointer.is-volt {
+    left: 10px;
+    top: 80px;
+
+    .select {
+      height: 38px;
+      width: 100px;
+    }
+  }
+
+  .selector__pointer.is-ampere {
+    left: 10px;
+    top: 200px;
+
+    .select {
+      height: 38px;
+      width: 110px;
+    }
+  }
+
+  .selector__pointer.is-pole {
+    right: 10px;
+    top: 80px;
+
+    .select {
+      height: 38px;
+      width: 100px;
+    }
+  }
+
+  .selector__pointer.is-schutzart {
+    right: 10px;
+    top: 200px;
+
+    .select {
+      height: 38px;
+      width: 120px;
+    }
+  }
+
+  .selector__pointer.is-hilfskontakt {
+    right: 10px;
+    top: 320px;
+
+    .select {
+      height: 38px;
+      width: 140px;
+    }
+  }
+}
+
+/** DUOi pointer positions – tablet / desktop **/
+.selector--duoi.is-tablet {
+
+  .selector__pointer.is-volt {
+    left: -10px;
+    top: 80px;
+
+    .select {
+      height: 38px;
+      width: 100px;
+    }
+
+    @include bp-lg() {
+      left: -10px;
+      top: 100px;
+    }
+  }
+
+  .selector__pointer.is-ampere {
+    left: -10px;
+    top: 200px;
+
+    .select {
+      height: 38px;
+      width: 110px;
+    }
+
+    @include bp-lg() {
+      left: -10px;
+      top: 250px;
+    }
+  }
+
+  .selector__pointer.is-pole {
+    right: -10px;
+    top: 80px;
+
+    .select {
+      height: 38px;
+      width: 100px;
+    }
+
+    @include bp-lg() {
+      right: -10px;
+      top: 100px;
+    }
+  }
+
+  .selector__pointer.is-schutzart {
+    right: -10px;
+    top: 200px;
+
+    .select {
+      height: 38px;
+      width: 130px;
+    }
+
+    @include bp-lg() {
+      right: -10px;
+      top: 250px;
+    }
+  }
+
+  .selector__pointer.is-hilfskontakt {
+    right: -10px;
+    top: 320px;
+
+    .select {
+      height: 38px;
+      width: 150px;
+    }
+
+    @include bp-lg() {
+      right: -10px;
+      top: 400px;
+    }
+  }
+}

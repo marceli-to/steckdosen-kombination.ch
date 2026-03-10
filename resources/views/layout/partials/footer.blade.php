@@ -47,6 +47,7 @@
 <script src="{{ mix('assets/js/language.js') }}" type="text/javascript"></script>
 <script src="{{ mix('assets/js/form.js') }}"></script>
 <script src="{{ mix('assets/js/app.js') }}" defer></script>
+<script src="{{ mix('assets/js/duoi.js') }}" defer></script>
 <script>
   var _paq = window._paq = window._paq || [];
   _paq.push(['trackPageView']);

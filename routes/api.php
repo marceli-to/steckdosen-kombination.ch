@@ -1,7 +1,8 @@
 <?php
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\Api\ProductController;
+use App\Http\Controllers\Api\MennekesProductController;
+use App\Http\Controllers\Api\DuoiProductController;
 use App\Http\Controllers\Api\TrainingSubscriberController;
 
 
@@ -16,6 +17,9 @@ use App\Http\Controllers\Api\TrainingSubscriberController;
 |
 */
 
-Route::post('products/filter', [ProductController::class, 'filter']);
-Route::get('products/filter', [ProductController::class, 'getFilterOptions']);
+Route::post('products/filter', [MennekesProductController::class, 'filter']);
+Route::get('products/filter', [MennekesProductController::class, 'getFilterOptions']);
 Route::post('training/register', [TrainingSubscriberController::class, 'store']);
+
+Route::post('duoi/filter', [DuoiProductController::class, 'filter']);
+Route::get('duoi/filter', [DuoiProductController::class, 'getFilterOptions']);

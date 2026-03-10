@@ -26,13 +26,13 @@ Vue.use(Notifications);
 // Store
 import store from '@/config/store';
 
-// Import your main component - assuming your current Index.vue content
-import MainComponent from '@/views/configurator/Index.vue';
+// Import main component
+import MainComponent from '@/views/duoi/Index.vue';
 
 // Mount App
-if (document.getElementById("app")) {
+if (document.getElementById("duoi-app")) {
   const app = new Vue({
     store,
     render: h => h(MainComponent)
-  }).$mount('#app');
+  }).$mount('#duoi-app');
 }

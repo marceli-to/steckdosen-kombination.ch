@@ -1,43 +1,18 @@
 <?php
-namespace App\Console\Commands;
-use App\Models\Product;
+namespace App\Console\Commands\Mennekes;
+use App\Models\MennekesProduct;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Console\Command;
 
 class UpdateFormdata extends Command
 {
-  /**
-   * The name and signature of the console command.
-   *
-   * @var string
-   */
-  protected $signature = 'update:formdata';
+  protected $signature = 'mennekes:update-formdata';
 
-  /**
-   * The console command description.
-   *
-   * @var string
-   */
-  protected $description = 'Updates the formdata columns in the products table';
+  protected $description = 'Updates the formdata columns in the mennekes_products table';
 
-  /**
-   * Create a new command instance.
-   *
-   * @return void
-   */
-  public function __construct()
-  {
-    parent::__construct();
-  }
-
-  /**
-   * Execute the console command.
-   *
-   * @return int
-   */
   public function handle()
   {
-    $products = Product::all();
+    $products = MennekesProduct::all();
     foreach ($products as $product)
     {
       // Formdata

@@ -26,5 +26,6 @@ mix.webpackConfig({
 // Web
 mix.sass('resources/sass/app.scss', 'public/assets/css/app.css').options({processCssUrls: false}).version();
 mix.js('resources/js/modules/language.js', 'public/assets/js/language.js').version();
-mix.js('resources/js/views/configurator/app.js', 'public/assets/js/app.js').version();
+mix.js('resources/js/views/mennekes/app.js', 'public/assets/js/app.js').version();
+mix.js('resources/js/views/duoi/app.js', 'public/assets/js/duoi.js').version();
 mix.js('resources/js/views/training/app.js', 'public/assets/js/form.js').version();

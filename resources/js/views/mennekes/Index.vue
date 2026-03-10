@@ -431,19 +431,19 @@ import NProgress from 'nprogress';
 import ErrorHandling from "@/mixins/ErrorHandling";
 import Helpers from "@/mixins/Helpers";
 import i18n from "@/mixins/i18n";
-import ConfiguratorWrapper from '@/views/configurator/components/layout/Wrapper.vue';
-import ConfiguratorHeader from '@/views/configurator/components/layout/Header.vue';
-import ConfiguratorFilter from '@/views/configurator/components/layout/Filter.vue';
-import ConfiguratorResult from '@/views/configurator/components/layout/Result.vue';
-import FilterItem from '@/views/configurator/components/form/FilterItem.vue';
-import IconFiLs from '@/views/configurator/components/icons/fi_ls.vue';
-import IconLsSwitch from '@/views/configurator/components/icons/ls_switch.vue';
-import IconCee16a3p from '@/views/configurator/components/icons/cee_16a_3p.vue';
-import IconCh16at25 from '@/views/configurator/components/icons/ch_16a_t25.vue';
-import IconDataPorts from '@/views/configurator/components/icons/data_ports.vue';
-import IconFiSwitch from '@/views/configurator/components/icons/fi_switch.vue';
-import IconCh16at23 from '@/views/configurator/components/icons/ch_16a_t23.vue';
-import IconCee63a32a16a5p from '@/views/configurator/components/icons/cee_63a_32a_16a_5p.vue';
+import ConfiguratorWrapper from '@/components/layout/Wrapper.vue';
+import ConfiguratorHeader from '@/components/layout/Header.vue';
+import ConfiguratorFilter from '@/components/layout/Filter.vue';
+import ConfiguratorResult from '@/components/layout/Result.vue';
+import FilterItem from '@/components/form/FilterItem.vue';
+import IconFiLs from '@/views/mennekes/components/icons/fi_ls.vue';
+import IconLsSwitch from '@/views/mennekes/components/icons/ls_switch.vue';
+import IconCee16a3p from '@/views/mennekes/components/icons/cee_16a_3p.vue';
+import IconCh16at25 from '@/views/mennekes/components/icons/ch_16a_t25.vue';
+import IconDataPorts from '@/views/mennekes/components/icons/data_ports.vue';
+import IconFiSwitch from '@/views/mennekes/components/icons/fi_switch.vue';
+import IconCh16at23 from '@/views/mennekes/components/icons/ch_16a_t23.vue';
+import IconCee63a32a16a5p from '@/views/mennekes/components/icons/cee_63a_32a_16a_5p.vue';
 
 export default {
 

@@ -1,0 +1,65 @@
+/**
+ * -----------------------------------------------------------------------------
+ * File: views/home
+ * -----------------------------------------------------------------------------
+ */
+
+.home {
+  @extend %pt-10x;
+  @extend %sm\:pt-16x;
+  @extend %pb-10x;
+  @extend %sm\:pb-16x;
+  max-width: 900px;
+  margin: 0 auto;
+
+  &__intro {
+    text-align: center;
+    @extend %mb-10x;
+    @extend %sm\:mb-16x;
+  }
+
+  &__products {
+    @extend %sm\:flex;
+    gap: 2rem;
+    justify-content: center;
+  }
+
+  &__product-card {
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    color: inherit;
+    border: 2px solid #e5e5e5;
+    border-radius: 8px;
+    padding: 2rem;
+    flex: 1;
+    transition: border-color 0.2s, box-shadow 0.2s;
+    @extend %mb-6x;
+
+    @include bp-sm() {
+      margin-bottom: 0;
+    }
+
+    &:hover {
+      border-color: $color-green;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    figure {
+      @extend %mb-6x;
+
+      img {
+        max-width: 100%;
+        height: auto;
+      }
+    }
+
+    h2 {
+      @extend %mb-2x;
+    }
+
+    p {
+      @extend %mb-6x;
+    }
+  }
+}

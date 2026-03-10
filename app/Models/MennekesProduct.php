@@ -5,9 +5,11 @@ use Illuminate\Database\Eloquent\Model;
 use Spatie\Translatable\HasTranslations;
 use App\Models\Base;
 
-class Product extends Base
+class MennekesProduct extends Base
 {
   use HasFactory, HasTranslations;
+
+  protected $table = 'mennekes_products';
 
   public $translatable = ['title'];
 

@@ -2,10 +2,10 @@
 namespace App\Http\Controllers\Api;
 use App\Http\Controllers\Controller;
 use App\Http\Resources\DataCollection;
-use App\Models\Product;
+use App\Models\MennekesProduct;
 use Illuminate\Http\Request;
 
-class ProductController extends Controller
+class MennekesProductController extends Controller
 {
   protected $filter_options = [
     'fi_ls'      => [],
@@ -39,14 +39,14 @@ class ProductController extends Controller
         $matches[] = [$key, '>=', $value];
       }
     }
-    
-    $products = Product::active()->where($matches)->orderBy('eldas_number', 'DESC')->get();
+
+    $products = MennekesProduct::active()->where($matches)->orderBy('eldas_number', 'DESC')->get();
     $this->getFilterOptions(TRUE, $matches);
-    
+
     return response()->json(
       [
-        'products' => $products, 
-        'filter_options' => $this->filter_options, 
+        'products' => $products,
+        'filter_options' => $this->filter_options,
         'api_connection' => session()->has('api_connection_data') ? session('api_connection_data') : null,
         'api_client' => session()->has('api_client') ? session('api_client') : null
       ]
@@ -59,7 +59,7 @@ class ProductController extends Controller
 
   public function getFilterOptions($isQuery = FALSE, $matches = [])
   {
-    $products = $isQuery && !empty($matches) ? Product::active()->where($matches)->orderBy('eldas_number', 'DESC')->get() : Product::active()->orderBy('eldas_number', 'DESC')->get();
+    $products = $isQuery && !empty($matches) ? MennekesProduct::active()->where($matches)->orderBy('eldas_number', 'DESC')->get() : MennekesProduct::active()->orderBy('eldas_number', 'DESC')->get();
 
     // Loops over resulting products and set new filter options
     foreach($products as $product)
@@ -97,7 +97,7 @@ class ProductController extends Controller
       // {
       //   $this->filter_options['fi_switch'][] = $product->fi_switch;
       // }
-      
+
       if (!in_array($product->fi_40a_63a, $this->filter_options['fi_40a_63a']) && $product->fi_40a_63a != 0)
       {
         $this->filter_options['fi_40a_63a'][] = $product->fi_40a_63a;

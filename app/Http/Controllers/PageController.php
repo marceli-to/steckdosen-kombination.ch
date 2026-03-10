@@ -1,7 +1,7 @@
 <?php
 namespace App\Http\Controllers;
 use App\Http\Controllers\BaseController;
-use App\Models\Product;
+use App\Models\MennekesProduct;
 use Illuminate\Http\Request;
 
 class PageController extends BaseController
@@ -14,15 +14,18 @@ class PageController extends BaseController
   }
 
   /**
-   * Show the homepage
-   *
-   * @param  \Illuminate\Http\Request $request
-   * @return \Illuminate\Http\Response
+   * Show the product selection homepage
    */
-
-  public function index(Request $request)
+  public function home()
   {
-    // Save request data from wholesale shop / elbridge
+    return view($this->viewPath . 'home');
+  }
+
+  /**
+   * Show the Steckdosen-Kombination landing page
+   */
+  public function steckdosenKombinationLanding(Request $request)
+  {
     $data = [];
     session()->flush();
     session()->regenerate();
@@ -37,13 +40,49 @@ class PageController extends BaseController
       }
       session(['api_connection_data' => $data]);
     }
-    return view($this->viewPath . 'landing');
+    return view($this->viewPath . 'steckdosen-kombination.landing');
+  }
+
+  /**
+   * Show the Steckdosen-Kombination configurator app
+   */
+  public function steckdosenKombinationApp()
+  {
+    return view($this->viewPath . 'steckdosen-kombination.app');
+  }
+
+  /**
+   * Show the Wandsteckdose DUOi landing page
+   */
+  public function wandsteckdoseDuoiLanding(Request $request)
+  {
+    $data = [];
+    session()->flush();
+    session()->regenerate();
+
+    session(['api_client' => env('SUBDOMAIN_KEY')]);
+
+    if ($request->all())
+    {
+      foreach($request->all() as $key => $value)
+      {
+        $data[$key] = $value;
+      }
+      session(['api_connection_data' => $data]);
+    }
+    return view($this->viewPath . 'wandsteckdose-duoi.landing');
+  }
+
+  /**
+   * Show the Wandsteckdose DUOi configurator app
+   */
+  public function wandsteckdoseDuoiApp()
+  {
+    return view($this->viewPath . 'wandsteckdose-duoi.app');
   }
 
   /**
    * Show the privacy page
-   *
-   * @return \Illuminate\Http\Response
    */
   public function privacy()
   {
@@ -52,22 +91,9 @@ class PageController extends BaseController
 
   /**
    * Show the cookies page
-   *
-   * @return \Illuminate\Http\Response
    */
   public function cookies()
   {
     return view($this->viewPath . 'privacy.cookies');
   }
-
-  /**
-   * Show the app
-   *
-   * @return \Illuminate\Http\Response
-   */
-  public function app()
-  {
-    return view($this->viewPath . 'app');
-  }
-
 }
