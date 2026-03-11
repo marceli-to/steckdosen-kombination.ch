@@ -18,7 +18,7 @@
         </a>
         <a href="{{ route(app()->getLocale() . '.page.wandsteckdose-duoi') }}" class="home__product-card">
           <figure>
-            <img src="/assets/img/wandsteckdose-duoi.png" width="300" height="300" alt="Wandsteckdose DUOi">
+            <img src="/assets/img/wandsteckdose-duoi-preview.png" width="300" height="300" alt="Wandsteckdose DUOi">
           </figure>
           <h2>{{ __('Wandsteckdose DUOi') }}</h2>
           <p>{{ __('Wandsteckdosen DUOi nach Ihren Anforderungen filtern.') }}</p>
