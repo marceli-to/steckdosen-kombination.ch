@@ -1,5 +1,4 @@
 <?php
-
 return [
   'env_stub' => '.env',
   'storage_dirs' => [
@@ -21,8 +20,11 @@ return [
     ],
   ],
   'domains' => [
+    'em.steckdosen-kombination.ch' => 'em.steckdosen-kombination.ch',
     'em.steckdosen-kombination.ch.local' => 'em.steckdosen-kombination.ch.local',
+    'saesseli.steckdosen-kombination.ch' => 'saesseli.steckdosen-kombination.ch',
     'saesseli.steckdosen-kombination.ch.local' => 'saesseli.steckdosen-kombination.ch.local',
+    'sonepar.steckdosen-kombination.ch' => 'sonepar.steckdosen-kombination.ch',
     'sonepar.steckdosen-kombination.ch.local' => 'sonepar.steckdosen-kombination.ch.local',
   ],
- ];
+];
