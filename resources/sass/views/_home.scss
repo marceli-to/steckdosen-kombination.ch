@@ -19,8 +19,9 @@
   }
 
   &__products {
+    @extend %px-4x;
     @extend %sm\:flex;
-    gap: 2rem;
+    gap: 3rem;
     justify-content: center;
   }
 
@@ -29,7 +30,7 @@
     text-align: center;
     text-decoration: none;
     color: inherit;
-    border: 2px solid #e5e5e5;
+    border: 1px solid $color-light-grey;
     border-radius: 8px;
     padding: 2rem;
     flex: 1;
@@ -41,8 +42,8 @@
     }
 
     &:hover {
+      background-color: rgba($color-green, 0.1);
       border-color: $color-green;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     }
 
     figure {
@@ -61,5 +62,14 @@
     p {
       @extend %mb-6x;
     }
+  }
+
+  h2 {
+    @include font-bold();
+    @include font-size($fs-md);
+  }
+
+  p {
+    text-wrap: balance;
   }
 }

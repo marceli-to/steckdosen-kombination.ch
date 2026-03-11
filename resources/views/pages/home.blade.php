@@ -14,7 +14,7 @@
           </figure>
           <h2>{{ __('Steckdosen-Kombination') }}</h2>
           <p>{{ __('Wand- und Stromverteiler AMAXX® und EverGUM konfigurieren.') }}</p>
-          <span class="btn-cta">{{ __('Konfigurator starten') }}</span>
+          <span class="btn-cta">{{ __('Produkt auswählen') }}</span>
         </a>
         <a href="{{ route(app()->getLocale() . '.page.wandsteckdose-duoi') }}" class="home__product-card">
           <figure>
@@ -22,7 +22,7 @@
           </figure>
           <h2>{{ __('Wandsteckdose DUOi') }}</h2>
           <p>{{ __('Wandsteckdosen DUOi nach Ihren Anforderungen filtern.') }}</p>
-          <span class="btn-cta">{{ __('Konfigurator starten') }}</span>
+          <span class="btn-cta">{{ __('Produkt auswählen') }}</span>
         </a>
       </div>
     </div>

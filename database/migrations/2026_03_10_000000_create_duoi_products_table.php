@@ -15,10 +15,6 @@ return new class extends Migration
             $table->string('ean_number')->nullable();
             $table->string('number')->nullable();
             $table->json('title')->nullable();
-            $table->string('gehaeuse')->nullable();
-            $table->string('fabrikat')->nullable();
-            $table->string('kategorie')->nullable();
-            $table->string('beschreibung')->nullable();
             $table->string('volt')->nullable();
             $table->string('ampere')->nullable();
             $table->string('pole')->nullable();
