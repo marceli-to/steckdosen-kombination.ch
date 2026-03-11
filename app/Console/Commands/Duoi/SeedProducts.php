@@ -41,6 +41,8 @@ class SeedProducts extends Command
       ['number' => '5614506H', 'title' => 'Wandsteckdose DUOi 32A5P 6H400V IP67/IP69 1HC',  'ampere' => '32A', 'pole' => '5', 'volt' => '400V', 'schutzart' => 'IP67/IP69', 'hilfskontakt' => 'Ja'],
     ];
 
+    DuoiProduct::truncate();
+
     foreach ($products as $p)
     {
       DuoiProduct::create([
@@ -58,7 +60,7 @@ class SeedProducts extends Command
         'uvp_egh'             => rand(120, 500) + (rand(0, 99) / 100),
         'uvp_installateur'    => rand(150, 600) + (rand(0, 99) / 100),
         'publish'             => 1,
-        'has_image'           => 1,
+        'has_image'           => 0,
       ]);
 
       $this->line('Created: ' . $p['number'] . ' – ' . $p['title']);

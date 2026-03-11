@@ -181,7 +181,7 @@
             :alt="result.number"
             v-if="result.has_image">
             <img
-              :src="`/assets/img/products/placeholder.png`"
+              :src="`/assets/img/products/duoi.png`"
               width="512"
               height="512"
               :alt="result.number"

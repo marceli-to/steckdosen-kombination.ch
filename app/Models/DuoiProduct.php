@@ -48,6 +48,6 @@ class DuoiProduct extends Base
 
   public function scopeActive($query)
   {
-    return $query->where('publish', 1)->where('has_image', 1);
+    return $query->where('publish', 1);
   }
 }
