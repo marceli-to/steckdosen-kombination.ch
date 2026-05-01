@@ -13,7 +13,8 @@
       "Bash(php artisan list mennekes 2>&1)",
       "Bash(php artisan duoi:seed-products 2>&1)",
       "Bash(git add app/Console/Commands/Duoi/ app/Console/Commands/Mennekes/ app/Http/Controllers/Api/DuoiProductController.php app/Http/Controllers/Api/MennekesProductController.php app/Models/DuoiProduct.php app/Models/MennekesProduct.php database/migrations/2026_03_10_000000_create_duoi_products_table.php database/migrations/2026_03_10_000001_rename_products_to_mennekes_products_table.php public/assets/img/wandsteckdose-duoi.png public/assets/js/duoi.js resources/js/components/ resources/js/views/duoi/ resources/js/views/mennekes/ resources/sass/views/_duoi.scss resources/sass/views/_home.scss resources/views/pages/home.blade.php resources/views/pages/steckdosen-kombination/ resources/views/pages/wandsteckdose-duoi/ app/Console/Commands/DeleteProducts.php app/Console/Commands/ImportEan.php app/Console/Commands/ImportShopurls.php app/Console/Commands/ImportTranslations.php app/Console/Commands/UpdateFormdata.php app/Http/Controllers/Api/ProductController.php app/Http/Controllers/PageController.php app/Models/Product.php package-lock.json public/assets/css/app.css public/assets/js/app.js public/assets/js/form.js public/assets/js/language.js public/mix-manifest.json resources/js/config/routes.js resources/js/mixins/i18n.js resources/js/views/configurator/ resources/sass/app.scss resources/views/layout/partials/footer.blade.php resources/views/layout/partials/header.blade.php routes/api.php routes/web.php webpack.mix.js yarn.lock)",
-      "Bash(git push)"
+      "Bash(git push)",
+      "Bash(php artisan:*)"
     ]
   }
 }
