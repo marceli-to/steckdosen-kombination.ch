@@ -146,9 +146,9 @@
   }
 }
 
-/** CEE 63A 5P, 32A 5P, 16A 5P **/
-.selector__pointer.is-cee_63a_32a_16a_5p {
-  height: 138px;
+/** CEE 125A, 63A, 63A 5P, 32A 5P, 16A 5P **/
+.selector__pointer.is-cee_125a_63a_32a_16a_5p {
+  height: 240px;
   left: 64px;
   top: 388px;
   width: 222px;
@@ -165,14 +165,22 @@
   .select {
     left: -12px;
     height: 38px;
-    top: -4px;
+    top: -42px;
     width: 144px;
-    
+
     + .select {
-      top: 8px;
+      top: -30px;
 
       + .select {
-        top: 20px;
+        top: -18px;
+
+        + .select {
+          top: -6px;
+
+          + .select {
+            top: 6px;
+          }
+        }
       }
     }
   }
@@ -184,7 +192,7 @@
 
   @include bp-lg() {
     left: 325px;
-    top: 386px;
+    top: 337px;
   }
 }
 

@@ -9,15 +9,8 @@
     <div class="sm:span-8 md:span-9">
       <h1>{{ __('Wandsteckdose DUOi – Finden Sie das passende Produkt.') }}</h1>
       <p>
-        <strong>{{ __('Filtern Sie die Wandsteckdosen DUOi nach Ihren Anforderungen und finden Sie schnell das richtige Produkt.') }}</strong>
+        {{ __('Die abschaltbar-verriegelte Wandsteckdose DUOi sorgt für eine sichere und zuverlässige Stromversorgung in anspruchsvollen Industrieumgebungen – für reibungslose und effiziente Abläufe rund um die Uhr. Die überarbeitete Generation überzeugt mit starken neuen Features und bewährter Qualität im täglichen Einsatz.') }}
       </p>
-      <ul class="list-checkmark mb-10x sm:mb-16x">
-        <li>{{ __('Bestellpositionen direkt im Shop eingegeben') }}
-        <li>{{ __('Webbasiert und daher immer aktuell') }}</li>
-        <li>{{ __('Keine Software-Installation notwendig') }}</li>
-        <li>{{ __('Nutzbar auf PC, Tablet und Handy') }}</li>
-        <li>{{ __('Lager und Verfügbarkeit sofort ersichtlich') }}</li>
-      </ul>
     </div>
   </article>
 </section>

@@ -109,7 +109,7 @@
               <icon-ch16at25 />
             </template>
           </filter-item>
-          <filter-item :attr="'cee_63a_32a_16a_5p'" :class="[!filter_options.cee_63a_5p && !filter_options.cee_32a_5p && !filter_options.cee_16a_5p ? 'is-disabled' : '']">
+          <filter-item :attr="'cee_125a_63a_32a_16a_5p'" :class="[!filter_options.cee_125a && !filter_options.cee_63a && !filter_options.cee_63a_5p && !filter_options.cee_32a_5p && !filter_options.cee_16a_5p ? 'is-disabled' : '']">
             <template v-slot:select>
               <div>
                 <div :class="[{'is-selected': selected('cee_16a_5p')}, {'is-disabled': !filter_options.cee_16a_5p}, 'select']">
@@ -133,10 +133,24 @@
                   </select>
                   <label class="is-right">CEE 63A 5P</label>
                 </div>
+                <div :class="[{'is-selected': selected('cee_63a')}, {'is-disabled': !filter_options.cee_63a}, 'select']">
+                  <select v-model="filter_items.cee_63a" @change="filter()">
+                    <option value="null">CEE 63A</option>
+                    <option :value="o" v-for="(o,i) in filter_options.cee_63a" :key="i">{{o}}</option>
+                  </select>
+                  <label class="is-right">CEE 63A</label>
+                </div>
+                <div :class="[{'is-selected': selected('cee_125a')}, {'is-disabled': !filter_options.cee_125a}, 'select']">
+                  <select v-model="filter_items.cee_125a" @change="filter()">
+                    <option value="null">CEE 125A</option>
+                    <option :value="o" v-for="(o,i) in filter_options.cee_125a" :key="i">{{o}}</option>
+                  </select>
+                  <label class="is-right">CEE 125A</label>
+                </div>
               </div>
             </template>
             <template v-slot:icon-before>
-              <icon-cee63a32a16a5p />
+              <icon-cee125a63a32a16a5p />
             </template>
           </filter-item>
         </div>
@@ -228,7 +242,7 @@
             <icon-ls-switch />
           </template>
         </filter-item>
-        <filter-item :attr="'cee_63a_32a_16a_5p'" :class="[!filter_options.cee_63a_5p && !filter_options.cee_32a_5p && !filter_options.cee_16a_5p ? 'is-disabled' : '']">
+        <filter-item :attr="'cee_125a_63a_32a_16a_5p'" :class="[!filter_options.cee_125a && !filter_options.cee_63a && !filter_options.cee_63a_5p && !filter_options.cee_32a_5p && !filter_options.cee_16a_5p ? 'is-disabled' : '']">
           <template v-slot:select>
             <div>
               <div :class="[{'is-selected': selected('cee_16a_5p')}, {'is-disabled': !filter_options.cee_16a_5p}, 'select']">
@@ -252,10 +266,24 @@
                 </select>
                 <label class="is-right">CEE 63A 5P</label>
               </div>
+              <div :class="[{'is-selected': selected('cee_63a')}, {'is-disabled': !filter_options.cee_63a}, 'select']">
+                <select v-model="filter_items.cee_63a" @change="filter()">
+                  <option value="null">CEE 63A</option>
+                  <option :value="o" v-for="(o,i) in filter_options.cee_63a" :key="i">{{o}}</option>
+                </select>
+                <label class="is-right">CEE 63A</label>
+              </div>
+              <div :class="[{'is-selected': selected('cee_125a')}, {'is-disabled': !filter_options.cee_125a}, 'select']">
+                <select v-model="filter_items.cee_125a" @change="filter()">
+                  <option value="null">CEE 125A</option>
+                  <option :value="o" v-for="(o,i) in filter_options.cee_125a" :key="i">{{o}}</option>
+                </select>
+                <label class="is-right">CEE 125A</label>
+              </div>
             </div>
           </template>
           <template v-slot:icon-before>
-            <icon-cee63a32a16a5p />
+            <icon-cee125a63a32a16a5p />
           </template>
         </filter-item>
         <filter-item :attr="'data_ports'" :class="[!filter_options.data_ports ? 'is-disabled' : '']">
@@ -443,7 +471,7 @@ import IconCh16at25 from '@/views/mennekes/components/icons/ch_16a_t25.vue';
 import IconDataPorts from '@/views/mennekes/components/icons/data_ports.vue';
 import IconFiSwitch from '@/views/mennekes/components/icons/fi_switch.vue';
 import IconCh16at23 from '@/views/mennekes/components/icons/ch_16a_t23.vue';
-import IconCee63a32a16a5p from '@/views/mennekes/components/icons/cee_63a_32a_16a_5p.vue';
+import IconCee125a63a32a16a5p from '@/views/mennekes/components/icons/cee_125a_63a_32a_16a_5p.vue';
 
 export default {
 
@@ -461,7 +489,7 @@ export default {
     IconDataPorts,
     IconFiSwitch,
     IconCh16at23,
-    IconCee63a32a16a5p
+    IconCee125a63a32a16a5p
   },
   
   mixins: [ErrorHandling, Helpers, i18n],
@@ -481,6 +509,8 @@ export default {
         cee_63a_5p: null,
         cee_32a_5p: null,
         cee_16a_5p: null,
+        cee_63a: null,
+        cee_125a: null,
       },
 
       // Results
@@ -554,6 +584,8 @@ export default {
         cee_63a_5p: null,
         cee_32a_5p: null,
         cee_16a_5p: null,
+        cee_63a: null,
+        cee_125a: null,
       };
       this.filter_options = this.default_filter_options;
       this.filter_results = [];

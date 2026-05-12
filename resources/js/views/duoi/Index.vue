@@ -175,7 +175,7 @@
       <div v-for="result in filter_results" :key="result.id" class="product">
         <figure>
           <img
-            :src="`/assets/img/duoi-products/${result.number}.jpg`"
+            :src="`/assets/img/products/${result.number}.jpg`"
             width="512"
             height="512"
             :alt="result.number"

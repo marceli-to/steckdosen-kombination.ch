@@ -20,6 +20,8 @@ class MennekesProduct extends Base
     'title',
     'description',
     'cee_63a_5p',
+    'cee_63a',
+    'cee_125a',
     'cee_32a_5p',
     'cee_16a_5p',
     'ch_16a_t25',
