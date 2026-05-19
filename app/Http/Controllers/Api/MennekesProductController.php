@@ -17,8 +17,6 @@ class MennekesProductController extends Controller
     'data_ports' => [],
     'ch_16a_t23' => [],
     'cee_63a_5p' => [],
-    'cee_63a'    => [],
-    'cee_125a'   => [],
     'cee_32a_5p' => [],
     'cee_16a_5p' => [],
   ];
@@ -69,14 +67,6 @@ class MennekesProductController extends Controller
       if (!in_array($product->cee_63a_5p, $this->filter_options['cee_63a_5p']) && $product->cee_63a_5p != 0)
       {
         $this->filter_options['cee_63a_5p'][] = $product->cee_63a_5p;
-      }
-      if (!in_array($product->cee_63a, $this->filter_options['cee_63a']) && $product->cee_63a != 0)
-      {
-        $this->filter_options['cee_63a'][] = $product->cee_63a;
-      }
-      if (!in_array($product->cee_125a, $this->filter_options['cee_125a']) && $product->cee_125a != 0)
-      {
-        $this->filter_options['cee_125a'][] = $product->cee_125a;
       }
       if (!in_array($product->cee_32a_5p, $this->filter_options['cee_32a_5p']) && $product->cee_32a_5p != 0)
       {
