@@ -11,10 +11,16 @@ use App\Http\Controllers\PageController;
 */
 
 // Product selection homepage
+// POST entry points handle integrations that submit connection data (e.g. wholesale shop / elbridge).
+Route::post('/', [PageController::class, 'home']);
 Route::get('/', [PageController::class, 'home'])->name('page.home');
+Route::post('/de', [PageController::class, 'home']);
 Route::get('/de', [PageController::class, 'home'])->name('de.page.home');
+Route::post('/fr', [PageController::class, 'home']);
 Route::get('/fr', [PageController::class, 'home'])->name('fr.page.home');
+Route::post('/it', [PageController::class, 'home']);
 Route::get('/it', [PageController::class, 'home'])->name('it.page.home');
+Route::post('/en', [PageController::class, 'home']);
 Route::get('/en', [PageController::class, 'home'])->name('en.page.home');
 
 // Steckdosen-Kombination (existing product)
