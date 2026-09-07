@@ -170,7 +170,7 @@ export default {
 </script>
 <style>
 .flatpickr-day.selected {
-  background-color:#1D8649 !important;
-  border-color: #1D8649 !important;
+  background-color:#2A5556 !important;
+  border-color: #2A5556 !important;
 }
 </style>
