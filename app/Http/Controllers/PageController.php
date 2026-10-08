@@ -37,11 +37,30 @@ class PageController extends BaseController
   }
 
   /**
+   * Redirect an entry without locale prefix to the language requested by the
+   * wholesale shop / elbridge (e.g. language=FR → /fr/steckdosen-kombination).
+   * Returns null if no redirect is needed.
+   */
+  protected function localeRedirect(Request $request)
+  {
+    $language = strtolower((string) $request->input('language'));
+    $supported = config('locales.supported');
+
+    if (!in_array($language, $supported) || $language == 'de' || in_array($request->segment(1), $supported))
+    {
+      return null;
+    }
+
+    return redirect('/' . $language . ($request->path() == '/' ? '' : '/' . $request->path()));
+  }
+
+  /**
    * Show the product selection homepage
    */
   public function home(Request $request)
   {
     $this->initSession($request);
+    if ($redirect = $this->localeRedirect($request)) return $redirect;
     return view($this->viewPath . 'home');
   }
 
@@ -51,6 +70,7 @@ class PageController extends BaseController
   public function steckdosenKombinationLanding(Request $request)
   {
     $this->initSession($request);
+    if ($redirect = $this->localeRedirect($request)) return $redirect;
     return view($this->viewPath . 'steckdosen-kombination.landing');
   }
 
@@ -68,6 +88,7 @@ class PageController extends BaseController
   public function wandsteckdoseDuoiLanding(Request $request)
   {
     $this->initSession($request);
+    if ($redirect = $this->localeRedirect($request)) return $redirect;
     return view($this->viewPath . 'wandsteckdose-duoi.landing');
   }
 

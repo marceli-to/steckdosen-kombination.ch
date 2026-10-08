@@ -16,6 +16,10 @@ class VerifyCsrfToken extends Middleware
     'de',
     'fr',
     'it',
-    'en'
+    'en',
+    'steckdosen-kombination',
+    '*/steckdosen-kombination',
+    'wandsteckdose-duoi',
+    '*/wandsteckdose-duoi'
   ];
 }
