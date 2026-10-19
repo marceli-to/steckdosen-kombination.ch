@@ -21,7 +21,7 @@
       </ul>
       <h3>{{ __('Gut zu wissen') }}</h3>
       <ul class="list-info">
-        <li>{{ __('Noch Fragen? Nutzen Sie unseren Chat') }}</li>
+        <li>{{ __('Noch Fragen? Schreiben Sie uns auf WhatsApp') }}</li>
         <li>{{ __('Schulungsanfragen für MENNEKES Stromverteiler') }}</li>
       </ul>
     </div>
